@@ -11,6 +11,7 @@
 import React from 'react';
 import { Image, Segment, Advertisement, Grid, Header, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
+import Footer from '~/components/Footer';
 
 const IntroToBitcoinImage =
 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png';
@@ -170,6 +171,7 @@ export default (props) => {
           <Advertisement centered unit="medium rectangle" test="Advertisement" />
         </Grid.Column>
       </Grid>
+      <Footer />
     </div>
   );
 };

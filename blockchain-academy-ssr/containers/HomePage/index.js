@@ -30,6 +30,7 @@ import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
 import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
+import Footer from '~/components/Footer';
 import { Link, Router } from '~/routes';
 
 const seminar1 =
@@ -282,5 +283,6 @@ export default () => (
         </Card.Group>
       </Segment>
     </Container>
+    <Footer />
   </div>
 );
