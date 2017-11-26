@@ -102,6 +102,7 @@
         "react": "16.0.0",
         "react-dom": "16.0.0",
         "react-particles-js": "2.1.0",
+        "react-player": "0.25.3",
         "react-redux": "5.0.6",
         "react-slick": "0.15.4",
         "redux": "3.7.2",

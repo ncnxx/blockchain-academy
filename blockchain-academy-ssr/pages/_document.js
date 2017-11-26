@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import Footer from '../components/Footer';
 
 export default class MyDocument extends Document {
   render() {
@@ -74,6 +75,7 @@ export default class MyDocument extends Document {
         <body>
           <div className="root">{main}</div>
           <NextScript />
+          <Footer />
         </body>
       </html>
     );

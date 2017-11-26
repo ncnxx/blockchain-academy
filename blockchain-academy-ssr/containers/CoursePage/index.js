@@ -1,17 +1,6 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a necessity for you then you can refactor it and remove
- * the linting exception.
- */
 import React from 'react';
 import { Image, Segment, Advertisement, Grid, Responsive, Header, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
-import Footer from '~/components/Footer';
 
 const IntroToBitcoinImage =
 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png';
@@ -193,7 +182,6 @@ export default (props) => {
           <Advertisement centered unit="medium rectangle" test="Advertisement" />
         </Grid.Column>
       </Grid>
-      <Footer />
     </div>
   );
 };

@@ -287,6 +287,5 @@ export default () => (
         </Card.Group>
       </Segment>
     </Container>
-    <Footer />
   </div>
 );

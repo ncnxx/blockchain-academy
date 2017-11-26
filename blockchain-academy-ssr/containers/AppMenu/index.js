@@ -30,24 +30,18 @@ export default class AppMenu extends Component {
         </Link>
         <Menu.Item
           name="features"
-          active={activeItem === 'features'}
-          onClick={this.handleItemClick}
         >
           คอร์สออนไลน์
         </Menu.Item>
 
         <Menu.Item
           name="testimonials"
-          active={activeItem === 'testimonials'}
-          onClick={this.handleItemClick}
         >
           อบรม/สัมนา
         </Menu.Item>
 
         <Menu.Item
           name="sign-in"
-          active={activeItem === 'sign-in'}
-          onClick={this.handleItemClick}
         >
           เกี่ยวกับเรา
         </Menu.Item>
