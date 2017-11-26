@@ -115,11 +115,13 @@
     },
     "devDependencies": {
         "babel-eslint": "8.0.1",
+        "babel-plugin-root-import": "5.1.0",
         "babel-plugin-styled-components": "^1.1.5",
         "eslint": "4.12.0",
         "eslint-config-airbnb": "16.1.0",
         "eslint-config-airbnb-base": "12.1.0",
         "eslint-config-prettier": "2.6.0",
+        "eslint-import-resolver-babel-root-import": "0.0.2",
         "eslint-plugin-import": "2.8.0",
         "eslint-plugin-jsx-a11y": "6.0.2",
         "eslint-plugin-react": "7.5.1",

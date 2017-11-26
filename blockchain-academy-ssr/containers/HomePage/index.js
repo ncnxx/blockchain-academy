@@ -8,9 +8,8 @@
  * reloading is not a necessity for you then you can refactor it and remove
  * the linting exception.
  */
-import _ from "lodash";
-import React, { Component } from "react";
-import { Particles } from "react-particles-js";
+import React, { Component } from 'react';
+import { Particles } from 'react-particles-js';
 import {
   Menu,
   Header,
@@ -21,41 +20,40 @@ import {
   Container,
   Card,
   Icon,
-  Dimmer
-} from "semantic-ui-react";
-import Slider from "react-slick";
-import styled from "styled-components";
+  Dimmer,
+} from 'semantic-ui-react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
 
-import { particleConfig } from "./constants";
-import NextArrow from "../../components/NextArrow";
-import PrevArrow from "../../components/PrevArrow";
+import { particleConfig } from './constants';
+import NextArrow from '../../components/NextArrow';
+import PrevArrow from '../../components/PrevArrow';
+import AppMenu from '~/containers/AppMenu';
 
-const Logo =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/logo.png";
 const IntroToBitcoinImage =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png';
 const CryptoCurrencyMiningImage =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/cryptocurrency-mining.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/cryptocurrency-mining.png';
 const EthereumImage =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ethereum.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ethereum.png';
 const seminar1 =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
 const seminar2 =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-2.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-2.png';
 const seminar3 =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-3.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-3.png';
 const seminar4 =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-4.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-4.png';
 const pantipPratunamLogo =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/pantip-pratunam-logo.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/pantip-pratunam-logo.png';
 const biostarLogo =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-logo.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-logo.png';
 const ratchapatLogo =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ratchapat-logo.png";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ratchapat-logo.png';
 const bitcoinSeminar1 =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin.jpg";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin.jpg';
 const thminerLogo =
-  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/thminer-logo.jpg";
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/thminer-logo.jpg';
 
 const settings = {
   dots: true,
@@ -67,7 +65,7 @@ const settings = {
   accessibility: true,
   adaptiveHeight: true,
   prevArrow: <PrevArrow />,
-  nextArrow: <NextArrow />
+  nextArrow: <NextArrow />,
 };
 
 const CanvasHeader = styled(Header)`
@@ -106,56 +104,56 @@ const CanvasSubheaderText = styled.h2``;
 const seminarList = [
   {
     image: bitcoinSeminar1,
-    name: "Introduction to Bitcoin and Blockchain ครั้งที่ 1",
-    venue: "HUBBA-TO",
+    name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 1',
+    venue: 'HUBBA-TO',
     description:
-      "คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด" +
-      "และการขุด",
-    time: "29 October 2017",
-    price: "ตั๋วหมด"
+      'คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด' +
+      'และการขุด',
+    time: '29 October 2017',
+    price: 'ตั๋วหมด',
   },
   {
     image: bitcoinSeminar1,
-    name: "Introduction to Bitcoin and Blockchain ครั้งที่ 2",
-    venue: "สมาคมธรรมศาสตร์",
+    name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 2',
+    venue: 'สมาคมธรรมศาสตร์',
     description:
-      "คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด" +
-      "และการขุด",
-    time: "18 November 2017",
-    price: "ตั๋วหมด"
-  }
+      'คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด' +
+      'และการขุด',
+    time: '18 November 2017',
+    price: 'ตั๋วหมด',
+  },
 ];
 
 const courseList = [
   {
-    name: "Bitcoin คืออะไร?",
+    name: 'Bitcoin คืออะไร?',
     image: IntroToBitcoinImage,
     description:
-      "ประวัติความเป็นมา และความรู้เบื้องต้นของสกุลเงินดิจิตอล Bitcoin",
-    meta: "ระดับมือใหม่",
+      'ประวัติความเป็นมา และความรู้เบื้องต้นของสกุลเงินดิจิตอล Bitcoin',
+    meta: 'ระดับมือใหม่',
     duration: 3,
-    price: "ฟรี"
+    price: 'ฟรี',
   },
   {
-    name: "สร้างกำไรจากการขุด Cryptocurrency",
+    name: 'สร้างกำไรจากการขุด Cryptocurrency',
     image: CryptoCurrencyMiningImage,
     description:
-      "เจาะลึกวิธีการและเทคนิคในการขุด Cryptocurrency ตั้งแต่การเลือกซื้ออุปกรณ์ ไปจนถึ" +
-      "งการติดตั้งและใช้งานซอฟต์แวร์สำหรับการขุด",
-    meta: "ระดับกลาง",
+      'เจาะลึกวิธีการและเทคนิคในการขุด Cryptocurrency ตั้งแต่การเลือกซื้ออุปกรณ์ ไปจนถึ' +
+      'งการติดตั้งและใช้งานซอฟต์แวร์สำหรับการขุด',
+    meta: 'ระดับกลาง',
     duration: 10,
-    price: "500 THB"
+    price: '500 THB',
   },
   {
-    name: "Ethereum นวัตกรรมเปลี่ยนโลก",
+    name: 'Ethereum นวัตกรรมเปลี่ยนโลก',
     image: EthereumImage,
     description:
-      "ทำความรู้จักกับ Ethereum อีกหนึ่ง Cryptocurrency ที่นำเสนอแนวคิดใหม่ที่แตกต่างไป" +
-      "จาก Bitcoin และเหรียญอื่นๆ",
-    meta: "ระดับมือใหม่",
+      'ทำความรู้จักกับ Ethereum อีกหนึ่ง Cryptocurrency ที่นำเสนอแนวคิดใหม่ที่แตกต่างไป' +
+      'จาก Bitcoin และเหรียญอื่นๆ',
+    meta: 'ระดับมือใหม่',
     duration: 3,
-    price: "ฟรี"
-  }
+    price: 'ฟรี',
+  },
 ];
 
 export default class HomePage extends Component {
@@ -179,41 +177,7 @@ export default class HomePage extends Component {
           rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
         />
-        <Menu stackable>
-          <Menu.Item>
-            <img
-              style={{
-                width: "6.5em"
-              }}
-              src={Logo}
-              alt="Logo"
-            />
-          </Menu.Item>
-
-          <Menu.Item
-            name="features"
-            active={activeItem === "features"}
-            onClick={this.handleItemClick}
-          >
-            คอร์สออนไลน์
-          </Menu.Item>
-
-          <Menu.Item
-            name="testimonials"
-            active={activeItem === "testimonials"}
-            onClick={this.handleItemClick}
-          >
-            อบรม/สัมนา
-          </Menu.Item>
-
-          <Menu.Item
-            name="sign-in"
-            active={activeItem === "sign-in"}
-            onClick={this.handleItemClick}
-          >
-            เกี่ยวกับเรา
-          </Menu.Item>
-        </Menu>
+        <AppMenu />
         <Segment>
           <Particles params={particleConfig} height="400px" />
           <CanvasHeader textAlign="center">
@@ -224,7 +188,7 @@ export default class HomePage extends Component {
             <Button
               color="blue"
               style={{
-                fontSize: "20px"
+                fontSize: '20px',
               }}
             >
               เริ่มต้นที่นี่
@@ -241,7 +205,7 @@ export default class HomePage extends Component {
           </Header>
           <br />
           <Card.Group stackable itemsPerRow="4">
-            {courseList.map(each => (
+            {courseList.map((each) => (
               <Card key={each.name}>
                 <Image fluid src={each.image} />
                 <Card.Content>
@@ -301,7 +265,7 @@ export default class HomePage extends Component {
           </Segment>
           <div
             style={{
-              maxHeight: "600px"
+              maxHeight: '600px',
             }}
           >
             <Slider {...settings}>
@@ -322,11 +286,11 @@ export default class HomePage extends Component {
           <Segment
             basic
             style={{
-              marginTop: "50px"
+              marginTop: '50px',
             }}
           >
             <Card.Group stackable itemsPerRow="3">
-              {seminarList.map(each => (
+              {seminarList.map((each) => (
                 <Card key={each.name}>
                   <Image fluid src={each.image} />
                   <Card.Content>
