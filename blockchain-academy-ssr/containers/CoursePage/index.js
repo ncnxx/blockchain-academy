@@ -19,7 +19,7 @@ const CryptoCurrencyMiningImage =
 const EthereumImage =
 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ethereum.png';
 
-const courseList = [
+export const courseList = [
   {
     name: 'Bitcoin คืออะไร?',
     image: IntroToBitcoinImage,
@@ -133,7 +133,7 @@ export default (props) => {
               </Grid.Column>
               <Grid.Column mobile="16" computer="16">
                 <Accordion fluid styled>
-                  {selectedCourse.content.map((chapter, index) => (
+                  {selectedCourse.content && selectedCourse.content.map((chapter, index) => (
                     <div key={chapter.name}>
                       <Accordion.Title active index={index}>
                         <Icon name="dropdown" />
@@ -141,7 +141,7 @@ export default (props) => {
                       </Accordion.Title>
                       <Accordion.Content active>
                         <Item.Group divided>
-                          {chapter.chapterContent.map((content) => (
+                          {chapter.chapterContent && chapter.chapterContent.map((content) => (
                             <Item key={content.name}>
                               <Item.Content>
                                 <Grid>

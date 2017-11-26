@@ -28,7 +28,9 @@ import styled from 'styled-components';
 import { particleConfig } from './constants';
 import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
+import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
+import { Link, Router } from '~/routes';
 
 const seminar1 =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
@@ -118,37 +120,6 @@ const seminarList = [
   },
 ];
 
-const courseList = [
-  {
-    name: 'Bitcoin คืออะไร?',
-    image: IntroToBitcoinImage,
-    description:
-      'ประวัติความเป็นมา และความรู้เบื้องต้นของสกุลเงินดิจิตอล Bitcoin',
-    meta: 'ระดับมือใหม่',
-    duration: 3,
-    price: 'ฟรี',
-  },
-  {
-    name: 'สร้างกำไรจากการขุด Cryptocurrency',
-    image: CryptoCurrencyMiningImage,
-    description:
-      'เจาะลึกวิธีการและเทคนิคในการขุด Cryptocurrency ตั้งแต่การเลือกซื้ออุปกรณ์ ไปจนถึ' +
-      'งการติดตั้งและใช้งานซอฟต์แวร์สำหรับการขุด',
-    meta: 'ระดับกลาง',
-    duration: 10,
-    price: '500 THB',
-  },
-  {
-    name: 'Ethereum นวัตกรรมเปลี่ยนโลก',
-    image: EthereumImage,
-    description:
-      'ทำความรู้จักกับ Ethereum อีกหนึ่ง Cryptocurrency ที่นำเสนอแนวคิดใหม่ที่แตกต่างไป' +
-      'จาก Bitcoin และเหรียญอื่นๆ',
-    meta: 'ระดับมือใหม่',
-    duration: 3,
-    price: 'ฟรี',
-  },
-];
 export default () => (
   <div>
     <link
@@ -192,7 +163,7 @@ export default () => (
             <Image fluid src={each.image} />
             <Card.Content>
               <Card.Header>
-                <a>{each.name}</a>
+                <Link route="course" params={{ slug: each.slug }}><a>{each.name}</a></Link>
               </Card.Header>
               <Card.Meta>{each.meta}</Card.Meta>
               <Card.Description>{each.description}</Card.Description>
