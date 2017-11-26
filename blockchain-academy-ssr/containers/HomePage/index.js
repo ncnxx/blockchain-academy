@@ -31,7 +31,7 @@ import PrevArrow from '../../components/PrevArrow';
 import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
-import { Link, Router } from '~/routes';
+import { Link } from '~/routes';
 
 const seminar1 =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
@@ -161,7 +161,11 @@ export default () => (
       <Card.Group stackable itemsPerRow="4">
         {courseList.map((each) => (
           <Card key={each.name}>
-            <Image fluid src={each.image} />
+            <Link route="course" params={{ slug: each.slug }}>
+              <a>
+                <Image fluid src={each.image} />
+              </a>
+            </Link>
             <Card.Content>
               <Card.Header>
                 <Link route="course" params={{ slug: each.slug }}><a>{each.name}</a></Link>

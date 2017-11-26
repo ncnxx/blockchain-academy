@@ -9,7 +9,7 @@
  * the linting exception.
  */
 import React from 'react';
-import { Image, Segment, Advertisement, Grid, Header, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
+import { Image, Segment, Advertisement, Grid, Responsive, Header, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
 
@@ -90,6 +90,24 @@ export const courseList = [
   },
 ];
 
+// const reviewZone = () => (
+//   [
+//     <Header as="h2">Reviews</Header>,
+//     <Grid>
+//       <Grid.Column width="4" textAlign="center">
+//         <Statistic>
+//           <Statistic.Value>4.8</Statistic.Value>
+//           <Statistic.Label>
+//             <div><Rating disabled maxRating={5} defaultRating={4} icon="star" size="huge" /></div>
+//             <div>คะแนนเฉลี่ย</div>
+//           </Statistic.Label>
+//         </Statistic>
+//       </Grid.Column>
+//       <Grid.Column width="12"></Grid.Column>
+//     </Grid>,
+//   ]
+// );
+
 export default (props) => {
   const { slug } = props;
   const selectedCourse = courseList.find((course) => course.slug === slug);
@@ -99,7 +117,11 @@ export default (props) => {
   return (
     <div>
       <AppMenu />
-      <Advertisement unit="leaderboard" test="Advertisement" centered />
+      <Responsive
+        minWidth={Responsive.onlyComputer.minWidth}
+      >
+        <Advertisement unit="leaderboard" test="Advertisement" centered />
+      </Responsive>
       <Advertisement unit="mobile leaderboard" test="Advertisement" centered />
       <Grid padded stackable>
         <Grid.Column computer={11}>
