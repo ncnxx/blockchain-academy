@@ -155,181 +155,171 @@ const courseList = [
     price: 'ฟรี',
   },
 ];
-
-export default class HomePage extends Component {
-  state = {};
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  render() {
-    const { activeItem } = this.state;
-    return (
-      <div>
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-        />
-        <AppMenu />
-        <Segment>
-          <Particles params={particleConfig} height="400px" />
-          <CanvasHeader textAlign="center">
-            <CanvasHeaderText>SIAM BLOCKCHAIN ACADEMY</CanvasHeaderText>
-            <CanvasSubheaderText>
-              ศูนย์รวมแห่งการเรียนรู้ Blockchain และ Cryptocurrency
-            </CanvasSubheaderText>
-            <Button
-              color="blue"
-              style={{
-                fontSize: '20px',
-              }}
-            >
-              เริ่มต้นที่นี่
-            </Button>
-          </CanvasHeader>
-        </Segment>
-        <br />
-        <Container>
-          <Header as="h1" textAlign="center">
-            คอร์สออนไลน์คุณภาพ
-            <Header.Subheader>
-              รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
-            </Header.Subheader>
-          </Header>
-          <br />
-          <Card.Group stackable itemsPerRow="4">
-            {courseList.map((each) => (
-              <Card key={each.name}>
-                <Image fluid src={each.image} />
-                <Card.Content>
-                  <Card.Header>
-                    <a>{each.name}</a>
-                  </Card.Header>
-                  <Card.Meta>{each.meta}</Card.Meta>
-                  <Card.Description>{each.description}</Card.Description>
-                  <br />
-                </Card.Content>
-                <Card.Content extra textAlign="right">
-                  <Icon name="time" />
-                  <span>
-                    {each.duration}
-                    ชั่วโมง
-                  </span>
-                  &nbsp;&nbsp;&nbsp;
-                  <Icon name="tags" />
-                  <span>{each.price}</span>
-                </Card.Content>
-              </Card>
-            ))}
-            <Dimmer.Dimmable as={Card} dimmed>
-              <Dimmer inverted active>
-                <Header as="h2" icon color="blue">
-                  <Icon name="plus" />
-                  ดูคอร์สออนไลน์ทั้งหมด
-                </Header>
-              </Dimmer>
-              <Image fluid src={courseList[0].image} />
+export default () => (
+  <div>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <AppMenu />
+    <Segment>
+      <Particles params={particleConfig} height="400px" />
+      <CanvasHeader textAlign="center">
+        <CanvasHeaderText>SIAM BLOCKCHAIN ACADEMY</CanvasHeaderText>
+        <CanvasSubheaderText>
+        ศูนย์รวมแห่งการเรียนรู้ Blockchain และ Cryptocurrency
+        </CanvasSubheaderText>
+        <Button
+          color="blue"
+          style={{
+            fontSize: '20px',
+          }}
+        >
+        เริ่มต้นที่นี่
+        </Button>
+      </CanvasHeader>
+    </Segment>
+    <br />
+    <Container>
+      <Header as="h1" textAlign="center">
+      คอร์สออนไลน์คุณภาพ
+        <Header.Subheader>
+        รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
+        </Header.Subheader>
+      </Header>
+      <br />
+      <Card.Group stackable itemsPerRow="4">
+        {courseList.map((each) => (
+          <Card key={each.name}>
+            <Image fluid src={each.image} />
+            <Card.Content>
+              <Card.Header>
+                <a>{each.name}</a>
+              </Card.Header>
+              <Card.Meta>{each.meta}</Card.Meta>
+              <Card.Description>{each.description}</Card.Description>
+              <br />
+            </Card.Content>
+            <Card.Content extra textAlign="right">
+              <Icon name="time" />
+              <span>
+                {each.duration}
+              ชั่วโมง
+              </span>
+            &nbsp;&nbsp;&nbsp;
+              <Icon name="tags" />
+              <span>{each.price}</span>
+            </Card.Content>
+          </Card>
+        ))}
+        <Dimmer.Dimmable as={Card} dimmed>
+          <Dimmer inverted active>
+            <Header as="h2" icon color="blue">
+              <Icon name="plus" />
+            ดูคอร์สออนไลน์ทั้งหมด
+            </Header>
+          </Dimmer>
+          <Image fluid src={courseList[0].image} />
+          <Card.Content>
+            <Card.Header>
+              <a>{courseList[0].name}</a>
+            </Card.Header>
+            <Card.Meta>{courseList[0].meta}</Card.Meta>
+            <Card.Description />
+          </Card.Content>
+        </Dimmer.Dimmable>
+      </Card.Group>
+      <br />
+      <Header as="h1" textAlign="center">
+      คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
+        <Header.Subheader>
+        พร้อมสาธิตให้เห็นภาพชัดเจน
+        เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
+        ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
+        Biostar
+        </Header.Subheader>
+      </Header>
+      <Segment basic textAlign="center">
+        <Image.Group>
+          <Image size="small" src={pantipPratunamLogo} />
+          <Image size="small" src={biostarLogo} />
+          <Image size="tiny" src={thminerLogo} />
+          <Image size="tiny" src={ratchapatLogo} />
+        </Image.Group>
+      </Segment>
+      <div
+        style={{
+          maxHeight: '600px',
+        }}
+      >
+        <Slider {...settings}>
+          <div>
+            <Image centered src={seminar1} />
+          </div>
+          <div>
+            <Image centered src={seminar2} />
+          </div>
+          <div>
+            <Image centered src={seminar3} />
+          </div>
+          <div>
+            <Image centered src={seminar4} />
+          </div>
+        </Slider>
+      </div>
+      <Segment
+        basic
+        style={{
+          marginTop: '50px',
+        }}
+      >
+        <Card.Group stackable itemsPerRow="3">
+          {seminarList.map((each) => (
+            <Card key={each.name}>
+              <Image fluid src={each.image} />
               <Card.Content>
                 <Card.Header>
-                  <a>{courseList[0].name}</a>
+                  <a>{each.name}</a>
                 </Card.Header>
-                <Card.Meta>{courseList[0].meta}</Card.Meta>
-                <Card.Description />
+                <Card.Description>{each.description}</Card.Description>
+                <br />
               </Card.Content>
-            </Dimmer.Dimmable>
-          </Card.Group>
-          <br />
-          <Header as="h1" textAlign="center">
-            คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
-            <Header.Subheader>
-              พร้อมสาธิตให้เห็นภาพชัดเจน
-              เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
-              ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
-              Biostar
-            </Header.Subheader>
-          </Header>
-          <Segment basic textAlign="center">
-            <Image.Group>
-              <Image size="small" src={pantipPratunamLogo} />
-              <Image size="small" src={biostarLogo} />
-              <Image size="tiny" src={thminerLogo} />
-              <Image size="tiny" src={ratchapatLogo} />
-            </Image.Group>
-          </Segment>
-          <div
-            style={{
-              maxHeight: '600px',
-            }}
-          >
-            <Slider {...settings}>
-              <div>
-                <Image centered src={seminar1} />
-              </div>
-              <div>
-                <Image centered src={seminar2} />
-              </div>
-              <div>
-                <Image centered src={seminar3} />
-              </div>
-              <div>
-                <Image centered src={seminar4} />
-              </div>
-            </Slider>
-          </div>
-          <Segment
-            basic
-            style={{
-              marginTop: '50px',
-            }}
-          >
-            <Card.Group stackable itemsPerRow="3">
-              {seminarList.map((each) => (
-                <Card key={each.name}>
-                  <Image fluid src={each.image} />
-                  <Card.Content>
-                    <Card.Header>
-                      <a>{each.name}</a>
-                    </Card.Header>
-                    <Card.Description>{each.description}</Card.Description>
-                    <br />
-                  </Card.Content>
-                  <Card.Content extra textAlign="right">
-                    <Icon name="time" />
-                    <span>{each.time}</span>
-                    &nbsp;&nbsp;&nbsp;
-                    <Icon name="tags" />
-                    <span>{each.price}</span>
-                  </Card.Content>
-                </Card>
-              ))}
-              <Dimmer.Dimmable as={Card} dimmed>
-                <Dimmer inverted active>
-                  <Header as="h2" icon color="blue">
-                    <Icon name="plus" />
-                    ดูคอร์สอบรม<br />
-                    และสัมนาทั้งหมด
-                  </Header>
-                </Dimmer>
-                <Image fluid src={seminarList[0].image} />
-                <Card.Content>
-                  <Card.Header>
-                    <a>{seminarList[0].name}</a>
-                  </Card.Header>
-                  <Card.Meta>{seminarList[0].meta}</Card.Meta>
-                  <Card.Description />
-                </Card.Content>
-              </Dimmer.Dimmable>
-            </Card.Group>
-          </Segment>
-        </Container>
-      </div>
-    );
-  }
-}
+              <Card.Content extra textAlign="right">
+                <Icon name="time" />
+                <span>{each.time}</span>
+              &nbsp;&nbsp;&nbsp;
+                <Icon name="tags" />
+                <span>{each.price}</span>
+              </Card.Content>
+            </Card>
+          ))}
+          <Dimmer.Dimmable as={Card} dimmed>
+            <Dimmer inverted active>
+              <Header as="h2" icon color="blue">
+                <Icon name="plus" />
+              ดูคอร์สอบรม<br />
+              และสัมนาทั้งหมด
+              </Header>
+            </Dimmer>
+            <Image fluid src={seminarList[0].image} />
+            <Card.Content>
+              <Card.Header>
+                {seminarList[0].name}
+              </Card.Header>
+              <Card.Meta>{seminarList[0].meta}</Card.Meta>
+              <Card.Description />
+            </Card.Content>
+          </Dimmer.Dimmable>
+        </Card.Group>
+      </Segment>
+    </Container>
+  </div>
+);
