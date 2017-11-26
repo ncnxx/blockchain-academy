@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-export default (props) => {
+export default props => {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ ...style, display: 'block', right: '10%' }}
+      style={{ ...style, display: "block", right: "10%" }}
       onClick={onClick}
-    ></div>
+    />
   );
 };

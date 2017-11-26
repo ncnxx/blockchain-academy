@@ -4,13 +4,13 @@ import {
   LOAD_DATA,
   LOAD_DATA_SUCCESS,
   START_CLOCK,
-  TICK_CLOCK,
-} from '../constants/appConstant';
+  TICK_CLOCK
+} from "../constants/appConstant";
 
 export function failure(error) {
   return {
     type: FAILURE,
-    error,
+    error
   };
 }
 
@@ -25,7 +25,7 @@ export function loadData() {
 export function loadDataSuccess(data) {
   return {
     type: LOAD_DATA_SUCCESS,
-    data,
+    data
   };
 }
 
@@ -37,6 +37,6 @@ export function tickClock(isServer) {
   return {
     type: TICK_CLOCK,
     light: !isServer,
-    ts: Date.now(),
+    ts: Date.now()
   };
 }

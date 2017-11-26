@@ -1,15 +1,15 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import withRedux from 'next-redux-wrapper';
-import nextReduxSaga from 'next-redux-saga';
-import createSagaMiddleware from 'redux-saga';
-import Immutable from 'seamless-immutable';
+import { createStore, applyMiddleware, compose } from "redux";
+import withRedux from "next-redux-wrapper";
+import nextReduxSaga from "next-redux-saga";
+import createSagaMiddleware from "redux-saga";
+import Immutable from "seamless-immutable";
 
-import rootReducer from './reducers';
-import rootSaga from './sagas';
+import rootReducer from "./reducers";
+import rootSaga from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
-const dev = process.env.NODE_ENV !== 'production';
-const windowExist = typeof window === 'object';
+const dev = process.env.NODE_ENV !== "production";
+const windowExist = typeof window === "object";
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers =
@@ -20,7 +20,8 @@ const composeEnhancers =
 /* eslint-enable */
 export function configureStore(initialState = {}) {
   /* eslint-disable no-param-reassign */
-  if (!Immutable.isImmutable(initialState)) initialState = Immutable(initialState);
+  if (!Immutable.isImmutable(initialState))
+    initialState = Immutable(initialState);
 
   /* eslint-enable */
   const store = createStore(

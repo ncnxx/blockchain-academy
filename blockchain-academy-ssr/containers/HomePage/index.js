@@ -8,9 +8,9 @@
  * reloading is not a necessity for you then you can refactor it and remove
  * the linting exception.
  */
-import _ from 'lodash';
-import React, {Component} from 'react';
-import {Particles} from 'react-particles-js';
+import _ from "lodash";
+import React, { Component } from "react";
+import { Particles } from "react-particles-js";
 import {
   Menu,
   Header,
@@ -22,27 +22,40 @@ import {
   Card,
   Icon,
   Dimmer
-} from 'semantic-ui-react';
-import Slider from 'react-slick';
+} from "semantic-ui-react";
+import Slider from "react-slick";
+import styled from "styled-components";
 
-import {particleConfig} from './constants';
-import styled from 'styled-components';
-import NextArrow from '../../components/NextArrow';
-import PrevArrow from '../../components/PrevArrow';
+import { particleConfig } from "./constants";
+import NextArrow from "../../components/NextArrow";
+import PrevArrow from "../../components/PrevArrow";
 
-const Logo = '/static/logo.png';
-const IntroToBitcoinImage = '/static/introduction-to-bitcoin.png';
-const CryptoCurrencyMiningImage = '/static/cryptocurrency-mining.png';
-const EthereumImage = '/static/ethereum.png';
-const seminar1 = '/static/seminar-1.png';
-const seminar2 = '/static/seminar-2.png';
-const seminar3 = '/static/seminar-3.png';
-const seminar4 = '/static/seminar-4.png';
-const pantipPratunamLogo = '/static/pantip-pratunam-logo.png';
-const biostarLogo = '/static/biostar-logo.png';
-const ratchapatLogo = '/static/ratchapat-logo.png';
-const bitcoinSeminar1 = '/static/seminar-bitcoin.jpg';
-const thminerLogo = '/static/thminer-logo.jpg';
+const Logo =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/logo.png";
+const IntroToBitcoinImage =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png";
+const CryptoCurrencyMiningImage =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/cryptocurrency-mining.png";
+const EthereumImage =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ethereum.png";
+const seminar1 =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png";
+const seminar2 =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-2.png";
+const seminar3 =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-3.png";
+const seminar4 =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-4.png";
+const pantipPratunamLogo =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/pantip-pratunam-logo.png";
+const biostarLogo =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-logo.png";
+const ratchapatLogo =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ratchapat-logo.png";
+const bitcoinSeminar1 =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin.jpg";
+const thminerLogo =
+  "https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/thminer-logo.jpg";
 
 const settings = {
   dots: true,
@@ -53,148 +66,172 @@ const settings = {
   autoplay: true,
   accessibility: true,
   adaptiveHeight: true,
-  prevArrow: <PrevArrow/>,
-  nextArrow: <NextArrow/>
+  prevArrow: <PrevArrow />,
+  nextArrow: <NextArrow />
 };
 
 const CanvasHeader = styled(Header)`
-    text-align: center;
-    position: absolute;
+  text-align: center;
+  position: absolute;
 
-    @media (max-width: 767px) { 
-      top: 50px;
-      left : 0;
-      right: 0;
-    }
+  @media (max-width: 767px) {
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
 
-    @media (min-width: 768px) { 
-      top: 110px;
-      left : 0;
-      right: 0;
-    }
+  @media (min-width: 768px) {
+    top: 110px;
+    left: 0;
+    right: 0;
+  }
 `;
 
-const CanvasHeaderText = styled.h1 `
-    letter-spacing: 2px;
-    pointer-events: none;
-    font-weight: 700;
+const CanvasHeaderText = styled.h1`
+  letter-spacing: 2px;
+  pointer-events: none;
+  font-weight: 700;
 
-    @media (max-width: 767px) { 
-      font-size: 2em !important;
-    }
+  @media (max-width: 767px) {
+    font-size: 2em !important;
+  }
 
-    @media (min-width: 768px) { 
-      font-size: 3em !important;
-    }
+  @media (min-width: 768px) {
+    font-size: 3em !important;
+  }
 `;
 
-const CanvasSubheaderText = styled.h2 ``;
+const CanvasSubheaderText = styled.h2``;
 
 const seminarList = [
   {
     image: bitcoinSeminar1,
-    name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 1',
-    venue: 'HUBBA-TO',
-    description: 'คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด' +
-        'และการขุด',
-    time: '29 October 2017',
-    price: 'ตั๋วหมด'
-  }, {
+    name: "Introduction to Bitcoin and Blockchain ครั้งที่ 1",
+    venue: "HUBBA-TO",
+    description:
+      "คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด" +
+      "และการขุด",
+    time: "29 October 2017",
+    price: "ตั๋วหมด"
+  },
+  {
     image: bitcoinSeminar1,
-    name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 2',
-    venue: 'สมาคมธรรมศาสตร์',
-    description: 'คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด' +
-        'และการขุด',
-    time: '18 November 2017',
-    price: 'ตั๋วหมด'
+    name: "Introduction to Bitcoin and Blockchain ครั้งที่ 2",
+    venue: "สมาคมธรรมศาสตร์",
+    description:
+      "คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด" +
+      "และการขุด",
+    time: "18 November 2017",
+    price: "ตั๋วหมด"
   }
 ];
 
 const courseList = [
   {
-    name: 'Bitcoin คืออะไร?',
+    name: "Bitcoin คืออะไร?",
     image: IntroToBitcoinImage,
-    description: 'ประวัติความเป็นมา และความรู้เบื้องต้นของสกุลเงินดิจิตอล Bitcoin',
-    meta: 'ระดับมือใหม่',
+    description:
+      "ประวัติความเป็นมา และความรู้เบื้องต้นของสกุลเงินดิจิตอล Bitcoin",
+    meta: "ระดับมือใหม่",
     duration: 3,
-    price: 'ฟรี'
-  }, {
-    name: 'สร้างกำไรจากการขุด Cryptocurrency',
+    price: "ฟรี"
+  },
+  {
+    name: "สร้างกำไรจากการขุด Cryptocurrency",
     image: CryptoCurrencyMiningImage,
-    description: 'เจาะลึกวิธีการและเทคนิคในการขุด Cryptocurrency ตั้งแต่การเลือกซื้ออุปกรณ์ ไปจนถึ' +
-        'งการติดตั้งและใช้งานซอฟต์แวร์สำหรับการขุด',
-    meta: 'ระดับกลาง',
+    description:
+      "เจาะลึกวิธีการและเทคนิคในการขุด Cryptocurrency ตั้งแต่การเลือกซื้ออุปกรณ์ ไปจนถึ" +
+      "งการติดตั้งและใช้งานซอฟต์แวร์สำหรับการขุด",
+    meta: "ระดับกลาง",
     duration: 10,
-    price: '500 THB'
-  }, {
-    name: 'Ethereum นวัตกรรมเปลี่ยนโลก',
+    price: "500 THB"
+  },
+  {
+    name: "Ethereum นวัตกรรมเปลี่ยนโลก",
     image: EthereumImage,
-    description: 'ทำความรู้จักกับ Ethereum อีกหนึ่ง Cryptocurrency ที่นำเสนอแนวคิดใหม่ที่แตกต่างไป' +
-        'จาก Bitcoin และเหรียญอื่นๆ',
-    meta: 'ระดับมือใหม่',
+    description:
+      "ทำความรู้จักกับ Ethereum อีกหนึ่ง Cryptocurrency ที่นำเสนอแนวคิดใหม่ที่แตกต่างไป" +
+      "จาก Bitcoin และเหรียญอื่นๆ",
+    meta: "ระดับมือใหม่",
     duration: 3,
-    price: 'ฟรี'
+    price: "ฟรี"
   }
 ];
 
 export default class HomePage extends Component {
-  state = {}
+  state = {};
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
     const { activeItem } = this.state;
     return (
       <div>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"></link>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"></link>
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        />
         <Menu stackable>
           <Menu.Item>
             <img
               style={{
-              width: '6.5em'
-            }}
+                width: "6.5em"
+              }}
               src={Logo}
-              alt="Logo"/>
+              alt="Logo"
+            />
           </Menu.Item>
 
           <Menu.Item
             name="features"
-            active={activeItem === 'features'}
-            onClick={this.handleItemClick}>
+            active={activeItem === "features"}
+            onClick={this.handleItemClick}
+          >
             คอร์สออนไลน์
           </Menu.Item>
 
           <Menu.Item
             name="testimonials"
-            active={activeItem === 'testimonials'}
-            onClick={this.handleItemClick}>
+            active={activeItem === "testimonials"}
+            onClick={this.handleItemClick}
+          >
             อบรม/สัมนา
           </Menu.Item>
 
           <Menu.Item
             name="sign-in"
-            active={activeItem === 'sign-in'}
-            onClick={this.handleItemClick}>
+            active={activeItem === "sign-in"}
+            onClick={this.handleItemClick}
+          >
             เกี่ยวกับเรา
           </Menu.Item>
         </Menu>
         <Segment>
           <Particles params={particleConfig} height="400px" />
           <CanvasHeader textAlign="center">
-            <CanvasHeaderText>
-              SIAM BLOCKCHAIN ACADEMY
-            </CanvasHeaderText>
+            <CanvasHeaderText>SIAM BLOCKCHAIN ACADEMY</CanvasHeaderText>
             <CanvasSubheaderText>
               ศูนย์รวมแห่งการเรียนรู้ Blockchain และ Cryptocurrency
             </CanvasSubheaderText>
-            <Button color="blue" style={{
-              fontSize: '20px'
-            }}>เริ่มต้นที่นี่</Button>
+            <Button
+              color="blue"
+              style={{
+                fontSize: "20px"
+              }}
+            >
+              เริ่มต้นที่นี่
+            </Button>
           </CanvasHeader>
         </Segment>
-        <br/>
+        <br />
         <Container>
           <Header as="h1" textAlign="center">
             คอร์สออนไลน์คุณภาพ
@@ -202,25 +239,27 @@ export default class HomePage extends Component {
               รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
             </Header.Subheader>
           </Header>
-          <br/>
+          <br />
           <Card.Group stackable itemsPerRow="4">
-            {courseList.map((each) => (
+            {courseList.map(each => (
               <Card key={each.name}>
-                <Image fluid src={each.image}/>
+                <Image fluid src={each.image} />
                 <Card.Content>
                   <Card.Header>
                     <a>{each.name}</a>
                   </Card.Header>
                   <Card.Meta>{each.meta}</Card.Meta>
                   <Card.Description>{each.description}</Card.Description>
-                  <br/>
+                  <br />
                 </Card.Content>
                 <Card.Content extra textAlign="right">
-                  <Icon name="time"/>
-                  <span>{each.duration}
-                    ชั่วโมง</span>
+                  <Icon name="time" />
+                  <span>
+                    {each.duration}
+                    ชั่วโมง
+                  </span>
                   &nbsp;&nbsp;&nbsp;
-                  <Icon name="tags"/>
+                  <Icon name="tags" />
                   <span>{each.price}</span>
                 </Card.Content>
               </Card>
@@ -228,65 +267,80 @@ export default class HomePage extends Component {
             <Dimmer.Dimmable as={Card} dimmed>
               <Dimmer inverted active>
                 <Header as="h2" icon color="blue">
-                  <Icon name="plus"/>
+                  <Icon name="plus" />
                   ดูคอร์สออนไลน์ทั้งหมด
                 </Header>
               </Dimmer>
-              <Image fluid src={courseList[0].image}/>
+              <Image fluid src={courseList[0].image} />
               <Card.Content>
                 <Card.Header>
                   <a>{courseList[0].name}</a>
                 </Card.Header>
                 <Card.Meta>{courseList[0].meta}</Card.Meta>
-                <Card.Description></Card.Description>
+                <Card.Description />
               </Card.Content>
             </Dimmer.Dimmable>
           </Card.Group>
-          <br/>
+          <br />
           <Header as="h1" textAlign="center">
             คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
             <Header.Subheader>
-              พร้อมสาธิตให้เห็นภาพชัดเจน เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
-              ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ Biostar
+              พร้อมสาธิตให้เห็นภาพชัดเจน
+              เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
+              ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
+              Biostar
             </Header.Subheader>
           </Header>
           <Segment basic textAlign="center">
-            <Image.Group >
-              <Image size="small" src={pantipPratunamLogo}/>
-              <Image size="small" src={biostarLogo}/>
-              <Image size="tiny" src={thminerLogo}/>
-              <Image size="tiny" src={ratchapatLogo}/>
+            <Image.Group>
+              <Image size="small" src={pantipPratunamLogo} />
+              <Image size="small" src={biostarLogo} />
+              <Image size="tiny" src={thminerLogo} />
+              <Image size="tiny" src={ratchapatLogo} />
             </Image.Group>
           </Segment>
-          <div style={{
-            maxHeight: '600px'
-          }}>
+          <div
+            style={{
+              maxHeight: "600px"
+            }}
+          >
             <Slider {...settings}>
-              <div><Image centered src={seminar1}/></div>
-              <div><Image centered src={seminar2}/></div>
-              <div><Image centered src={seminar3}/></div>
-              <div><Image centered src={seminar4}/></div>
+              <div>
+                <Image centered src={seminar1} />
+              </div>
+              <div>
+                <Image centered src={seminar2} />
+              </div>
+              <div>
+                <Image centered src={seminar3} />
+              </div>
+              <div>
+                <Image centered src={seminar4} />
+              </div>
             </Slider>
           </div>
-          <Segment basic style={{
-            marginTop: '50px'
-          }}>
+          <Segment
+            basic
+            style={{
+              marginTop: "50px"
+            }}
+          >
             <Card.Group stackable itemsPerRow="3">
-              {seminarList.map((each) => (
+              {seminarList.map(each => (
                 <Card key={each.name}>
-                  <Image fluid src={each.image}/>
+                  <Image fluid src={each.image} />
                   <Card.Content>
                     <Card.Header>
                       <a>{each.name}</a>
                     </Card.Header>
                     <Card.Description>{each.description}</Card.Description>
-                    <br/>
+                    <br />
                   </Card.Content>
                   <Card.Content extra textAlign="right">
-                    <Icon name="time"/>
+                    <Icon name="time" />
                     <span>{each.time}</span>
                     &nbsp;&nbsp;&nbsp;
-                    <Icon name="tags"/>
+                    <Icon name="tags" />
                     <span>{each.price}</span>
                   </Card.Content>
                 </Card>
@@ -294,18 +348,18 @@ export default class HomePage extends Component {
               <Dimmer.Dimmable as={Card} dimmed>
                 <Dimmer inverted active>
                   <Header as="h2" icon color="blue">
-                    <Icon name="plus"/>
-                    ดูคอร์สอบรม<br/>
+                    <Icon name="plus" />
+                    ดูคอร์สอบรม<br />
                     และสัมนาทั้งหมด
                   </Header>
                 </Dimmer>
-                <Image fluid src={seminarList[0].image}/>
+                <Image fluid src={seminarList[0].image} />
                 <Card.Content>
                   <Card.Header>
                     <a>{seminarList[0].name}</a>
                   </Card.Header>
                   <Card.Meta>{seminarList[0].meta}</Card.Meta>
-                  <Card.Description></Card.Description>
+                  <Card.Description />
                 </Card.Content>
               </Dimmer.Dimmable>
             </Card.Group>
