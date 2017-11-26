@@ -1,5 +1,5 @@
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   render() {
@@ -10,6 +10,8 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>React Boilerplate Next</title>
           <meta
             name="description"
@@ -62,6 +64,10 @@ export default class MyDocument extends Document {
             rel="mask-icon"
             href="static/safari-pinned-tab.svg"
             color="#5bbad5"
+          />
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
           />
           {styleTags}
         </Head>

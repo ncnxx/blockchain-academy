@@ -30,12 +30,6 @@ import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
 import AppMenu from '~/containers/AppMenu';
 
-const IntroToBitcoinImage =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png';
-const CryptoCurrencyMiningImage =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/cryptocurrency-mining.png';
-const EthereumImage =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/ethereum.png';
 const seminar1 =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
 const seminar2 =
@@ -157,10 +151,6 @@ const courseList = [
 ];
 export default () => (
   <div>
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
-    />
     <link
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
