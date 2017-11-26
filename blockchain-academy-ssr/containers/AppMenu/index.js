@@ -24,7 +24,8 @@ export default class AppMenu extends Component {
           />
         </Menu.Item>
         <Link href="/">
-          <Menu.Item>
+
+          <Menu.Item as="a">
           หน้าแรก
           </Menu.Item>
         </Link>

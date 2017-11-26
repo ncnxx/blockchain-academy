@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Segment, Advertisement, Grid, Responsive, Header, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
+import { contentList } from '../CourseContentPage';
 
 const IntroToBitcoinImage =
 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin.png';
@@ -22,36 +23,7 @@ export const courseList = [
     content: [
       {
         name: 'Bitcoin คืออะไร?',
-        chapterContent: [
-          {
-            name: 'ประวัติความเป็นมาของเงินดิจิตอล',
-            duration: '10:37',
-          },
-          {
-            name: 'ประวัติของ Bitcoin',
-            duration: '8:09',
-          },
-          {
-            name: 'ความน่าเชื่อถือของ Bitcoin',
-            duration: '11:57',
-          },
-          {
-            name: 'Bitcoin มีมูลค่ามาจากอะไร',
-            duration: '5:13',
-          },
-          {
-            name: 'เศรษฐศาสตร์ของ Bitcoin',
-            duration: '9:49',
-          },
-          {
-            name: 'การเก็บรักษา Bitcoin',
-            duration: '8:45',
-          },
-          {
-            name: 'การหาซื้อ Bitcoin',
-            duration: '8:09',
-          },
-        ],
+        chapterContent: contentList,
       },
     ],
   },
@@ -106,9 +78,7 @@ export default (props) => {
   return (
     <div>
       <AppMenu />
-      <Responsive
-        minWidth={Responsive.onlyComputer.minWidth}
-      >
+      <Responsive minWidth={Responsive.onlyComputer.minWidth}>
         <Advertisement unit="leaderboard" test="Advertisement" centered />
       </Responsive>
       <Advertisement unit="mobile leaderboard" test="Advertisement" centered />
@@ -158,7 +128,9 @@ export default (props) => {
                               <Item.Content>
                                 <Grid>
                                   <Grid.Column computer="10">
-                                    <Header as="h4"><Icon name="video play" size="large" />{content.name}</Header>
+                                    <a href={`/course/${selectedCourse.slug}/content/${content.id}`}>
+                                      <Header as="h4"><Icon name="video play" size="large" />{content.name}</Header>
+                                    </a>
                                   </Grid.Column>
                                   <Grid.Column computer="6" textAlign="right">
                                     {content.duration}
