@@ -151,65 +151,14 @@ export default () => (
     <br />
     <Container>
       <Header as="h1" textAlign="center">
-      คอร์สออนไลน์คุณภาพ
-        <Header.Subheader>
-        รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
-        </Header.Subheader>
-      </Header>
-      <br />
-      <Card.Group stackable itemsPerRow="4">
-        {courseList.map((each) => (
-          <Card key={each.name}>
-            <a href={`/course/${each.slug}`}>
-              <Image fluid src={each.image} />
-            </a>
-            <Card.Content>
-              <Card.Header>
-                <a href={`/course/${each.slug}`}>{each.name}</a>
-              </Card.Header>
-              <Card.Meta>{each.meta}</Card.Meta>
-              <Card.Description>{each.description}</Card.Description>
-              <br />
-            </Card.Content>
-            <Card.Content extra textAlign="right">
-              <Icon name="time" />
-              <span>
-                {each.duration}
-              ชั่วโมง
-              </span>
-            &nbsp;&nbsp;&nbsp;
-              <Icon name="tags" />
-              <span>{each.price}</span>
-            </Card.Content>
-          </Card>
-        ))}
-        <Dimmer.Dimmable as={Card} dimmed>
-          <Dimmer inverted active>
-            <Header as="h2" icon color="blue">
-              <Icon name="plus" />
-            ดูคอร์สออนไลน์ทั้งหมด
-            </Header>
-          </Dimmer>
-          <Image fluid src={courseList[0].image} />
-          <Card.Content>
-            <Card.Header>
-              <a>{courseList[0].name}</a>
-            </Card.Header>
-            <Card.Meta>{courseList[0].meta}</Card.Meta>
-            <Card.Description />
-          </Card.Content>
-        </Dimmer.Dimmable>
-      </Card.Group>
-      <br />
-      <Header as="h1" textAlign="center">
       คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
-        <Header.Subheader>
+      <Header.Subheader>
         พร้อมสาธิตให้เห็นภาพชัดเจน
         เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
         ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
         Biostar
         </Header.Subheader>
-      </Header>
+    </Header>
       <Segment basic textAlign="center">
         <Image.Group>
           <Image size="small" src={pantipPratunamLogo} />
@@ -278,6 +227,57 @@ export default () => (
                 {seminarList[0].name}
               </Card.Header>
               <Card.Meta>{seminarList[0].meta}</Card.Meta>
+              <Card.Description />
+            </Card.Content>
+          </Dimmer.Dimmable>
+        </Card.Group>
+        <br />
+        <Header as="h1" textAlign="center">
+      คอร์สออนไลน์คุณภาพ
+          <Header.Subheader>
+        รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
+          </Header.Subheader>
+        </Header>
+        <br />
+        <Card.Group stackable itemsPerRow="4">
+          {courseList.map((each) => (
+            <Card key={each.name}>
+              <a href={`/course/${each.slug}`}>
+                <Image fluid src={each.image} />
+              </a>
+              <Card.Content>
+                <Card.Header>
+                  <a href={`/course/${each.slug}`}>{each.name}</a>
+                </Card.Header>
+                <Card.Meta>{each.meta}</Card.Meta>
+                <Card.Description>{each.description}</Card.Description>
+                <br />
+              </Card.Content>
+              <Card.Content extra textAlign="right">
+                <Icon name="time" />
+                <span>
+                  {each.duration}
+              ชั่วโมง
+                </span>
+            &nbsp;&nbsp;&nbsp;
+                <Icon name="tags" />
+                <span>{each.price}</span>
+              </Card.Content>
+            </Card>
+          ))}
+          <Dimmer.Dimmable as={Card} dimmed>
+            <Dimmer inverted active>
+              <Header as="h2" icon color="blue">
+                <Icon name="plus" />
+            ดูคอร์สออนไลน์ทั้งหมด
+              </Header>
+            </Dimmer>
+            <Image fluid src={courseList[0].image} />
+            <Card.Content>
+              <Card.Header>
+                <a>{courseList[0].name}</a>
+              </Card.Header>
+              <Card.Meta>{courseList[0].meta}</Card.Meta>
               <Card.Description />
             </Card.Content>
           </Dimmer.Dimmable>
