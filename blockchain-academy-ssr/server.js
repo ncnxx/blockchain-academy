@@ -9,6 +9,7 @@ const handle = app.getRequestHandler();
 app.prepare()
   .then(() => {
     const server = express();
+    server.get('/seminar/:slug', (req, res) => app.render(req, res, '/seminar', { slug: req.params.slug }));
 
     server.get('/course/:slug', (req, res) => app.render(req, res, '/course', { slug: req.params.slug }));
 

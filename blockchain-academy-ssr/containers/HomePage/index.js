@@ -31,6 +31,7 @@ import PrevArrow from '../../components/PrevArrow';
 import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
+import { seminarList } from '~/containers/SeminarPage/constants';
 
 const seminar1 =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
@@ -97,29 +98,6 @@ const CanvasHeaderText = styled.h1`
 
 const CanvasSubheaderText = styled.h2``;
 
-const seminarList = [
-  {
-    image: bitcoinSeminar1,
-    name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 1',
-    venue: 'HUBBA-TO',
-    description:
-      'คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด' +
-      'และการขุด',
-    time: '29 October 2017',
-    price: 'ตั๋วหมด',
-  },
-  {
-    image: bitcoinSeminar1,
-    name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 2',
-    venue: 'สมาคมธรรมศาสตร์',
-    description:
-      'คอร์สอบรมความรู้ระดับเบื้องต้นเกี่ยวกับ Bitcoin และ Blockchain พร้อมสาธิตการเทรด' +
-      'และการขุด',
-    time: '18 November 2017',
-    price: 'ตั๋วหมด',
-  },
-];
-
 export default () => (
   <div>
     <link
@@ -152,13 +130,13 @@ export default () => (
     <Container>
       <Header as="h1" textAlign="center">
       คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
-      <Header.Subheader>
+        <Header.Subheader>
         พร้อมสาธิตให้เห็นภาพชัดเจน
         เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
         ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
         Biostar
         </Header.Subheader>
-    </Header>
+      </Header>
       <Segment basic textAlign="center">
         <Image.Group>
           <Image size="small" src={pantipPratunamLogo} />
@@ -199,9 +177,9 @@ export default () => (
               <Image fluid src={each.image} />
               <Card.Content>
                 <Card.Header>
-                  <a>{each.name}</a>
+                  <a href={`/seminar/${each.slug}`}>{each.name}</a>
                 </Card.Header>
-                <Card.Description>{each.description}</Card.Description>
+                <Card.Description>{each.shortDescription}</Card.Description>
                 <br />
               </Card.Content>
               <Card.Content extra textAlign="right">
@@ -239,7 +217,8 @@ export default () => (
           </Header.Subheader>
         </Header>
         <br />
-        <Card.Group stackable itemsPerRow="4">
+        <Header as="h1" textAlign="center">เร็วๆนี้</Header>
+        {/* <Card.Group stackable itemsPerRow="4">
           {courseList.map((each) => (
             <Card key={each.name}>
               <a href={`/course/${each.slug}`}>
@@ -281,7 +260,7 @@ export default () => (
               <Card.Description />
             </Card.Content>
           </Dimmer.Dimmable>
-        </Card.Group>
+        </Card.Group> */}
       </Segment>
     </Container>
   </div>
