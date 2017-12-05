@@ -53,6 +53,7 @@ export default (props) => {
                   <Header as="h1">ซื้อตั๋ว</Header>
                   <Button size="huge" negative>งานสิ้นสุดลงแล้ว</Button>
                 </Segment>
+                {selectedSeminar.ratings &&
                 <Segment>
                   <Header as="h1">ความพึงพอใจของผู้เข้าร่วม</Header>
                   <br />
@@ -67,9 +68,10 @@ export default (props) => {
                       {selectedSeminar.reviews && selectedSeminar.reviews.map((review) => (
                         <Header as="h2"><i>"{review}"</i></Header>
                       ))}
+                      <p>ข้อมูลจากการทำแบบสอบถามโดยผู้เข้าร่วมงานจำนวน {selectedSeminar.actualParticipants} คน</p>
                     </Grid.Column>
                   </Grid>
-                </Segment>
+                </Segment>}
                 <Segment>
                   <Header as="h1">รายละเอียด</Header>
                   <div dangerouslySetInnerHTML={{ __html: selectedSeminar.longDescription }} />
