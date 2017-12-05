@@ -4,7 +4,7 @@ import PrevArrow from '../../components/PrevArrow';
 
 export const seminarList = [
   {
-    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin.jpg',
+    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin-1-alt.jpg',
     name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 1',
     venue: 'HUBBA-TO',
     shortDescription:
@@ -47,7 +47,7 @@ export const seminarList = [
     ],
   },
   {
-    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin-2.jpg',
+    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin-2-alt.jpg',
     name: 'Introduction to Bitcoin and Blockchain ครั้งที่ 2',
     venue: 'สมาคมธรรมศาสตร์',
     longDescription: '<p>Bitcoin คืออะไร?<br /><br />เงินดิจิตอลปลอดภัยจริงหรือ<wbr />ไม่?<br /><br />ทำไม Bitcoin ถึงมีมูลค่า?<br /><br />Blockchain เอาไว้ทำอะไร?<br /><br />นี่ใช่แชร์ลูกโซ่รึเปล่า?<br /><br />Siam Blockchain เว็บข่าวสาร Blockchain และ Cryptocurrency เพื่อคนไทย จะขอมาตอบคำถามของทุกท่านผ่<wbr />านคอร์สเรียน "Introduction to Bitcoin and Blockchain" ที่จะทำการมอบความรู้เกี่ยว<wbr />กับเงินดิจิตอล เทคโนโลยี Blockchain และ Cryptocurrency เพื่อให้เกิดความเข้าใจ และรู้เท่าทันกับเทคโนโลยีท<wbr />ี่เป็นที่พูดถึงกันทั่วโลกใ<wbr />นขณะนี้<br /><span class="text_exposed_show"><br />- ความรู้ที่ผู้เข้าร่วมทุกท่<wbr />านจะได้รับหลังจากคอร์สนี้ คือ<br />- จุดกำเนิด และที่มาที่ไปของ Bitcoin<br />- ความเข้าใจเกี่ยวกับหลักการ<wbr />ทำงานของ Bitcoin และ Blockchain รวมถึงบทบาทของเทคโนโลยีเหล<wbr />่านี้ในชีวิตของเรา<br />- รู้จักกับการขุด Bitcoin และ Cryptocurrency รวมถึงกลไกเบื้องหลังของการ<wbr />ขุด<br />- รู้เท่าทันถึงอันตราย และความเสี่ยงจากเงินดิจิตอ<wbr />ล รวมถึงวิธีป้องกันตนเองจากภ<wbr />ัยอันตรายเหล่านี้<br />- รู้จักตลาด และช่องทางในการลงทุน Cryptocurrency<br />- ประสบการ์ณในการเทรดและขุดข<wbr />องวิทยากรทั้งสองท่าน<br />- Demo วิธีการเทรดและการโอนเงินเบ<wbr />ื้องต้น<br />- Demo การขุด โดยเราจะนำเครื่องขุดมา Demo ให้ดูว่ามันทำงานยังไง พร้อมแมนวลวิธีการขุด<br />- Q&amp;A Session สุดพิเศษกับ 2 วิทยากร<br /><br />เนื้อหาและจุดประสงค์ในการจ<wbr />ัดทำคอร์สนี้ เป็นการมุ่งหวังเพื่อสร้างค<wbr />วามรู้ และความเข้าใจในเทคโนโลยีนี<wbr />้อย่างกว้างขวางมากขึ้นในปร<wbr />ะเทศไทย โดยเนื้อหาในคอร์สนี้จะมีทั<wbr />้งเรื่องเทคโนโลยีและการลงท<wbr />ุนแต่จะเน้นไปที่พื้นฐานของ<wbr />ความเข้าใจในตัวของ Bitcoin และ Blockchain<br /><br />โดยการจัดอบรมคอร์สนี้ เป็นการจัดงานครั้งที่ 2 แล้ว เพื่อตอบสนองความต้องการจำน<wbr />วนมากของผู้สนใจที่ต้องการค<wbr />้นหาและได้รับความรู้เกี่ยว<wbr />กับ Bitcoin และ Blockchain<br /><br />วันและเวลา: วันเสาร์ที่ 18 พฤศจิกายน 2560 เวลา 13.00 - 17.00<br /><br />สถานที่: สมาคมธรรมศาสตร์ Auditoruim พระราม 4&nbsp;<a href="https://l.facebook.com/l.php?u=https%3A%2F%2Ftinyurl.com%2Fyd97nhoa&amp;h=ATNRXBryIJ9MoKo09bjdPh765zPQVDKpWScpfgRO35MRL9THuPgynu7myhHKasmi-w-imeTwggpAyW2GLcAECEcPYpbM06rCIgT0fkyO-rujAmCy0FbpAQItKqHutOUciqnmY9ZjTXD9gXtkrLOMgw6ouNv-OlrjSbFJ60QBj7YifzZ9rMqkm-E" target="_blank" rel="nofollow noopener" data-lynx-mode="async">https://tinyurl.com/<wbr />yd97nhoa</a><br /><br />ค่าสมัคร: 1,799 บาท<br /><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.zipeventapp.com%2Fe%2FIntroduction-to-Bitcoin-and-Blockchain-2rd-by-Siam-Blockchain&amp;h=ATO-EhfcEaL_PuXFLTM73z-ayjaeF1rknZkDCjxFblUkeRrJH7Px686-IT9LvFvUjQeHefivI7BqDyFP4JvwYsztlkmz2Fgx21vegWJ5hu--Xn886zC5MUbKD08J6pTMj_OHjQqzWXvZ9QwhaZYjcYoLQnBwHiNWj9tpVoUqUxVpHC6d-cY4hME" target="_blank" rel="nofollow noopener" data-lynx-mode="async">https://<wbr />www.zipeventapp.com/e/<wbr />Introduction-to-Bitcoin-and<wbr />-Blockchain-2rd-by-Siam-Bl<wbr />ockchain</a><br /><br />งานสัมนานี้สำหรับ: มือใหม่<br />มีอาหารว่างให้<br /><br /><br />ความประทับใจบางส่วนจากผู้เ<wbr />ข้าร่วมในคอร์สที่แล้ว<br /><br />"เข้าใจเรื่องของ Bitcoin มากขึ้น"<br /><br />"รู้จักสกุลเงินดิจิตอลมากข<wbr />ึ้น"<br /><br />"บรรยากาศเป็นกันเองดี"<br /><br />"รูปแบบของสไลด์ที่ดูง่ายดี<wbr />"<br /><br />"ความเชี่ยวชาญของวิทยากร"<br /><br />"อธิบายเข้าใจง่าย"<br /><br /><br />หากมีข้อสงสัยสามารถติดต่อไ<wbr />ด้ที่เพจ Siam Blockchain หรือ 080-962-6306 (คุณหาญ)</span></p>',
@@ -79,6 +79,17 @@ export const seminarList = [
     ],
     maxParticipants: 160,
     actualParticipants: 77,
+  },
+  {
+    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin-3.jpg',
+    name: 'สัมนา Bitcoin คืออะไร?',
+    venue: 'ศูนย์การค้าพันธุ์ทิพย์ ประตูน้ำ',
+    longDescription: '<p>งานสัมมนาให้ความรู้ด้าน Bitcoin จะถูกจัดขึ้นในวันที่ 22-23 กรกฎาคม 2560 เวลาบ่ายสองโมงตรง ณ ที่ห้องสัมมนาชั้น 3 ของห้างพันธุ์ทิพย์ประตู้น้ำ &nbsp;ซึ่งเซสชั่นของงานสัมมนาจะถูกแบ่งออกเป็นสองเซสชั่น โดยเซสชั่นแรกจัดขึ้นวันที่ 22 ก.ค. จะเป็นการพูดคุยเกี่ยวกับความรู้พื้นฐานของ Bitcoin โดยรวม &nbsp;และสำหรับเซสชั่นที่สองจัดขึ้นวันที่ 23 ก.ค. &nbsp;จะเป็นการอธิบายเกี่ยวกับ Bitcoin แบบขั้นสูง เช่นการลงทุนด้านการขุดและการเทรดเพื่อทำกำไร</p><p>ทางพันธุ์ทิพย์ประตูน้ำยังได้จัดทำระบบจองที่นั่งสำหรับผู้ที่สนใจเข้าร่วมงานสัมมนาได้ฟรี โดยสามารถลงทะเบียนเพื่อเข้าร่วมงานได้<a href="https://goo.gl/bdyvnm">ที่นี่</a></p>',
+    shortDescription:
+        'งานสัมนาในหัวข้อ Bitcoin คืออะไร? พร้อมเนื้อหาด้านประวัติ ที่มา การทำงานเบื้องหลัง และอนาคตของสกุลเงินดิจิตอล Bitcoin',
+    time: '22 - 23 July 2017',
+    price: 'ฟรี',
+    slug: 'what-is-bitcoin-pantip',
   },
 ];
 
