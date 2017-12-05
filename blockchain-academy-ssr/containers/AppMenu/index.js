@@ -35,11 +35,12 @@ export default class AppMenu extends Component {
           คอร์สออนไลน์
         </Menu.Item>
 
-        <Menu.Item
-          name="testimonials"
-        >
+        <Link href="/all-seminar">
+
+          <Menu.Item as="a">
           อบรม/สัมนา
-        </Menu.Item>
+          </Menu.Item>
+        </Link>
 
         <Menu.Item
           name="sign-in"
