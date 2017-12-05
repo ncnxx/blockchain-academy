@@ -172,7 +172,7 @@ export default () => (
         }}
       >
         <Card.Group stackable itemsPerRow="3">
-          {seminarList.map((each) => (
+          {seminarList.slice(0, 2).map((each) => (
             <Card key={each.name}>
               <Image fluid src={each.image} />
               <Card.Content>
@@ -194,9 +194,11 @@ export default () => (
           <Dimmer.Dimmable as={Card} dimmed>
             <Dimmer inverted active>
               <Header as="h2" icon color="blue">
-                <Icon name="plus" />
+                <a href="/all-seminar">
+                  <Icon name="plus" />
               ดูคอร์สอบรม<br />
               และสัมนาทั้งหมด
+                </a>
               </Header>
             </Dimmer>
             <Image fluid src={seminarList[0].image} />
@@ -208,6 +210,7 @@ export default () => (
               <Card.Description />
             </Card.Content>
           </Dimmer.Dimmable>
+
         </Card.Group>
         <br />
         <Header as="h1" textAlign="center">

@@ -91,12 +91,12 @@ export default (props) => {
           {selectedSeminar.pictures &&
           <Segment>
             <Header as="h1">ภาพจากงาน</Header>
-            <div style={{ maxHeight: '600px', paddingBottom: '20px' }}>
+            <div style={{ paddingBottom: '20px' }}>
               <Slider {...slideSettings}>
                 {selectedSeminar.pictures.map((eachPicture) =>
                   (
                     <div key={eachPicture}>
-                      <Image centered src={eachPicture} />
+                      <Image style={{ maxHeight: '600px' }} centered src={eachPicture} />
                     </div>
                   ))}
               </Slider>

@@ -9,8 +9,13 @@ export default () => (
     <AppMenu />
     <Grid padded>
       <Grid.Column width="16">
+        <Header as="h1">งานอบรมและสัมนาทั้งหมด</Header>
         <Segment>
-          <Header as="h1">งานอบรมและสัมนาทั้งหมด</Header>
+          <Header as="h2">งานอบรมและสัมนาที่กำลังจะจัดขึ้น</Header>
+          <Header textAlign="center" as="h1">รอติดตามเร็วๆนี้</Header>
+        </Segment>
+        <Segment>
+          <Header as="h2">งานอบรมและสัมนาที่ผ่านไปแล้ว</Header>
           <Card.Group stackable itemsPerRow="3">
             {seminarList.map((each) => (
               <Card key={each.name}>

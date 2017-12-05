@@ -91,6 +91,35 @@ export const seminarList = [
     price: 'ฟรี',
     slug: 'what-is-bitcoin-pantip',
   },
+  {
+    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-poster.png',
+    name: 'สัมนา Biostar Mining Decode',
+    venue: 'โรงแรมดุสิตธานี กรุงเทพฯ',
+    shortDescription: 'งานสัมนาจัดโดย บริษัท Biostar ที่จะมาแนะนำเครื่องมือสำคัญของนักขุดที่ต้องมี พร้อมมอบความรู้เรื่อง Bitcoin และการทำกำไรจาก Bitcoin',
+    time: '29 July 2017',
+    price: 'ฟรี',
+    slug: 'biostar-mining-decode',
+    pictures: [
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-1.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-2.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-3.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-4.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-5.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-6.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-7.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-8.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/biostar-seminar/biostar-pic-9.jpg',
+    ],
+  },
+  {
+    image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/thminer-seminar/thminer-poster.jpg',
+    name: 'สัมนา TH MINER Bitcoin Workshop',
+    venue: 'IMPACT Arena',
+    shortDescription: 'งานสัมนาจัดโดย TH MINER ที่ขนความรู้พร้อมสินค้าสำหรับนักขุดมาส่งให้คุณถึงที่',
+    time: '6 August 2017',
+    price: 'ฟรี',
+    slug: 'thminer-bitcoin-workshop',
+  },
 ];
 
 export const slideSettings = {

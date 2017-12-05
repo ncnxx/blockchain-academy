@@ -29,11 +29,11 @@ export default class AppMenu extends Component {
           หน้าแรก
           </Menu.Item>
         </Link>
-        <Menu.Item
+        {/* <Menu.Item
           name="features"
         >
           คอร์สออนไลน์
-        </Menu.Item>
+        </Menu.Item> */}
 
         <Link href="/all-seminar">
 
@@ -42,11 +42,11 @@ export default class AppMenu extends Component {
           </Menu.Item>
         </Link>
 
-        <Menu.Item
+        {/* <Menu.Item
           name="sign-in"
         >
           เกี่ยวกับเรา
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     );
   }
