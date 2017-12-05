@@ -1,3 +1,7 @@
+import React from 'react';
+import NextArrow from '../../components/NextArrow';
+import PrevArrow from '../../components/PrevArrow';
+
 export const seminarList = [
   {
     image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin.jpg',
@@ -28,6 +32,19 @@ export const seminarList = [
     ],
     maxParticipants: 50,
     actualParticipants: 50,
+    pictures: [
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_1.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_2.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_3.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_4.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_5.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_6.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_7.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_8.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_9.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_10.jpg',
+      'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/introduction-to-bitcoin-and-blockchain-1/introduction-to-bitcoin-and-blockchain-1_11.jpg',
+    ],
   },
   {
     image: 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-bitcoin-2.jpg',
@@ -64,3 +81,16 @@ export const seminarList = [
     actualParticipants: 77,
   },
 ];
+
+export const slideSettings = {
+  dots: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  autoplay: true,
+  accessibility: true,
+  adaptiveHeight: true,
+  prevArrow: <PrevArrow />,
+  nextArrow: <NextArrow />,
+};

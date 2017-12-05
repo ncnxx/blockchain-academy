@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
+import Slider from 'react-slick';
 import { Image, Segment, Advertisement, Grid, Responsive, Header, Button, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
-import { seminarList } from './constants';
+import { seminarList, slideSettings } from './constants';
 
 export default (props) => {
   const { slug } = props;
@@ -12,6 +13,14 @@ export default (props) => {
   }
   return (
     <div>
+      <link
+        rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      />
       <AppMenu />
       <Responsive minWidth={Responsive.onlyComputer.minWidth}>
         <Advertisement unit="leaderboard" test="Advertisement" centered />
@@ -60,13 +69,13 @@ export default (props) => {
                   <Grid>
                     {selectedSeminar.ratings && _.map(selectedSeminar.ratings, (rating, item) => (
                       [
-                        <Grid.Column width="8"><Header as="h4">{item}</Header></Grid.Column>,
-                        <Grid.Column width="8"><Rating disabled maxRating={5} defaultRating={rating} icon="star" size="large" /> {rating}</Grid.Column>,
+                        <Grid.Column key={`${item}_item`} width="8"><Header as="h4">{item}</Header></Grid.Column>,
+                        <Grid.Column key={`${item}_rating`} width="8"><Rating disabled maxRating={5} defaultRating={rating} icon="star" size="large" /> {rating}</Grid.Column>,
                       ]
                     ))}
                     <Grid.Column width="16" textAlign="center">
                       {selectedSeminar.reviews && selectedSeminar.reviews.map((review) => (
-                        <Header as="h2"><i>"{review}"</i></Header>
+                        <Header key={review} as="h2"><i>"{review}"</i></Header>
                       ))}
                       <p>ข้อมูลจากการทำแบบสอบถามโดยผู้เข้าร่วมงานจำนวน {selectedSeminar.actualParticipants} คน</p>
                     </Grid.Column>
@@ -79,6 +88,20 @@ export default (props) => {
               </Grid.Column>
             </Grid>
           </Segment>
+          {selectedSeminar.pictures &&
+          <Segment>
+            <Header as="h1">ภาพจากงาน</Header>
+            <div style={{ maxHeight: '600px', paddingBottom: '20px' }}>
+              <Slider {...slideSettings}>
+                {selectedSeminar.pictures.map((eachPicture) =>
+                  (
+                    <div key={eachPicture}>
+                      <Image centered src={eachPicture} />
+                    </div>
+                  ))}
+              </Slider>
+            </div>
+          </Segment>}
         </Grid.Column>
         <Grid.Column computer={5}>
           <Advertisement centered unit="medium rectangle" test="Advertisement" />
