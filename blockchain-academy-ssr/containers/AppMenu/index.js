@@ -16,10 +16,8 @@ export default class AppMenu extends Component {
 
         <Menu.Item>
           <img
-            style={{
-              width: '6.5em',
-            }}
-            src={Logo}
+            style={{ width: '4em' }}
+            src="/static/symbol-logo.png"
             alt="Logo"
           />
         </Menu.Item>
