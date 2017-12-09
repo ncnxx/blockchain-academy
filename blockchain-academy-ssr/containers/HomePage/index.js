@@ -9,6 +9,7 @@
  * the linting exception.
  */
 import React, { Component } from 'react';
+import { Fade, Zoom } from 'react-reveal';
 import { Particles } from 'react-particles-js';
 import {
   Menu,
@@ -108,112 +109,121 @@ export default () => (
     <Segment basic style={{ marginTop: '70px' }}>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
-        <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
-        <CanvasSubheaderText>
+        <Zoom>
+          <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
+          <CanvasSubheaderText>
         ศูนย์รวมแห่งการเรียนรู้ Blockchain<br />และ Cryptocurrency
-        </CanvasSubheaderText>
+          </CanvasSubheaderText>
+        </Zoom>
       </CanvasHeader>
     </Segment>
     <br />
     <Container>
-      <Header as="h1" textAlign="center">
+      <Fade>
+        <Header as="h1" textAlign="center">
       คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
-        <Header.Subheader>
+          <Header.Subheader>
         พร้อมสาธิตให้เห็นภาพชัดเจน
         เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
         ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
         Biostar
-        </Header.Subheader>
-      </Header>
-      <Segment basic textAlign="center">
-        <Image.Group>
-          <Image size="small" src={pantipPratunamLogo} />
-          <Image size="small" src={biostarLogo} />
-          <Image size="tiny" src={thminerLogo} />
-          <Image size="tiny" src={ratchapatLogo} />
-        </Image.Group>
-      </Segment>
-      <div
-        style={{
-          maxHeight: '600px',
-        }}
-      >
-        <Slider {...settings}>
-          <div>
-            <Image size="big" centered src={seminar1} />
-            <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
-          </div>
-          <div>
-            <Image size="big" centered src={seminar2} />
-            <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
-          </div>
-          <div>
-            <Image size="big" centered src={seminar3} />
-            <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
-          </div>
-          <div>
-            <Image size="big" centered src={seminar4} />
-            <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
-          </div>
-        </Slider>
-      </div>
-      <Segment
-        basic
-        style={{
-          marginTop: '50px',
-        }}
-      >
-        <Card.Group stackable itemsPerRow="3">
-          {seminarList.slice(0, 2).map((each) => (
-            <Card key={each.name} raised>
-              <Image fluid src={each.image} />
-              <Card.Content>
-                <Card.Header>
-                  <a href={`/seminar/${each.slug}`}>{each.name}</a>
-                </Card.Header>
-                <Card.Description>{each.shortDescription}</Card.Description>
-                <br />
-              </Card.Content>
-              <Card.Content extra textAlign="right">
-                <Icon name="time" />
-                <span>{each.time}</span>
-              &nbsp;&nbsp;&nbsp;
-                <Icon name="tags" />
-                <span>{each.price}</span>
-              </Card.Content>
-            </Card>
-          ))}
-          <Dimmer.Dimmable as={Card} dimmed>
-            <Dimmer inverted active>
-              <Header as="h2" icon color="blue">
-                <a href="/all-seminar">
-                  <Icon name="plus" />
-              ดูคอร์สอบรม<br />
-              และสัมนาทั้งหมด
-                </a>
-              </Header>
-            </Dimmer>
-            <Image fluid src={seminarList[2].image} />
-            <Card.Content>
-              <Card.Header>
-                {seminarList[2].name}
-              </Card.Header>
-              <Card.Meta>{seminarList[2].meta}</Card.Meta>
-              <Card.Description />
-            </Card.Content>
-          </Dimmer.Dimmable>
-
-        </Card.Group>
-        <br />
-        <Header as="h1" textAlign="center">
-      คอร์สออนไลน์คุณภาพ
-          <Header.Subheader>
-        รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
           </Header.Subheader>
         </Header>
-        <br />
-        <Header as="h1" textAlign="center">เร็วๆนี้</Header>
-        {/* <Card.Group stackable itemsPerRow="4">
+      </Fade>
+      <Fade>
+        <Segment basic textAlign="center">
+          <Image.Group>
+            <Image size="small" src={pantipPratunamLogo} />
+            <Image size="small" src={biostarLogo} />
+            <Image size="tiny" src={thminerLogo} />
+            <Image size="tiny" src={ratchapatLogo} />
+          </Image.Group>
+        </Segment>
+      </Fade>
+      <Fade>
+        <div
+          style={{
+            maxHeight: '600px',
+          }}
+        >
+          <Slider {...settings}>
+            <div>
+              <Image size="big" centered src={seminar1} />
+              <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
+            </div>
+            <div>
+              <Image size="big" centered src={seminar2} />
+              <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
+            </div>
+            <div>
+              <Image size="big" centered src={seminar3} />
+              <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
+            </div>
+            <div>
+              <Image size="big" centered src={seminar4} />
+              <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
+            </div>
+          </Slider>
+        </div>
+      </Fade>
+      <Fade bottom>
+        <Segment
+          basic
+          style={{
+            marginTop: '50px',
+          }}
+        >
+          <Card.Group stackable itemsPerRow="3">
+            {seminarList.slice(0, 2).map((each) => (
+              <Card key={each.name} raised>
+                <Image fluid src={each.image} />
+                <Card.Content>
+                  <Card.Header>
+                    <a href={`/seminar/${each.slug}`}>{each.name}</a>
+                  </Card.Header>
+                  <Card.Description>{each.shortDescription}</Card.Description>
+                  <br />
+                </Card.Content>
+                <Card.Content extra textAlign="right">
+                  <Icon name="time" />
+                  <span>{each.time}</span>
+              &nbsp;&nbsp;&nbsp;
+                  <Icon name="tags" />
+                  <span>{each.price}</span>
+                </Card.Content>
+              </Card>
+            ))}
+            <Dimmer.Dimmable as={Card} dimmed>
+              <Dimmer inverted active>
+                <Header as="h2" icon color="blue">
+                  <a href="/all-seminar">
+                    <Icon name="plus" />
+              ดูคอร์สอบรม<br />
+              และสัมนาทั้งหมด
+                  </a>
+                </Header>
+              </Dimmer>
+              <Image fluid src={seminarList[2].image} />
+              <Card.Content>
+                <Card.Header>
+                  {seminarList[2].name}
+                </Card.Header>
+                <Card.Meta>{seminarList[2].meta}</Card.Meta>
+                <Card.Description />
+              </Card.Content>
+            </Dimmer.Dimmable>
+
+          </Card.Group>
+          <br />
+          <Header as="h1" textAlign="center">
+      คอร์สออนไลน์คุณภาพ
+            <Header.Subheader>
+        รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
+            </Header.Subheader>
+          </Header>
+          <br />
+          <Header as="h1" textAlign="center">เร็วๆนี้</Header>
+          {/* <Card.Group stackable itemsPerRow="4">
           {courseList.map((each) => (
             <Card key={each.name}>
               <a href={`/course/${each.slug}`}>
@@ -256,7 +266,8 @@ export default () => (
             </Card.Content>
           </Dimmer.Dimmable>
         </Card.Group> */}
-      </Segment>
+        </Segment>
+      </Fade>
     </Container>
   </div>
 );

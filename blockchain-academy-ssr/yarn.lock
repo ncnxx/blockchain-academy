@@ -4561,6 +4561,13 @@ react-redux@5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
+react-reveal@0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-0.7.3.tgz#4b7265b48251813acf735ab862d1687ad85d4570"
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.5.10"
+
 react-slick@0.15.4:
   version "0.15.4"
   resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.15.4.tgz#6709c87b06e7640feeacc06711be42cc2066aabe"
