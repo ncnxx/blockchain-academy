@@ -1,3 +1,7 @@
 a {
     color: #DD3236 !important;
 }
+
+html * :not(i) {
+    font-family: 'Prompt', sans-serif !important;    
+}
