@@ -12,7 +12,7 @@ export default class AppMenu extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu fixed="top" fluid borderless stackable style={{ marginTop: '0px' }}>
+      <Menu fixed="top" fluid borderless stackable style={{ backgroundColor: '#EBEBEB' }}>
 
         <Menu.Item>
           <Image
