@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 
-export default props => {
+export default (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", right: "10%" }}
+      className="slick-next"
+      style={{
+        content: 'none', height: '38px', right: '10%', backgroundImage: 'url(/static/right-arrow.svg)',
+      }}
       onClick={onClick}
     />
   );

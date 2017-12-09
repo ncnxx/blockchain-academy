@@ -5,3 +5,7 @@ a {
 html * :not(i) {
     font-family: 'Prompt', sans-serif !important;    
 }
+
+.slick-next:before {
+    content: none !important;
+}

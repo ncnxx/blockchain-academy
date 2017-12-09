@@ -105,7 +105,7 @@ export default () => (
       href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
     <AppMenu />
-    <Segment>
+    <Segment basic style={{ marginTop: '70px' }}>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
         <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
@@ -140,16 +140,20 @@ export default () => (
       >
         <Slider {...settings}>
           <div>
-            <Image centered src={seminar1} />
+            <Image size="big" centered src={seminar1} />
+            <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
           </div>
           <div>
-            <Image centered src={seminar2} />
+            <Image size="big" centered src={seminar2} />
+            <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
           </div>
           <div>
-            <Image centered src={seminar3} />
+            <Image size="big" centered src={seminar3} />
+            <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
           </div>
           <div>
-            <Image centered src={seminar4} />
+            <Image size="big" centered src={seminar4} />
+            <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
           </div>
         </Slider>
       </div>
@@ -161,7 +165,7 @@ export default () => (
       >
         <Card.Group stackable itemsPerRow="3">
           {seminarList.slice(0, 2).map((each) => (
-            <Card key={each.name}>
+            <Card key={each.name} raised>
               <Image fluid src={each.image} />
               <Card.Content>
                 <Card.Header>
@@ -189,12 +193,12 @@ export default () => (
                 </a>
               </Header>
             </Dimmer>
-            <Image fluid src={seminarList[0].image} />
+            <Image fluid src={seminarList[2].image} />
             <Card.Content>
               <Card.Header>
-                {seminarList[0].name}
+                {seminarList[2].name}
               </Card.Header>
-              <Card.Meta>{seminarList[0].meta}</Card.Meta>
+              <Card.Meta>{seminarList[2].meta}</Card.Meta>
               <Card.Description />
             </Card.Content>
           </Dimmer.Dimmable>
