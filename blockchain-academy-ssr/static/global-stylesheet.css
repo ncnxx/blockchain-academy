@@ -6,6 +6,6 @@ html * :not(i) {
     font-family: 'Prompt', sans-serif !important;    
 }
 
-.slick-next:before {
+.slick-next:before, .slick-prev:before {
     content: none !important;
 }
