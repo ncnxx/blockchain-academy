@@ -76,17 +76,13 @@ const CanvasHeader = styled(Header)`
   }
 
   @media (min-width: 768px) {
-    top: 110px;
+    top: 25px;
     left: 0;
     right: 0;
   }
 `;
 
-const CanvasHeaderText = styled.h1`
-  letter-spacing: 2px;
-  pointer-events: none;
-  font-weight: 700;
-
+const CanvasHeaderText = styled.div`
   @media (max-width: 767px) {
     font-size: 2em !important;
   }
@@ -112,18 +108,10 @@ export default () => (
     <Segment>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
-        <CanvasHeaderText>SIAM BLOCKCHAIN ACADEMY</CanvasHeaderText>
+        <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
         <CanvasSubheaderText>
-        ศูนย์รวมแห่งการเรียนรู้ Blockchain และ Cryptocurrency
+        ศูนย์รวมแห่งการเรียนรู้ Blockchain<br />และ Cryptocurrency
         </CanvasSubheaderText>
-        <Button
-          color="blue"
-          style={{
-            fontSize: '20px',
-          }}
-        >
-        เริ่มต้นที่นี่
-        </Button>
       </CanvasHeader>
     </Segment>
     <br />

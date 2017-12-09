@@ -16,11 +16,11 @@ export default class MyDocument extends Document {
           <title>Siam Blockchain Academy</title>
           <meta
             name="description"
-            content="NextJS with additional tech feature like react-boilerplate"
+            content="ศูนย์รวมแห่งการเรียนรู้ Blockchain และ Cryptocurrency"
           />
           <meta
             name="keywords"
-            content="react, reactjs, next, nextjs, react boilerplate, react boilerplate next, javascript, boilerplate, redux, redux saga, immutable"
+            content="bitcoin blockchain cryptocurrency invesment บิทคอยน์ บล็อกเชน เงินดิจิตอล สกุลเงินดิจิตอล ethereum"
           />
           <meta
             name="viewport"
@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="static/apple-touch-icon.png"
+            href="static/apple-icon.png"
           />
           <link
             rel="icon"
@@ -69,6 +69,10 @@ export default class MyDocument extends Document {
           <link
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="/static/global-stylesheet.css"
           />
           {styleTags}
         </Head>

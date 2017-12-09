@@ -70,7 +70,7 @@ export default (props) => {
                     {selectedSeminar.ratings && _.map(selectedSeminar.ratings, (rating, item) => (
                       [
                         <Grid.Column key={`${item}_item`} width="8"><Header as="h4">{item}</Header></Grid.Column>,
-                        <Grid.Column key={`${item}_rating`} width="8"><Rating disabled maxRating={5} defaultRating={rating} icon="star" size="large" /> {rating}</Grid.Column>,
+                        <Grid.Column key={`${item}_rating`} width="8"><Rating disabled maxRating={5} defaultRating={rating} size="large" /> {rating}</Grid.Column>,
                       ]
                     ))}
                     <Grid.Column width="16" textAlign="center">

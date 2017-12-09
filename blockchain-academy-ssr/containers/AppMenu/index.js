@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import Link from 'next/link';
 
 const Logo = 'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/logo.png';
@@ -12,10 +12,11 @@ export default class AppMenu extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu stackable>
+      <Menu stackable style={{ marginTop: '0px' }}>
 
         <Menu.Item>
-          <img
+          <Image
+            centered
             style={{ width: '4em' }}
             src="/static/symbol-logo.png"
             alt="Logo"

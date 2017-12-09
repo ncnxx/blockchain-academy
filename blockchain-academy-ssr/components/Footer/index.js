@@ -1,29 +1,31 @@
 import React from 'react';
-import { Segment, Grid, Header, Button, Icon } from 'semantic-ui-react';
+import { Segment, Grid, Header, Button, Icon, Image } from 'semantic-ui-react';
 
 export default () => (
-  <Segment inverted basic>
+  <Segment basic style={{ backgroundColor: '#EBEBEB' }}>
     <Grid stackable columns={3}>
       <Grid.Column textAlign="center" verticalAlign="middle">
-        <Header as="h1" inverted>SIAM BLOCKCHAIN ACADEMY</Header>
+        <Image centered size="small" src="/static/full-logo.png" />
       </Grid.Column>
       <Grid.Column>
-        <Header as="h3" inverted>เกี่ยวกับเรา</Header>
-        <p style={{ color: 'white' }}>
+        <Header as="h3">เกี่ยวกับเรา</Header>
+        <p style={{ color: 'black' }}>
           Siam Blockchain Academy คือ ศูนย์รวมแห่งการเรียนรู้ของเทคโนโลยี Blockchain และ Cryptocurrency
           เรามุ่งหวังว่าเราจะนำเสนอเนื้อหาและความรู้ที่มีคุณภาพ เข้าใจง่าย สามารถเข้าถึงผู้เรียนรู้ได้ทุกๆคน
           <br /><br />
-          ติดต่อเรา <a href="mailto:info@siamblockchainacademy.com">info@siamblockchainacademy.com</a>
+          <strong>ติดต่อเรา</strong><br />
+          พีรพัฒน์ หาญคงแก้ว (หาญ) 080-962-6306<br />
+          ณัฐชนน โพธื์เงิน (เอิร์ท) 081-480-4553
         </p>
       </Grid.Column>
-      <Grid.Column textAlign="center">
-        <Header as="h3" inverted>ติดตามเราได้ที่</Header>
+      <Grid.Column textAlign="center" verticalAlign="middle">
+        <Header as="h3">ติดตามเราได้ที่</Header>
         <Button color="facebook">
           <Icon name="facebook" /> Facebook
         </Button>
-        <Button color="twitter">
+        {/* <Button color="twitter">
           <Icon name="twitter" /> Twitter
-        </Button>
+        </Button> */}
       </Grid.Column>
     </Grid>
   </Segment>
