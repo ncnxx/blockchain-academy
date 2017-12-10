@@ -31,7 +31,6 @@ import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
 import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
-import MobileAppMenu from '~/containers/MobileAppMenu';
 import Footer from '~/components/Footer';
 import { seminarList } from '~/containers/SeminarPage/constants';
 
@@ -107,7 +106,6 @@ export default () => (
       href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
     <AppMenu />
-    <MobileAppMenu />
     <Segment basic style={{ marginTop: '70px' }}>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
