@@ -7,7 +7,7 @@ import { seminarList } from '~/containers/SeminarPage/constants';
 export default () => (
   <div>
     <AppMenu />
-    <Grid padded>
+    <Grid style={{ marginTop: '30px !important' }} padded>
       <Grid.Column width="16">
         <Header as="h1">งานอบรมและสัมนาทั้งหมด</Header>
         <Segment>
@@ -18,7 +18,7 @@ export default () => (
           <Header as="h2">งานอบรมและสัมนาที่ผ่านไปแล้ว</Header>
           <Card.Group stackable itemsPerRow="3">
             {seminarList.map((each) => (
-              <Card key={each.name}>
+              <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
                 <Image fluid src={each.image} />
                 <Card.Content>
                   <Card.Header>
