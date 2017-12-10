@@ -12,7 +12,7 @@ export default class AppMenu extends Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Responsive minWidth={768}>
+      <Responsive as="span" minWidth={768}>
         <Menu fixed="top" fluid borderless stackable style={{ backgroundColor: '#EBEBEB' }}>
 
           <Menu.Item>
