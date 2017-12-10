@@ -109,12 +109,10 @@ export default () => (
     <Segment basic style={{ marginTop: '70px' }}>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
-        <Fade>
-          <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
-          <CanvasSubheaderText>
+        <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
+        <CanvasSubheaderText>
         ศูนย์รวมแห่งการเรียนรู้ Blockchain<br />และ Cryptocurrency
-          </CanvasSubheaderText>
-        </Fade>
+        </CanvasSubheaderText>
       </CanvasHeader>
     </Segment>
     <br />
@@ -269,5 +267,6 @@ export default () => (
         </Segment>
       </Fade>
     </Container>
+    <Footer />
   </div>
 );

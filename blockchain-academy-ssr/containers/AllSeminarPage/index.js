@@ -1,13 +1,19 @@
 import _ from 'lodash';
 import React from 'react';
+import styled from 'styled-components';
 import { Image, Card, Segment, Advertisement, Grid, Responsive, Header, Button, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
+import Footer from '~/components/Footer';
 import { seminarList } from '~/containers/SeminarPage/constants';
+
+const StyledGrid = styled(Grid)`
+padding-top: 60px !important;
+`;
 
 export default () => (
   <div>
     <AppMenu />
-    <Grid style={{ marginTop: '30px !important' }} padded>
+    <StyledGrid padded>
       <Grid.Column width="16">
         <Header as="h1">งานอบรมและสัมนาทั้งหมด</Header>
         <Segment>
@@ -39,6 +45,7 @@ export default () => (
           </Card.Group>
         </Segment>
       </Grid.Column>
-    </Grid>
+    </StyledGrid>
+    <Footer />
   </div>
 );

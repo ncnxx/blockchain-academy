@@ -80,7 +80,6 @@ export default class MyDocument extends Document {
         <body>
           <div className="root">{main}</div>
           <NextScript />
-          <Footer />
         </body>
       </html>
     );
