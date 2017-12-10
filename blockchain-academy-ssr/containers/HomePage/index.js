@@ -109,12 +109,12 @@ export default () => (
     <Segment basic style={{ marginTop: '70px' }}>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
-        <Zoom>
+        <Fade>
           <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
           <CanvasSubheaderText>
         ศูนย์รวมแห่งการเรียนรู้ Blockchain<br />และ Cryptocurrency
           </CanvasSubheaderText>
-        </Zoom>
+        </Fade>
       </CanvasHeader>
     </Segment>
     <br />
@@ -175,7 +175,7 @@ export default () => (
         >
           <Card.Group stackable itemsPerRow="3">
             {seminarList.slice(0, 2).map((each) => (
-              <Card key={each.name} raised>
+              <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
                 <Image fluid src={each.image} />
                 <Card.Content>
                   <Card.Header>
@@ -193,7 +193,7 @@ export default () => (
                 </Card.Content>
               </Card>
             ))}
-            <Dimmer.Dimmable as={Card} dimmed>
+            <Dimmer.Dimmable as={Card} onClick={() => window.location.replace('/all-seminar')} dimmed>
               <Dimmer inverted active>
                 <Header as="h2" icon color="blue">
                   <a href="/all-seminar">

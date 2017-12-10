@@ -20,9 +20,7 @@ export default () => (
       </Grid.Column>
       <Grid.Column textAlign="center" verticalAlign="middle">
         <Header as="h3">ติดตามเราได้ที่</Header>
-        <Button color="facebook">
-          <Icon name="facebook" /> Facebook
-        </Button>
+        <Icon size="big" name="facebook" />
         {/* <Button color="twitter">
           <Icon name="twitter" /> Twitter
         </Button> */}
