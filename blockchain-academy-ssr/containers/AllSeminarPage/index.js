@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import styled from 'styled-components';
+import { Fade } from 'react-reveal';
 import { Image, Card, Segment, Advertisement, Grid, Responsive, Header, Button, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
@@ -16,34 +17,39 @@ export default () => (
     <StyledGrid padded>
       <Grid.Column width="16">
         <Header as="h1">งานอบรมและสัมนาทั้งหมด</Header>
-        <Segment>
-          <Header as="h2">งานอบรมและสัมนาที่กำลังจะจัดขึ้น</Header>
-          <Header textAlign="center" as="h1">รอติดตามเร็วๆนี้</Header>
-        </Segment>
-        <Segment>
-          <Header as="h2">งานอบรมและสัมนาที่ผ่านไปแล้ว</Header>
-          <Card.Group stackable itemsPerRow="3">
-            {seminarList.map((each) => (
-              <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
-                <Image fluid src={each.image} />
-                <Card.Content>
-                  <Card.Header>
-                    <a href={`/seminar/${each.slug}`}>{each.name}</a>
-                  </Card.Header>
-                  <Card.Description>{each.shortDescription}</Card.Description>
-                  <br />
-                </Card.Content>
-                <Card.Content extra textAlign="right">
-                  <Icon name="time" />
-                  <span>{each.time}</span>
+        <Fade left>
+          <Segment>
+            <Header as="h2">งานอบรมและสัมนาที่กำลังจะจัดขึ้น</Header>
+            <Header textAlign="center" as="h1">รอติดตามเร็วๆนี้</Header>
+          </Segment>
+        </Fade>
+        <br />
+        <Fade right>
+          <Segment>
+            <Header as="h2">งานอบรมและสัมนาที่ผ่านไปแล้ว</Header>
+            <Card.Group stackable itemsPerRow="3">
+              {seminarList.map((each) => (
+                <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
+                  <Image fluid src={each.image} />
+                  <Card.Content>
+                    <Card.Header>
+                      <a href={`/seminar/${each.slug}`}>{each.name}</a>
+                    </Card.Header>
+                    <Card.Description>{each.shortDescription}</Card.Description>
+                    <br />
+                  </Card.Content>
+                  <Card.Content extra textAlign="right">
+                    <Icon name="time" />
+                    <span>{each.time}</span>
               &nbsp;&nbsp;&nbsp;
-                  <Icon name="tags" />
-                  <span>{each.price}</span>
-                </Card.Content>
-              </Card>
-            ))}
-          </Card.Group>
-        </Segment>
+                    <Icon name="tags" />
+                    <span>{each.price}</span>
+                  </Card.Content>
+                </Card>
+              ))}
+            </Card.Group>
+          </Segment>
+        </Fade>
       </Grid.Column>
     </StyledGrid>
     <Footer />
