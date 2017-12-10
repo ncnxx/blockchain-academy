@@ -182,7 +182,7 @@ export default class HomePage extends Component {
                 </Slider>
               </div>
             </Fade>
-            <Fade left>
+            <Fade bottom duration={500}>
               <Segment
                 basic
                 style={{

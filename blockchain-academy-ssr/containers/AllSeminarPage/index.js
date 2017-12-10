@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import styled from 'styled-components';
-import { Fade } from 'react-reveal';
+import { Fade, Zoom } from 'react-reveal';
 import { Image, Card, Segment, Advertisement, Grid, Responsive, Header, Button, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
@@ -17,14 +17,14 @@ export default () => (
     <StyledGrid padded>
       <Grid.Column width="16">
         <Header as="h1">งานอบรมและสัมนาทั้งหมด</Header>
-        <Fade left>
+        <Fade duration={1000}>
           <Segment>
             <Header as="h2">งานอบรมและสัมนาที่กำลังจะจัดขึ้น</Header>
             <Header textAlign="center" as="h1">รอติดตามเร็วๆนี้</Header>
           </Segment>
         </Fade>
         <br />
-        <Fade right>
+        <Fade duration={1500}>
           <Segment>
             <Header as="h2">งานอบรมและสัมนาที่ผ่านไปแล้ว</Header>
             <Card.Group stackable itemsPerRow="3">
