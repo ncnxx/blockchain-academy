@@ -31,6 +31,7 @@ import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
 import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
+import MobileAppMenu from '~/containers/MobileAppMenu';
 import Footer from '~/components/Footer';
 import { seminarList } from '~/containers/SeminarPage/constants';
 
@@ -106,6 +107,7 @@ export default () => (
       href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
     <AppMenu />
+    <MobileAppMenu />
     <Segment basic style={{ marginTop: '70px' }}>
       <Particles params={particleConfig} height="400px" />
       <CanvasHeader textAlign="center">
@@ -176,8 +178,8 @@ export default () => (
               <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
                 <Image fluid src={each.image} />
                 <Card.Content>
-                  <Card.Header>
-                    <a href={`/seminar/${each.slug}`}>{each.name}</a>
+                  <Card.Header style={{ color: 'red' }}>
+                    {each.name}
                   </Card.Header>
                   <Card.Description>{each.shortDescription}</Card.Description>
                   <br />
@@ -193,12 +195,10 @@ export default () => (
             ))}
             <Dimmer.Dimmable as={Card} onClick={() => window.location.replace('/all-seminar')} dimmed>
               <Dimmer inverted active>
-                <Header as="h2" icon color="blue">
-                  <a href="/all-seminar">
-                    <Icon name="plus" />
+                <Header as="h2" icon color="red">
+                  <Icon name="plus" />
               ดูคอร์สอบรม<br />
               และสัมนาทั้งหมด
-                  </a>
                 </Header>
               </Dimmer>
               <Image fluid src={seminarList[2].image} />
