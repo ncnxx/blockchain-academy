@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Image, Segment, Advertisement, Grid, Responsive, Header, Button, Rating, Icon, Accordion, Item } from 'semantic-ui-react';
 import AppMenu from '~/containers/AppMenu';
+import Footer from '~/components/Footer';
 import { seminarList, slideSettings } from './constants';
 
 export default (props) => {
@@ -29,7 +30,7 @@ export default (props) => {
         <Advertisement unit="mobile leaderboard" test="Advertisement" centered />
         <Grid padded stackable>
           <Grid.Column computer={11}>
-            <Segment>
+            <Segment basic>
               <Grid>
                 <Grid.Column mobile="16" computer="6">
                   <Image src={selectedSeminar.image} />
@@ -87,22 +88,24 @@ export default (props) => {
                     <div dangerouslySetInnerHTML={{ __html: selectedSeminar.longDescription }} />
                   </Segment>
                 </Grid.Column>
+                {selectedSeminar.pictures &&
+                <Grid.Column mobile="16" computer="16">
+                  <Segment>
+                    <Header as="h1">ภาพจากงาน</Header>
+                    <div style={{ paddingBottom: '20px' }}>
+                      <Slider {...slideSettings}>
+                        {selectedSeminar.pictures.map((eachPicture) =>
+                          (
+                            <div key={eachPicture}>
+                              <Image style={{ maxHeight: '600px' }} centered src={eachPicture} />
+                            </div>
+                          ))}
+                      </Slider>
+                    </div>
+                  </Segment>
+                </Grid.Column>}
               </Grid>
             </Segment>
-            {selectedSeminar.pictures &&
-            <Segment>
-              <Header as="h1">ภาพจากงาน</Header>
-              <div style={{ paddingBottom: '20px' }}>
-                <Slider {...slideSettings}>
-                  {selectedSeminar.pictures.map((eachPicture) =>
-                    (
-                      <div key={eachPicture}>
-                        <Image style={{ maxHeight: '600px' }} centered src={eachPicture} />
-                      </div>
-                    ))}
-                </Slider>
-              </div>
-            </Segment>}
           </Grid.Column>
           <Grid.Column computer={5}>
             <Advertisement centered unit="medium rectangle" test="Advertisement" />
@@ -111,6 +114,7 @@ export default (props) => {
           </Grid.Column>
         </Grid>
       </div>
+      <Footer />
     </div>
   );
 };
