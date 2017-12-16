@@ -28,7 +28,7 @@ export default class AppMenu extends Component {
             {menuList.map((eachMenu) => (
               <Link key={eachMenu.name} href={eachMenu.link}>
                 <Menu.Item as="a">
-                  {eachMenu.label}
+                  <h3>{eachMenu.label}</h3>
                 </Menu.Item>
               </Link>
             ))}
