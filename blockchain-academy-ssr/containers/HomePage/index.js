@@ -9,6 +9,7 @@
  * the linting exception.
  */
 import React, { Component } from 'react';
+import CountUp from 'react-countup';
 import { Fade } from 'react-reveal';
 import { Particles } from 'react-particles-js';
 import {
@@ -35,6 +36,7 @@ import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
 import { seminarList } from '~/containers/SeminarPage/constants';
+import ShuttleLaunchVideo from '~/components/ShuttleLaunchVideo';
 
 const seminar1 =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
@@ -87,7 +89,7 @@ const CanvasHeader = styled(Header)`
   }
 
   @media (min-width: 768px) {
-    top: 25px;
+    top: 15vh;
     left: 0;
     right: 0;
   }
@@ -103,141 +105,228 @@ const CanvasHeaderText = styled.div`
   }
 `;
 
-const CanvasSubheaderText = styled.h2``;
+const VideoOverlay = styled.div`
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+`;
+
+const BitcoinText = () => (
+  <span style={{ color: '#FB9238' }}>BITCOIN</span>
+);
+
+const CanvasSubheaderText = styled.h2`
+  font-size: 5vh !important;
+  color: #DD3336;
+`;
+
+const BitcoinPriceTicker = (props) => (
+  <CountUp
+    className="CountUp"
+    start={props.previousBTCPrice}
+    end={props.nextBTCPrice}
+    duration={1}
+    separator=","
+    redraw
+  />
+);
 
 export default class HomePage extends Component {
-  state = { sidebarVisible: false };
+  constructor(props) {
+    super(props);
+    this.state = { sidebarVisible: false, previousBTCPrice: 580000, nextBTCPrice: 587000 };
+
+    setInterval(() => {
+      this.setState({
+        previousBTCPrice: this.state.nextBTCPrice,
+        nextBTCPrice: this.state.nextBTCPrice += Math.floor((Math.random() * 100) - 100),
+      });
+    }, Math.floor((Math.random() * 3000) + 1000));
+  }
 
   toggleSidebarVisibility = () => this.setState({ sidebarVisible: !this.state.sidebarVisible })
 
-    hideSidebar = () => this.state.sidebarVisible ? this.setState({ sidebarVisible: false }) : null;
+  hideSidebar = () => this.state.sidebarVisible ? this.setState({ sidebarVisible: false }) : null;
 
-    render() {
-      return (
-        <div>
-          <link
-            rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-          />
-          <AppMenu />
-          <Segment basic style={{ marginTop: '70px' }}>
-            <Particles params={particleConfig} height="400px" />
-            <CanvasHeader textAlign="center">
-              <CanvasHeaderText><Image centered size="medium" src="/static/full-logo.png" /></CanvasHeaderText>
-              <CanvasSubheaderText>
-          ศูนย์รวมแห่งการเรียนรู้ Blockchain<br />และ Cryptocurrency
-              </CanvasSubheaderText>
-            </CanvasHeader>
-          </Segment>
-          <br />
-          <Container>
-            <Fade>
-              <Header as="h1" textAlign="center">
+  render() {
+    return (
+      <div>
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        />
+        <AppMenu />
+        <Segment basic style={{ padding: '0 0 0 0', height: '100vh', overflow: 'hidden' }}>
+          <Image centered src="https://static.pexels.com/photos/730564/pexels-photo-730564.jpeg" style={{ width: '100%' }} />
+          <VideoOverlay />
+          <CanvasHeader textAlign="center">
+            <CanvasHeaderText><Image centered style={{ width: '70vh' }} src="/static/full-logo.png" /></CanvasHeaderText>
+            <CanvasSubheaderText>
+          ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN<br />และ CRYPTOCURRENCY
+            </CanvasSubheaderText>
+          </CanvasHeader>
+        </Segment>
+        <Segment basic style={{ height: '100vh' }}>
+          <Grid>
+            <Grid.Column width="16" textAlign="center">
+              <Fade left>
+                <Header as="h1" color="red">
+                  เงินดิจิตอล คือ คำตอบของอนาคต
+                </Header>
+              </Fade>
+              <Fade right>
+                <Header as="h1" color="red">
+                  มกราคม ปี พ.ศ. 2560 <BitcoinText /> มีราคาประมาณ 20,000 บาท
+                </Header>
+              </Fade>
+            </Grid.Column>
+            <Grid.Column style={{ padding: '0 0 0 0' }} width="16" textAlign="center">
+              <div
+                style={{
+                  width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh',
+                }}
+              >
+                <ShuttleLaunchVideo
+                  style={{
+                    width: '100vw',
+                    left: 0,
+                    bottom: 0,
+                    position: 'absolute',
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  position: 'absolute', top: '0px', left: '0px', display: 'table', width: '100%', height: '100%', backgroundColor: 'rgba(60, 55, 55, 0.57)',
+                }}
+              >
+                <div style={{ display: 'table-cell', verticalAlign: 'middle', textAlign: 'center' }}>
+                  <Fade><Header as="h3" size="large" inverted>วันนี้ <BitcoinText /> เงินดิจิตอลสกุลแรกของโลก มีราคา</Header></Fade>
+                  <Fade>
+                    <Header as="h1" style={{ fontSize: '6em' }} inverted>
+                      <BitcoinPriceTicker {...this.state} /> บาท
+                    </Header>
+                  </Fade>
+                  <Fade><Header as="h3" size="large" inverted>เพิ่มมากขึ้นกว่า {Math.floor(this.state.nextBTCPrice / 20000)} เท่าตัว และยังคงเพิ่มขึ้นเรื่อยๆ</Header></Fade>
+                  <Fade><Header as="h3" size="medium" inverted>ข้อมูลราคาจาก <span style={{ color: 'red' }}>TDAX.COM</span></Header></Fade>
+                </div>
+              </div>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+        <br />
+        <br />
+        <br />
+        <Container>
+          <Fade>
+            <Header as="h1" textAlign="center">
         คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
-                <Header.Subheader>
+              <Header.Subheader>
           พร้อมสาธิตให้เห็นภาพชัดเจน
           เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
           ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
           Biostar
-                </Header.Subheader>
-              </Header>
-            </Fade>
-            <Fade>
-              <Segment basic textAlign="center">
-                <Image.Group>
-                  <Image size="small" src={pantipPratunamLogo} />
-                  <Image size="small" src={biostarLogo} />
-                  <Image size="tiny" src={thminerLogo} />
-                  <Image size="tiny" src={ratchapatLogo} />
-                </Image.Group>
-              </Segment>
-            </Fade>
-            <Fade>
-              <div
-                style={{
-                  maxHeight: '600px',
-                }}
-              >
-                <Slider {...settings}>
-                  <div>
-                    <Image size="big" centered src={seminar1} />
-                    <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
-                  </div>
-                  <div>
-                    <Image size="big" centered src={seminar2} />
-                    <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
-                  </div>
-                  <div>
-                    <Image size="big" centered src={seminar3} />
-                    <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
-                  </div>
-                  <div>
-                    <Image size="big" centered src={seminar4} />
-                    <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
-                  </div>
-                </Slider>
-              </div>
-            </Fade>
-            <Fade bottom duration={500}>
-              <Segment
-                basic
-                style={{
-                  marginTop: '50px',
-                }}
-              >
-                <Card.Group stackable itemsPerRow="3">
-                  {seminarList.slice(0, 2).map((each) => (
-                    <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
-                      <Image fluid src={each.image} />
-                      <Card.Content>
-                        <Card.Header style={{ color: 'red' }}>
-                          {each.name}
-                        </Card.Header>
-                        <Card.Description>{each.shortDescription}</Card.Description>
-                        <br />
-                      </Card.Content>
-                      <Card.Content extra textAlign="right">
-                        <Icon name="time" />
-                        <span>{each.time}</span>
+              </Header.Subheader>
+            </Header>
+          </Fade>
+          <Fade>
+            <Segment basic textAlign="center">
+              <Image.Group>
+                <Image size="small" src={pantipPratunamLogo} />
+                <Image size="small" src={biostarLogo} />
+                <Image size="tiny" src={thminerLogo} />
+                <Image size="tiny" src={ratchapatLogo} />
+              </Image.Group>
+            </Segment>
+          </Fade>
+          <Fade>
+            <div
+              style={{
+                maxHeight: '600px',
+              }}
+            >
+              <Slider {...settings}>
+                <div>
+                  <Image size="big" centered src={seminar1} />
+                  <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
+                </div>
+                <div>
+                  <Image size="big" centered src={seminar2} />
+                  <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
+                </div>
+                <div>
+                  <Image size="big" centered src={seminar3} />
+                  <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
+                </div>
+                <div>
+                  <Image size="big" centered src={seminar4} />
+                  <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
+                </div>
+              </Slider>
+            </div>
+          </Fade>
+          <Fade bottom duration={500}>
+            <Segment
+              basic
+              style={{
+                marginTop: '50px',
+              }}
+            >
+              <Card.Group stackable itemsPerRow="3">
+                {seminarList.slice(0, 2).map((each) => (
+                  <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
+                    <Image fluid src={each.image} />
+                    <Card.Content>
+                      <Card.Header style={{ color: 'red' }}>
+                        {each.name}
+                      </Card.Header>
+                      <Card.Description>{each.shortDescription}</Card.Description>
+                      <br />
+                    </Card.Content>
+                    <Card.Content extra textAlign="right">
+                      <Icon name="time" />
+                      <span>{each.time}</span>
                 &nbsp;&nbsp;&nbsp;
-                        <Icon name="tags" />
-                        <span>{each.price}</span>
-                      </Card.Content>
-                    </Card>
-                  ))}
-                  <Dimmer.Dimmable as={Card} onClick={() => window.location.replace('/all-seminar')} dimmed>
-                    <Dimmer inverted active>
-                      <Header as="h2" icon color="red">
-                        <Icon name="plus" />
+                      <Icon name="tags" />
+                      <span>{each.price}</span>
+                    </Card.Content>
+                  </Card>
+                ))}
+                <Dimmer.Dimmable as={Card} onClick={() => window.location.replace('/all-seminar')} dimmed>
+                  <Dimmer inverted active>
+                    <Header as="h2" icon color="red">
+                      <Icon name="plus" />
                 ดูคอร์สอบรม<br />
                 และสัมนาทั้งหมด
-                      </Header>
-                    </Dimmer>
-                    <Image fluid src={seminarList[2].image} />
-                    <Card.Content>
-                      <Card.Header>
-                        {seminarList[2].name}
-                      </Card.Header>
-                      <Card.Meta>{seminarList[2].meta}</Card.Meta>
-                      <Card.Description />
-                    </Card.Content>
-                  </Dimmer.Dimmable>
+                    </Header>
+                  </Dimmer>
+                  <Image fluid src={seminarList[2].image} />
+                  <Card.Content>
+                    <Card.Header>
+                      {seminarList[2].name}
+                    </Card.Header>
+                    <Card.Meta>{seminarList[2].meta}</Card.Meta>
+                    <Card.Description />
+                  </Card.Content>
+                </Dimmer.Dimmable>
 
-                </Card.Group>
-                <br />
-                <Header as="h1" textAlign="center">
+              </Card.Group>
+              <br />
+              <Header as="h1" textAlign="center">
         คอร์สออนไลน์คุณภาพ
-                  <Header.Subheader>
+                <Header.Subheader>
           รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
-                  </Header.Subheader>
-                </Header>
-                <br />
-                <Header as="h1" textAlign="center">เร็วๆนี้</Header>
-                {/* <Card.Group stackable itemsPerRow="4">
+                </Header.Subheader>
+              </Header>
+              <br />
+              <Header as="h1" textAlign="center">เร็วๆนี้</Header>
+              {/* <Card.Group stackable itemsPerRow="4">
             {courseList.map((each) => (
               <Card key={each.name}>
                 <a href={`/course/${each.slug}`}>
@@ -280,11 +369,11 @@ export default class HomePage extends Component {
               </Card.Content>
             </Dimmer.Dimmable>
           </Card.Group> */}
-              </Segment>
-            </Fade>
-          </Container>
-          <Footer />
-        </div>
-      );
-    }
+            </Segment>
+          </Fade>
+        </Container>
+        <Footer />
+      </div>
+    );
+  }
 }

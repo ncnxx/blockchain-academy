@@ -101,6 +101,7 @@
         "next-routes": "1.1.0",
         "prop-types": "15.6.0",
         "react": "16.0.0",
+        "react-countup": "3.0.2",
         "react-dom": "16.0.0",
         "react-particles-js": "2.1.0",
         "react-player": "0.25.3",
