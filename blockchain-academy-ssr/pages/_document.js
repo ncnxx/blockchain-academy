@@ -70,7 +70,8 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
           />
-          <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,700&amp;subset=thai" />
           <link
             rel="stylesheet"
             href="/static/global-stylesheet.css"

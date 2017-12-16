@@ -3,7 +3,7 @@ a {
 }
 
 html * :not(i) {
-    font-family: 'Prompt', sans-serif !important;    
+    font-family: 'Montserrat','Prompt', sans-serif !important;    
 }
 
 .card {
