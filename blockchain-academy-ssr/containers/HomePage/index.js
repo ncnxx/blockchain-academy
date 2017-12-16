@@ -191,7 +191,7 @@ export default class HomePage extends Component {
             autoPlay
             style={{ width: '100vw' }}
           >
-            <source src="//ak8.picdn.net/shutterstock/videos/32413318/preview/stock-footage-global-network-connected.mp4" type="video/mp4" />
+            <source src="/static/space.mp4" type="video/mp4" />
           </video>
           <VideoOverlay />
           <CanvasHeader textAlign="center">
