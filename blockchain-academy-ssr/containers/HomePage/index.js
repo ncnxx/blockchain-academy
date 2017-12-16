@@ -133,6 +133,20 @@ const BitcoinPriceTicker = (props) => (
   />
 );
 
+const ImageContainer = styled.div`
+  position: relative;
+  text-align: center;
+  color: white;
+`;
+
+const TextOverImage = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6em !important;
+`;
+
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -162,7 +176,12 @@ export default class HomePage extends Component {
           href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
         />
         <AppMenu />
-        <Segment basic style={{ padding: '0 0 0 0', height: '100vh', overflow: 'hidden' }}>
+        <Segment
+          basic
+          style={{
+            padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0',
+          }}
+        >
           <Image centered src="https://static.pexels.com/photos/730564/pexels-photo-730564.jpeg" style={{ width: '100%' }} />
           <VideoOverlay />
           <CanvasHeader textAlign="center">
@@ -172,35 +191,42 @@ export default class HomePage extends Component {
             </CanvasSubheaderText>
           </CanvasHeader>
         </Segment>
-        <Segment basic style={{ height: '100vh' }}>
+        <Segment
+          basic
+          style={{
+            height: '100vh', backgroundColor: 'black', marginTop: '0', paddingTop: '100px',
+          }}
+        >
           <Grid>
-            <Grid.Column width="16" textAlign="center">
+            <Grid.Column width="16" textAlign="center" style={{ fontSize: '1.5em' }}>
               <Fade left>
-                <Header as="h1" color="red">
+                <Header size="huge" as="h1" color="red">
                   เงินดิจิตอล คือ คำตอบของอนาคต
                 </Header>
               </Fade>
               <Fade right>
-                <Header as="h1" color="red">
+                <Header size="huge" as="h1" color="red">
                   มกราคม ปี พ.ศ. 2560 <BitcoinText /> มีราคาประมาณ 20,000 บาท
                 </Header>
               </Fade>
             </Grid.Column>
             <Grid.Column style={{ padding: '0 0 0 0' }} width="16" textAlign="center">
-              <div
-                style={{
-                  width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh',
-                }}
-              >
-                <ShuttleLaunchVideo
+              <Fade>
+                <div
                   style={{
-                    width: '100vw',
-                    left: 0,
-                    bottom: 0,
-                    position: 'absolute',
+                    width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh',
                   }}
-                />
-              </div>
+                >
+                  <ShuttleLaunchVideo
+                    style={{
+                      width: '100vw',
+                      left: 0,
+                      bottom: 0,
+                      position: 'absolute',
+                    }}
+                  />
+                </div>
+              </Fade>
               <div
                 style={{
                   position: 'absolute', top: '0px', left: '0px', display: 'table', width: '100%', height: '100%', backgroundColor: 'rgba(60, 55, 55, 0.57)',
@@ -220,10 +246,57 @@ export default class HomePage extends Component {
             </Grid.Column>
           </Grid>
         </Segment>
-        <br />
-        <br />
-        <br />
-        <Container>
+        <Segment
+          basic
+          style={{
+            height: '100vh', backgroundColor: 'white', overflow: 'hidden', marginTop: '100px',
+          }}
+        >
+          <Grid>
+            <Grid.Column width="16">
+              <Header as="h1" size="huge" textAlign="center">
+                <span style={{ color: 'red' }}>BLOCKCHAIN</span> เทคโนโลยีเบื้องหลังของ <BitcoinText /><br />เป็นที่ต้องการอย่างมากเพื่อนำไปประยุกต์ใช้ในหลากหลายอุตสาหกรรม
+              </Header>
+            </Grid.Column>
+            <Grid.Row style={{ padding: '0 0 0 0' }}>
+              <Grid.Column width="16">
+                <ImageContainer>
+                  <div style={{ overflow: 'hidden', height: '25vh' }}>
+                    <Image fluid src="https://images.pexels.com/photos/421888/pexels-photo-421888.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                  </div>
+                  <TextOverImage>
+                    พลังงาน
+                  </TextOverImage>
+                </ImageContainer>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row style={{ padding: '0 0 0 0' }}>
+              <Grid.Column width="16">
+                <ImageContainer>
+                  <div style={{ overflow: 'hidden', height: '25vh' }}>
+                    <Image fluid src="https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                  </div>
+                  <TextOverImage>
+                    การเงิน
+                  </TextOverImage>
+                </ImageContainer>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row style={{ padding: '0 0 0 0' }}>
+              <Grid.Column width="16">
+                <ImageContainer>
+                  <div style={{ overflow: 'hidden', height: '25vh' }}>
+                    <Image fluid src="https://images.unsplash.com/photo-1494412623380-6e86033ab9ed?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                  </div>
+                  <TextOverImage>
+                    โลจิสติกส์
+                  </TextOverImage>
+                </ImageContainer>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+        {/* <Container>
           <Fade>
             <Header as="h1" textAlign="center">
         คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
@@ -326,52 +399,52 @@ export default class HomePage extends Component {
               </Header>
               <br />
               <Header as="h1" textAlign="center">เร็วๆนี้</Header>
-              {/* <Card.Group stackable itemsPerRow="4">
-            {courseList.map((each) => (
-              <Card key={each.name}>
-                <a href={`/course/${each.slug}`}>
-                  <Image fluid src={each.image} />
-                </a>
-                <Card.Content>
-                  <Card.Header>
-                    <a href={`/course/${each.slug}`}>{each.name}</a>
-                  </Card.Header>
-                  <Card.Meta>{each.meta}</Card.Meta>
-                  <Card.Description>{each.description}</Card.Description>
-                  <br />
-                </Card.Content>
-                <Card.Content extra textAlign="right">
-                  <Icon name="time" />
-                  <span>
-                    {each.duration}
+              <Card.Group stackable itemsPerRow="4">
+                {courseList.map((each) => (
+                  <Card key={each.name}>
+                    <a href={`/course/${each.slug}`}>
+                      <Image fluid src={each.image} />
+                    </a>
+                    <Card.Content>
+                      <Card.Header>
+                        <a href={`/course/${each.slug}`}>{each.name}</a>
+                      </Card.Header>
+                      <Card.Meta>{each.meta}</Card.Meta>
+                      <Card.Description>{each.description}</Card.Description>
+                      <br />
+                    </Card.Content>
+                    <Card.Content extra textAlign="right">
+                      <Icon name="time" />
+                      <span>
+                        {each.duration}
                 ชั่วโมง
-                  </span>
+                      </span>
               &nbsp;&nbsp;&nbsp;
-                  <Icon name="tags" />
-                  <span>{each.price}</span>
-                </Card.Content>
-              </Card>
-            ))}
-            <Dimmer.Dimmable as={Card} dimmed>
-              <Dimmer inverted active>
-                <Header as="h2" icon color="blue">
-                  <Icon name="plus" />
+                      <Icon name="tags" />
+                      <span>{each.price}</span>
+                    </Card.Content>
+                  </Card>
+                ))}
+                <Dimmer.Dimmable as={Card} dimmed>
+                  <Dimmer inverted active>
+                    <Header as="h2" icon color="blue">
+                      <Icon name="plus" />
               ดูคอร์สออนไลน์ทั้งหมด
-                </Header>
-              </Dimmer>
-              <Image fluid src={courseList[0].image} />
-              <Card.Content>
-                <Card.Header>
-                  <a>{courseList[0].name}</a>
-                </Card.Header>
-                <Card.Meta>{courseList[0].meta}</Card.Meta>
-                <Card.Description />
-              </Card.Content>
-            </Dimmer.Dimmable>
-          </Card.Group> */}
+                    </Header>
+                  </Dimmer>
+                  <Image fluid src={courseList[0].image} />
+                  <Card.Content>
+                    <Card.Header>
+                      <a>{courseList[0].name}</a>
+                    </Card.Header>
+                    <Card.Meta>{courseList[0].meta}</Card.Meta>
+                    <Card.Description />
+                  </Card.Content>
+                </Dimmer.Dimmable>
+              </Card.Group>
             </Segment>
           </Fade>
-        </Container>
+        </Container> */}
         <Footer />
       </div>
     );
