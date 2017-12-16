@@ -10,7 +10,7 @@
  */
 import React, { Component } from 'react';
 import CountUp from 'react-countup';
-import { Fade } from 'react-reveal';
+import { Fade, Zoom } from 'react-reveal';
 import { Particles } from 'react-particles-js';
 import {
   Sidebar,
@@ -144,7 +144,7 @@ const TextOverImage = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 6em !important;
+  width: 70%;
 `;
 
 export default class HomePage extends Component {
@@ -182,7 +182,17 @@ export default class HomePage extends Component {
             padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0',
           }}
         >
-          <Image centered src="https://static.pexels.com/photos/730564/pexels-photo-730564.jpeg" style={{ width: '100%' }} />
+          {/* <Image centered src="https://images.unsplash.com/photo-1486160108250-95123a1f2b6e?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" style={{ width: '100%' }} /> */}
+          <video
+            ref="video"
+            muted
+            id="background-video"
+            loop
+            autoPlay
+            style={{ width: '100vw' }}
+          >
+            <source src="//ak8.picdn.net/shutterstock/videos/32413318/preview/stock-footage-global-network-connected.mp4" type="video/mp4" />
+          </video>
           <VideoOverlay />
           <CanvasHeader textAlign="center">
             <CanvasHeaderText><Image centered style={{ width: '70vh' }} src="/static/full-logo.png" /></CanvasHeaderText>
@@ -254,47 +264,189 @@ export default class HomePage extends Component {
         >
           <Grid>
             <Grid.Column width="16">
-              <Header as="h1" size="huge" textAlign="center">
-                <span style={{ color: 'red' }}>BLOCKCHAIN</span> เทคโนโลยีเบื้องหลังของ <BitcoinText /><br />เป็นที่ต้องการอย่างมากเพื่อนำไปประยุกต์ใช้ในหลากหลายอุตสาหกรรม
-              </Header>
+              <Fade right>
+                <Header as="h1" size="huge" textAlign="center">
+                  <span style={{ color: 'red' }}>BLOCKCHAIN</span> เทคโนโลยีเบื้องหลังของ <BitcoinText /><br />กำลังเป็นที่นิยมสำหรับการนำไปประยุกต์ใช้ในหลากหลายอุตสาหกรรม
+                </Header>
+              </Fade>
             </Grid.Column>
-            <Grid.Row style={{ padding: '0 0 0 0' }}>
-              <Grid.Column width="16">
-                <ImageContainer>
-                  <div style={{ overflow: 'hidden', height: '25vh' }}>
-                    <Image fluid src="https://images.pexels.com/photos/421888/pexels-photo-421888.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
-                  </div>
-                  <TextOverImage>
-                    พลังงาน
-                  </TextOverImage>
-                </ImageContainer>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row style={{ padding: '0 0 0 0' }}>
-              <Grid.Column width="16">
-                <ImageContainer>
-                  <div style={{ overflow: 'hidden', height: '25vh' }}>
-                    <Image fluid src="https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                  </div>
-                  <TextOverImage>
-                    การเงิน
-                  </TextOverImage>
-                </ImageContainer>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row style={{ padding: '0 0 0 0' }}>
-              <Grid.Column width="16">
-                <ImageContainer>
-                  <div style={{ overflow: 'hidden', height: '25vh' }}>
-                    <Image fluid src="https://images.unsplash.com/photo-1494412623380-6e86033ab9ed?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                  </div>
-                  <TextOverImage>
-                    โลจิสติกส์
-                  </TextOverImage>
-                </ImageContainer>
-              </Grid.Column>
-            </Grid.Row>
+            <Fade left delay={500} style={{ width: '100%' }}>
+              <Grid.Row style={{ padding: '0 0 0 0' }}>
+                <Grid.Column width="16">
+                  <ImageContainer>
+                    <div style={{ overflow: 'hidden', height: '25vh' }}>
+                      <Image fluid src="https://images.pexels.com/photos/421888/pexels-photo-421888.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                    </div>
+                    <TextOverImage>
+                      <h1 style={{ fontSize: '6em' }}>
+                        พลังงาน
+                      </h1>
+                    </TextOverImage>
+                  </ImageContainer>
+                </Grid.Column>
+              </Grid.Row>
+            </Fade>
+            <Fade left delay={1000} style={{ width: '100%' }}>
+              <Grid.Row style={{ padding: '0 0 0 0' }}>
+                <Grid.Column width="16">
+                  <ImageContainer>
+                    <div style={{ overflow: 'hidden', height: '25vh' }}>
+                      <Image fluid src="https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                    </div>
+                    <TextOverImage>
+                      <h1 style={{ fontSize: '6em' }}>
+                        การเงิน
+                      </h1>
+                    </TextOverImage>
+                  </ImageContainer>
+                </Grid.Column>
+              </Grid.Row>
+            </Fade>
+            <Fade left delay={1500} style={{ width: '100%' }}>
+              <Grid.Row style={{ padding: '0 0 0 0' }}>
+                <Grid.Column width="16">
+                  <ImageContainer>
+                    <div style={{ overflow: 'hidden', height: '25vh' }}>
+                      <Image fluid src="https://images.unsplash.com/photo-1494412623380-6e86033ab9ed?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                    </div>
+                    <TextOverImage>
+                      <h1 style={{ fontSize: '6em' }}>
+                        โลจิสติกส์
+                      </h1>
+                    </TextOverImage>
+                  </ImageContainer>
+                </Grid.Column>
+              </Grid.Row>
+            </Fade>
           </Grid>
+        </Segment>
+        <Segment
+          basic
+          style={{
+            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px',
+          }}
+        >
+          <Zoom>
+            <Header textAlign="center" color="red" as="h1">
+            SIAM BLOCKCHAIN ACADEMY
+            </Header>
+          </Zoom>
+          <Zoom delay={500}>
+            <Header textAlign="center" color="red" as="h1">
+            จะทำให้คุณรู้จักและเข้าใจในเทคโนโลยี CRYPTOCURRENCY และ BLOCKCHAIN<br />
+            ด้วยบริการของเรา
+            </Header>
+          </Zoom>
+          <br />
+          <Grid stackable columns={3}>
+
+            <Grid.Column>
+              <Fade top>
+                <ImageContainer>
+                  <div style={{ overflow: 'hidden', height: '80vh' }}>
+                    <img style={{ height: '100%', filter: 'brightness(50%)' }} src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                  </div>
+                  <TextOverImage>
+                    <h1>อบรมและสัมมนา</h1>
+                    <h3>ถ่ายทอดความรู้แบบถึงตัว พร้อมสาธิตให้เห็นภาพชัดเจน
+                    เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
+                    </h3>
+                    <Button color="red">ดูงานทั้งหมด</Button>
+                  </TextOverImage>
+                </ImageContainer>
+              </Fade>
+            </Grid.Column>
+            <Grid.Column>
+              <Fade top delay={500}>
+                <ImageContainer>
+                  <div style={{ overflow: 'hidden', height: '80vh' }}>
+                    <img style={{ height: '100%', filter: 'brightness(50%)' }} src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1052&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                  </div>
+                  <TextOverImage>
+                    <h1>คอร์สออนไลน์</h1>
+                    <h3>
+                    เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา
+                    </h3>
+                    <Button color="red">ดูคอร์สทั้งหมด</Button>
+                  </TextOverImage>
+                </ImageContainer>
+              </Fade>
+            </Grid.Column>
+            <Grid.Column>
+              <Fade top delay={1000}>
+                <ImageContainer>
+                  <div style={{ overflow: 'hidden', height: '80vh' }}>
+                    <img style={{ height: '100%', filter: 'brightness(50%)' }} src="https://images.unsplash.com/photo-1505860421472-7d74e0b4d98a?auto=format&fit=crop&w=634&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+                  </div>
+                  <TextOverImage>
+                    <h1>วิทยากรรับเชิญและอบรมส่วนตัว</h1>
+                    <h3>
+                    เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ
+                    </h3>
+                    <Button color="red">ติดต่อเรา</Button>
+                  </TextOverImage>
+                </ImageContainer>
+              </Fade>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+        <Segment basic textAlign="center" style={{ minHeight: '100vh' }}>
+          <Header as="h1">การันตีคุณภาพจากผู้เคยเข้าร่วมการอบรมและสัมมนา</Header>
+          <Image.Group>
+            <Image size="small" src={pantipPratunamLogo} />
+            <Image size="small" src={biostarLogo} />
+            <Image size="tiny" src={thminerLogo} />
+            <Image size="tiny" src={ratchapatLogo} />
+          </Image.Group>
+          <Fade>
+            <div
+              style={{
+                maxHeight: '600px',
+              }}
+            >
+              <Slider {...settings}>
+                <div>
+                  <Image size="big" centered src={seminar1} />
+                  <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
+                </div>
+                <div>
+                  <Image size="big" centered src={seminar2} />
+                  <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
+                </div>
+                <div>
+                  <Image size="big" centered src={seminar3} />
+                  <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
+                </div>
+                <div>
+                  <Image size="big" centered src={seminar4} />
+                  <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
+                </div>
+              </Slider>
+            </div>
+          </Fade>
+        </Segment>
+        <Segment
+          basic
+          style={{
+            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px',
+          }}
+        >
+          <ImageContainer>
+            <div style={{ overflow: 'hidden', height: '100vh' }}>
+              <Image fluid src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+            </div>
+            <TextOverImage>
+              <h1>
+                ณ ตอนนี้ เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
+              </h1>
+              <h1 style={{ fontSize: '6em' }}>
+                โอกาสอีกมากมาย<br />
+                ยังรอคุณอยู่<br />
+              </h1>
+              <Button color="red" size="huge">เริ่มเรียนรู้</Button>
+            </TextOverImage>
+          </ImageContainer>
+
         </Segment>
         {/* <Container>
           <Fade>
