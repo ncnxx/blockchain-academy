@@ -9,6 +9,7 @@
  * the linting exception.
  */
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import {
   Sidebar,
   Responsive,
@@ -17,6 +18,23 @@ import {
   Image,
 } from 'semantic-ui-react';
 import { menuList } from '~/containers/AppMenu/constants';
+
+const MenuIcon = styled.img`
+  transition: 300ms linear all;
+  margin: 15px 0px 0px 15px;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+
+  @media (min-width: 768px) {
+    width: 5vw;
+  }
+
+  @media (max-width: 767px) {
+    width: 30%;
+  }
+`;
 
 export default class MobileViewWrapper extends Component {
     state = { sidebarVisible: false };
@@ -28,29 +46,26 @@ export default class MobileViewWrapper extends Component {
     render() {
       return (
         <div>
-          <Responsive maxWidth={768}>
-            <Menu fixed="top" style={{ backgroundColor: '#EBEBEB' }}>
-              <Segment basic>
-                <Image
-                  centered
-                  style={{ width: '2em' }}
-                  src="/static/symbol-logo.png"
-                  alt="Logo"
-                  onClick={this.toggleSidebarVisibility}
-                />
-              </Segment>
-            </Menu>
-            <Sidebar as={Menu} animation="overlay" width="thin" visible={this.state.sidebarVisible} icon="labeled" vertical inverted>
-              {menuList.map((eachMenu) => (
-                <a key={eachMenu.name} href={eachMenu.link} onClick={this.hideSidebar}>
-                  <Menu.Item as="div" name={eachMenu.name} style={{ color: 'red' }}>
-                    {eachMenu.label}
-                  </Menu.Item>
-                </a>
-              ))}
-            </Sidebar>
-          </Responsive>
-          <Sidebar.Pushable as={Segment}>
+          <Menu fixed="top" style={{ backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}>
+            <Segment basic>
+              <MenuIcon
+                style={{ cursor: 'pointer' }}
+                src="/static/symbol-logo.png"
+                alt="Logo"
+                onClick={this.toggleSidebarVisibility}
+              />
+            </Segment>
+          </Menu>
+          <Sidebar as={Menu} animation="overlay" width="thin" visible={this.state.sidebarVisible} icon="labeled" vertical inverted>
+            {menuList.map((eachMenu) => (
+              <a key={eachMenu.name} href={eachMenu.link} onClick={this.hideSidebar}>
+                <Menu.Item as="div" name={eachMenu.name} style={{ color: 'red' }}>
+                  {eachMenu.label}
+                </Menu.Item>
+              </a>
+            ))}
+          </Sidebar>
+          <Sidebar.Pushable as={Segment} style={{ marginTop: 0 }}>
             <Sidebar.Pusher onClick={this.hideSidebar}>
               {this.props.children}
             </Sidebar.Pusher>

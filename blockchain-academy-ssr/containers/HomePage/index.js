@@ -167,15 +167,6 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-        />
-        {/* <AppMenu /> */}
         <Segment
           basic
           style={{

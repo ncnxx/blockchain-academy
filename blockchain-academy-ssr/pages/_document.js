@@ -76,6 +76,14 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="/static/global-stylesheet.css"
           />
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+          />
           {styleTags}
         </Head>
         <body>

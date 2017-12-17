@@ -5,14 +5,9 @@ import MobileViewWrapper from '../containers/MobileViewWrapper';
 
 const Index = () => (
   <div>
-    <Responsive as="div" maxWidth={425}>
-      <MobileViewWrapper>
-        <HomePage />
-      </MobileViewWrapper>
-    </Responsive>
-    <Responsive as="span" minWidth={426}>
+    <MobileViewWrapper>
       <HomePage />
-    </Responsive>
+    </MobileViewWrapper>
   </div>
 );
 
