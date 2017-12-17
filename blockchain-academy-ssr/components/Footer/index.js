@@ -2,7 +2,7 @@ import React from 'react';
 import { Segment, Grid, Header, Button, Icon, Image } from 'semantic-ui-react';
 
 export default () => (
-  <Segment basic style={{ backgroundColor: '#EBEBEB' }}>
+  <Segment basic style={{ backgroundColor: '#EBEBEB', paddingTop: 0 }}>
     <Grid stackable columns={3}>
       <Grid.Column textAlign="center" verticalAlign="middle">
         <Image centered size="small" src="/static/full-logo.png" />

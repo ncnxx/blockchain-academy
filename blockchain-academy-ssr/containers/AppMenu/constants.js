@@ -6,7 +6,7 @@ export const menuList = [
   },
   {
     name: 'seminar',
-    label: 'อบรม/สัมนา',
+    label: 'อบรม/สัมมนา',
     link: '/all-seminar',
   },
   {

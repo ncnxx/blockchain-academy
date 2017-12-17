@@ -119,7 +119,7 @@ const BitcoinText = () => (
 
 const CanvasSubheaderText = styled.h2`
   font-size: 5vh !important;
-  color: #DD3336;
+  color: red;
 `;
 
 const BitcoinPriceTicker = (props) => (
@@ -175,11 +175,11 @@ export default class HomePage extends Component {
           rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
         />
-        <AppMenu />
+        {/* <AppMenu /> */}
         <Segment
           basic
           style={{
-            padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0',
+            padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
           }}
         >
           {/* <Image centered src="https://images.unsplash.com/photo-1486160108250-95123a1f2b6e?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" style={{ width: '100%' }} /> */}
@@ -189,13 +189,13 @@ export default class HomePage extends Component {
             id="background-video"
             loop
             autoPlay
-            style={{ width: '100vw' }}
+            style={{ minHeight: '100vh' }}
           >
             <source src="/static/space.mp4" type="video/mp4" />
           </video>
-          <VideoOverlay />
+          {/* <VideoOverlay /> */}
           <CanvasHeader textAlign="center">
-            <CanvasHeaderText><Image centered style={{ width: '70vh' }} src="/static/full-logo.png" /></CanvasHeaderText>
+            <CanvasHeaderText><Image centered style={{ width: '30vw' }} src="/static/full-logo.png" /></CanvasHeaderText>
             <CanvasSubheaderText>
           ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN<br />และ CRYPTOCURRENCY
             </CanvasSubheaderText>
@@ -204,7 +204,7 @@ export default class HomePage extends Component {
         <Segment
           basic
           style={{
-            height: '100vh', backgroundColor: 'black', marginTop: '0', paddingTop: '100px',
+            minHeight: '100vh', backgroundColor: 'black', marginTop: '0', paddingTop: '100px',
           }}
         >
           <Grid>
@@ -233,13 +233,14 @@ export default class HomePage extends Component {
                       left: 0,
                       bottom: 0,
                       position: 'absolute',
+                      filter: 'brightness(50%)',
                     }}
                   />
                 </div>
               </Fade>
               <div
                 style={{
-                  position: 'absolute', top: '0px', left: '0px', display: 'table', width: '100%', height: '100%', backgroundColor: 'rgba(60, 55, 55, 0.57)',
+                  position: 'absolute', top: '0px', left: '0px', display: 'table', width: '100%', height: '100%',
                 }}
               >
                 <div style={{ display: 'table-cell', verticalAlign: 'middle', textAlign: 'center' }}>
@@ -270,7 +271,7 @@ export default class HomePage extends Component {
                 </Header>
               </Fade>
             </Grid.Column>
-            <Fade left delay={500} style={{ width: '100%' }}>
+            <Fade left delay={0} style={{ width: '100%' }}>
               <Grid.Row style={{ padding: '0 0 0 0' }}>
                 <Grid.Column width="16">
                   <ImageContainer>
@@ -286,7 +287,7 @@ export default class HomePage extends Component {
                 </Grid.Column>
               </Grid.Row>
             </Fade>
-            <Fade left delay={1000} style={{ width: '100%' }}>
+            <Fade left delay={500} style={{ width: '100%' }}>
               <Grid.Row style={{ padding: '0 0 0 0' }}>
                 <Grid.Column width="16">
                   <ImageContainer>
@@ -302,7 +303,7 @@ export default class HomePage extends Component {
                 </Grid.Column>
               </Grid.Row>
             </Fade>
-            <Fade left delay={1500} style={{ width: '100%' }}>
+            <Fade left delay={1000} style={{ width: '100%' }}>
               <Grid.Row style={{ padding: '0 0 0 0' }}>
                 <Grid.Column width="16">
                   <ImageContainer>
@@ -391,13 +392,15 @@ export default class HomePage extends Component {
           </Grid>
         </Segment>
         <Segment basic textAlign="center" style={{ minHeight: '100vh' }}>
-          <Header as="h1">การันตีคุณภาพจากผู้เคยเข้าร่วมการอบรมและสัมมนา</Header>
-          <Image.Group>
-            <Image size="small" src={pantipPratunamLogo} />
-            <Image size="small" src={biostarLogo} />
-            <Image size="tiny" src={thminerLogo} />
-            <Image size="tiny" src={ratchapatLogo} />
-          </Image.Group>
+          <Fade bottom left><Header as="h1">การันตีคุณภาพจากผู้เคยเข้าร่วมการอบรมและสัมมนา</Header></Fade>
+          <Zoom>
+            <Image.Group>
+              <Image size="small" src={pantipPratunamLogo} />
+              <Image size="small" src={biostarLogo} />
+              <Image size="tiny" src={thminerLogo} />
+              <Image size="tiny" src={ratchapatLogo} />
+            </Image.Group>
+          </Zoom>
           <Fade>
             <div
               style={{
@@ -428,7 +431,7 @@ export default class HomePage extends Component {
         <Segment
           basic
           style={{
-            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px',
+            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px', paddingBottom: '0px',
           }}
         >
           <ImageContainer>
@@ -436,167 +439,19 @@ export default class HomePage extends Component {
               <Image fluid src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
             </div>
             <TextOverImage>
-              <h1>
+              <Fade duration={3000}>
+                <h1>
                 ณ ตอนนี้ เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
-              </h1>
-              <h1 style={{ fontSize: '6em' }}>
+                </h1>
+                <h1 style={{ fontSize: '6em' }}>
                 โอกาสอีกมากมาย<br />
                 ยังรอคุณอยู่<br />
-              </h1>
-              <Button color="red" size="huge">เริ่มเรียนรู้</Button>
+                </h1>
+                <Button color="red" size="huge">เริ่มเรียนรู้</Button>
+              </Fade>
             </TextOverImage>
           </ImageContainer>
-
         </Segment>
-        {/* <Container>
-          <Fade>
-            <Header as="h1" textAlign="center">
-        คอร์สอบรมและสัมนา ถ่ายทอดความรู้แบบถึงตัว
-              <Header.Subheader>
-          พร้อมสาธิตให้เห็นภาพชัดเจน
-          เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
-          ด้วยประสบการณ์การจัดสัมนากับ พันธุ์ทิพย์ ประตูน้ำ, THMiner และ
-          Biostar
-              </Header.Subheader>
-            </Header>
-          </Fade>
-          <Fade>
-            <Segment basic textAlign="center">
-              <Image.Group>
-                <Image size="small" src={pantipPratunamLogo} />
-                <Image size="small" src={biostarLogo} />
-                <Image size="tiny" src={thminerLogo} />
-                <Image size="tiny" src={ratchapatLogo} />
-              </Image.Group>
-            </Segment>
-          </Fade>
-          <Fade>
-            <div
-              style={{
-                maxHeight: '600px',
-              }}
-            >
-              <Slider {...settings}>
-                <div>
-                  <Image size="big" centered src={seminar1} />
-                  <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
-                </div>
-                <div>
-                  <Image size="big" centered src={seminar2} />
-                  <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
-                </div>
-                <div>
-                  <Image size="big" centered src={seminar3} />
-                  <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
-                </div>
-                <div>
-                  <Image size="big" centered src={seminar4} />
-                  <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
-                </div>
-              </Slider>
-            </div>
-          </Fade>
-          <Fade bottom duration={500}>
-            <Segment
-              basic
-              style={{
-                marginTop: '50px',
-              }}
-            >
-              <Card.Group stackable itemsPerRow="3">
-                {seminarList.slice(0, 2).map((each) => (
-                  <Card key={each.name} onClick={() => window.location.replace(`/seminar/${each.slug}`)}>
-                    <Image fluid src={each.image} />
-                    <Card.Content>
-                      <Card.Header style={{ color: 'red' }}>
-                        {each.name}
-                      </Card.Header>
-                      <Card.Description>{each.shortDescription}</Card.Description>
-                      <br />
-                    </Card.Content>
-                    <Card.Content extra textAlign="right">
-                      <Icon name="time" />
-                      <span>{each.time}</span>
-                &nbsp;&nbsp;&nbsp;
-                      <Icon name="tags" />
-                      <span>{each.price}</span>
-                    </Card.Content>
-                  </Card>
-                ))}
-                <Dimmer.Dimmable as={Card} onClick={() => window.location.replace('/all-seminar')} dimmed>
-                  <Dimmer inverted active>
-                    <Header as="h2" icon color="red">
-                      <Icon name="plus" />
-                ดูคอร์สอบรม<br />
-                และสัมนาทั้งหมด
-                    </Header>
-                  </Dimmer>
-                  <Image fluid src={seminarList[2].image} />
-                  <Card.Content>
-                    <Card.Header>
-                      {seminarList[2].name}
-                    </Card.Header>
-                    <Card.Meta>{seminarList[2].meta}</Card.Meta>
-                    <Card.Description />
-                  </Card.Content>
-                </Dimmer.Dimmable>
-
-              </Card.Group>
-              <br />
-              <Header as="h1" textAlign="center">
-        คอร์สออนไลน์คุณภาพ
-                <Header.Subheader>
-          รู้ลึกทุกข้อมูล ด้วยเนื้อหาที่เข้าใจง่าย เหมาะสมสำหรับทุกคน
-                </Header.Subheader>
-              </Header>
-              <br />
-              <Header as="h1" textAlign="center">เร็วๆนี้</Header>
-              <Card.Group stackable itemsPerRow="4">
-                {courseList.map((each) => (
-                  <Card key={each.name}>
-                    <a href={`/course/${each.slug}`}>
-                      <Image fluid src={each.image} />
-                    </a>
-                    <Card.Content>
-                      <Card.Header>
-                        <a href={`/course/${each.slug}`}>{each.name}</a>
-                      </Card.Header>
-                      <Card.Meta>{each.meta}</Card.Meta>
-                      <Card.Description>{each.description}</Card.Description>
-                      <br />
-                    </Card.Content>
-                    <Card.Content extra textAlign="right">
-                      <Icon name="time" />
-                      <span>
-                        {each.duration}
-                ชั่วโมง
-                      </span>
-              &nbsp;&nbsp;&nbsp;
-                      <Icon name="tags" />
-                      <span>{each.price}</span>
-                    </Card.Content>
-                  </Card>
-                ))}
-                <Dimmer.Dimmable as={Card} dimmed>
-                  <Dimmer inverted active>
-                    <Header as="h2" icon color="blue">
-                      <Icon name="plus" />
-              ดูคอร์สออนไลน์ทั้งหมด
-                    </Header>
-                  </Dimmer>
-                  <Image fluid src={courseList[0].image} />
-                  <Card.Content>
-                    <Card.Header>
-                      <a>{courseList[0].name}</a>
-                    </Card.Header>
-                    <Card.Meta>{courseList[0].meta}</Card.Meta>
-                    <Card.Description />
-                  </Card.Content>
-                </Dimmer.Dimmable>
-              </Card.Group>
-            </Segment>
-          </Fade>
-        </Container> */}
         <Footer />
       </div>
     );
