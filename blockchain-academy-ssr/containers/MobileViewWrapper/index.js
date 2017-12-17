@@ -56,10 +56,10 @@ export default class MobileViewWrapper extends Component {
               />
             </Segment>
           </Menu>
-          <Sidebar as={Menu} animation="overlay" width="thin" visible={this.state.sidebarVisible} icon="labeled" vertical inverted>
+          <Sidebar as={Menu} animation="overlay" width="wide" visible={this.state.sidebarVisible} icon="labeled" vertical inverted>
             {menuList.map((eachMenu) => (
               <a key={eachMenu.name} href={eachMenu.link} onClick={this.hideSidebar}>
-                <Menu.Item as="div" name={eachMenu.name} style={{ color: 'red' }}>
+                <Menu.Item as="h1" name={eachMenu.name} style={{ color: 'red', fontWeight: 'bold' }}>
                   {eachMenu.label}
                 </Menu.Item>
               </a>

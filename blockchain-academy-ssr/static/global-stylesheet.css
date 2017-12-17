@@ -26,3 +26,7 @@ html * :not(i) {
 .slick-next:before, .slick-prev:before {
     content: none !important;
 }
+
+.ui.red.header{
+    color: #F1152B !important;
+}

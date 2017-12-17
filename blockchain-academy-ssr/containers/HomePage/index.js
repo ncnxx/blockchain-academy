@@ -173,24 +173,31 @@ export default class HomePage extends Component {
             padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
           }}
         >
-          {/* <Image centered src="https://images.unsplash.com/photo-1486160108250-95123a1f2b6e?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" style={{ width: '100%' }} /> */}
-          <video
-            ref="video"
-            muted
-            id="background-video"
-            loop
-            autoPlay
-            style={{ minHeight: '100vh' }}
-          >
-            <source src="/static/space.mp4" type="video/mp4" />
-          </video>
+          <ImageContainer>
+            <div style={{ overflow: 'hidden', height: '100vh' }}>
+              <video
+                ref="video"
+                muted
+                id="background-video"
+                loop
+                autoPlay
+                style={{ minHeight: '100vh' }}
+              >
+                <source src="/static/space.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <TextOverImage>
+              <Image centered size="large" src="/static/full-logo.png" />
+              <Header style={{ color: '#F1152B' }} as="h1">ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+            </TextOverImage>
+          </ImageContainer>
           {/* <VideoOverlay /> */}
-          <CanvasHeader textAlign="center">
+          {/* <CanvasHeader textAlign="center">
             <CanvasHeaderText><Image centered style={{ width: '30vw' }} src="/static/full-logo.png" /></CanvasHeaderText>
             <CanvasSubheaderText>
           ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN<br />และ CRYPTOCURRENCY
             </CanvasSubheaderText>
-          </CanvasHeader>
+          </CanvasHeader> */}
         </Segment>
         <Segment
           basic
