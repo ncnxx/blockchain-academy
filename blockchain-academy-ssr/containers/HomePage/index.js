@@ -181,6 +181,7 @@ export default class HomePage extends Component {
                 id="background-video"
                 loop
                 autoPlay
+                playsinline
                 style={{ minHeight: '100vh', filter: 'brightness(400%)' }}
               >
                 <source src="/static/space.mp4" type="video/mp4" />
