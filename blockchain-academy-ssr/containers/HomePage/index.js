@@ -435,7 +435,7 @@ export default class HomePage extends Component {
             <TextOverImage>
               <Fade duration={3000}>
                 <h1>
-                ณ ตอนนี้ เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
+                เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
                 </h1>
                 <h1 style={{ fontSize: '3rem' }}>
                 โอกาสอีกมากมาย<br />
