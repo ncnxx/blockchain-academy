@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 export default class ShuttleLaunchVideo extends Component {
   componentDidMount() {
-    if (this.refs && this.refs.video) {
-      this.refs.video.playbackRate = 7.5;
-    }
+    // if (this.refs && this.refs.video) {
+    //   const { video } = this.refs;
+    //   video.pause();
+    //   video.playbackRate = 7.5;
+    //   video.play();
+    // }
   }
 
   render() {

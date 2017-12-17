@@ -175,17 +175,12 @@ export default class HomePage extends Component {
         >
           <ImageContainer>
             <div style={{ overflow: 'hidden', height: '100vh' }}>
-              <video
-                ref="video"
-                muted
-                id="background-video"
-                loop
-                autoPlay
-                playsinline
-                style={{ minHeight: '100vh', filter: 'brightness(400%)' }}
-              >
-                <source src="/static/space.mp4" type="video/mp4" />
-              </video>
+              <Responsive minWidth={768}>
+                <video src="/static/space.mp4" playsinline loop muted autoPlay style={{ minHeight: '100vh', filter: 'brightness(400%)' }}></video>
+              </Responsive>
+              <Responsive maxWidth={767}>
+                <img style={{ minHeight: '100vh', filter: 'brightness(150%)' }} src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=1075&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+              </Responsive>
             </div>
             <TextOverImage>
               <Image centered size="large" src="/static/full-logo.png" />
@@ -221,16 +216,21 @@ export default class HomePage extends Component {
                     width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh', textAlign: 'center',
                   }}
                 >
-                  <ShuttleLaunchVideo
-                    style={{
-                      height: '100vh',
-                      left: '100%',
-                      bottom: 0,
-                      position: 'relative',
-                      filter: 'brightness(50%)',
-                      marginLeft: '-200%',
-                    }}
-                  />
+                  <Responsive minWidth={768}>
+                    <ShuttleLaunchVideo
+                      style={{
+                        height: '100vh',
+                        left: '100%',
+                        bottom: 0,
+                        position: 'relative',
+                        filter: 'brightness(50%)',
+                        marginLeft: '-200%',
+                      }}
+                    />
+                  </Responsive>
+                  <Responsive maxWidth={767}>
+                    <img style={{ minHeight: '100vh', filter: 'brightness(50%)' }} src="https://images.pexels.com/photos/87089/rocket-lift-off-liftoff-astronautics-87089.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                  </Responsive>
                 </div>
               </Fade>
               <div
