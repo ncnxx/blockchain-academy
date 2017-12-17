@@ -32,7 +32,7 @@ const MenuIcon = styled.img`
   }
 
   @media (max-width: 767px) {
-    width: 30%;
+    width: 20%;
   }
 `;
 

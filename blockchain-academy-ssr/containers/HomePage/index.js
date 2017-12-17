@@ -181,7 +181,7 @@ export default class HomePage extends Component {
                 id="background-video"
                 loop
                 autoPlay
-                style={{ minHeight: '100vh', filter: 'brightness(300%)' }}
+                style={{ minHeight: '100vh', filter: 'brightness(400%)' }}
               >
                 <source src="/static/space.mp4" type="video/mp4" />
               </video>
@@ -190,14 +190,14 @@ export default class HomePage extends Component {
               <Image centered size="large" src="/static/full-logo.png" />
               <Header style={{ fontSize: '20px' }} as="h1">POWERED BY</Header>
               <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
-              <Header inverted as="h1">ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+              <Header as="h1" style={{ fontSize: '2rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
             </TextOverImage>
           </ImageContainer>
         </Segment>
         <Segment
           basic
           style={{
-            minHeight: '100vh', backgroundColor: 'black', marginTop: '0', paddingTop: '100px',
+            maxHeight: '150vh', backgroundColor: 'black', marginTop: '0', paddingTop: '100px', overflow: 'hidden',
           }}
         >
           <Grid>
@@ -217,16 +217,17 @@ export default class HomePage extends Component {
               <Fade>
                 <div
                   style={{
-                    width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh',
+                    width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh', textAlign: 'center',
                   }}
                 >
                   <ShuttleLaunchVideo
                     style={{
-                      width: '100vw',
-                      left: 0,
+                      height: '100vh',
+                      left: '100%',
                       bottom: 0,
-                      position: 'absolute',
+                      position: 'relative',
                       filter: 'brightness(50%)',
+                      marginLeft: '-200%',
                     }}
                   />
                 </div>
@@ -239,7 +240,7 @@ export default class HomePage extends Component {
                 <div style={{ display: 'table-cell', verticalAlign: 'middle', textAlign: 'center' }}>
                   <Fade><Header as="h3" size="large" inverted>วันนี้ <BitcoinText /> เงินดิจิตอลสกุลแรกของโลก มีราคา</Header></Fade>
                   <Fade>
-                    <Header as="h1" style={{ fontSize: '6em' }} inverted>
+                    <Header as="h1" style={{ fontSize: '4rem' }} inverted>
                       <BitcoinPriceTicker {...this.state} /> บาท
                     </Header>
                   </Fade>
@@ -268,11 +269,11 @@ export default class HomePage extends Component {
               <Grid.Row style={{ padding: '0 0 0 0' }}>
                 <Grid.Column width="16">
                   <ImageContainer>
-                    <div style={{ overflow: 'hidden', height: '25vh' }}>
+                    <div style={{ overflow: 'hidden', height: '22vh' }}>
                       <Image fluid src="https://images.pexels.com/photos/421888/pexels-photo-421888.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
                     </div>
                     <TextOverImage>
-                      <h1 style={{ fontSize: '6em' }}>
+                      <h1 style={{ fontSize: '4rem' }}>
                         พลังงาน
                       </h1>
                     </TextOverImage>
@@ -284,11 +285,11 @@ export default class HomePage extends Component {
               <Grid.Row style={{ padding: '0 0 0 0' }}>
                 <Grid.Column width="16">
                   <ImageContainer>
-                    <div style={{ overflow: 'hidden', height: '25vh' }}>
+                    <div style={{ overflow: 'hidden', height: '22vh' }}>
                       <Image fluid src="https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
                     </div>
                     <TextOverImage>
-                      <h1 style={{ fontSize: '6em' }}>
+                      <h1 style={{ fontSize: '4rem' }}>
                         การเงิน
                       </h1>
                     </TextOverImage>
@@ -300,11 +301,11 @@ export default class HomePage extends Component {
               <Grid.Row style={{ padding: '0 0 0 0' }}>
                 <Grid.Column width="16">
                   <ImageContainer>
-                    <div style={{ overflow: 'hidden', height: '25vh' }}>
+                    <div style={{ overflow: 'hidden', height: '22vh' }}>
                       <Image fluid src="https://images.unsplash.com/photo-1494412623380-6e86033ab9ed?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
                     </div>
                     <TextOverImage>
-                      <h1 style={{ fontSize: '6em' }}>
+                      <h1 style={{ fontSize: '4rem' }}>
                         โลจิสติกส์
                       </h1>
                     </TextOverImage>
@@ -424,19 +425,19 @@ export default class HomePage extends Component {
         <Segment
           basic
           style={{
-            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px', paddingBottom: '0px',
+            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', padding: '100px 0px 0px 0px',
           }}
         >
           <ImageContainer>
             <div style={{ overflow: 'hidden', height: '100vh' }}>
-              <Image fluid src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
             </div>
             <TextOverImage>
               <Fade duration={3000}>
                 <h1>
                 ณ ตอนนี้ เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
                 </h1>
-                <h1 style={{ fontSize: '6em' }}>
+                <h1 style={{ fontSize: '3rem' }}>
                 โอกาสอีกมากมาย<br />
                 ยังรอคุณอยู่<br />
                 </h1>
