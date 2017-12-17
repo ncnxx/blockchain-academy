@@ -181,23 +181,18 @@ export default class HomePage extends Component {
                 id="background-video"
                 loop
                 autoPlay
-                style={{ minHeight: '100vh' }}
+                style={{ minHeight: '100vh', filter: 'brightness(300%)' }}
               >
                 <source src="/static/space.mp4" type="video/mp4" />
               </video>
             </div>
             <TextOverImage>
               <Image centered size="large" src="/static/full-logo.png" />
-              <Header style={{ color: '#F1152B' }} as="h1">ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+              <Header style={{ fontSize: '20px' }} as="h1">POWERED BY</Header>
+              <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
+              <Header inverted as="h1">ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
             </TextOverImage>
           </ImageContainer>
-          {/* <VideoOverlay /> */}
-          {/* <CanvasHeader textAlign="center">
-            <CanvasHeaderText><Image centered style={{ width: '30vw' }} src="/static/full-logo.png" /></CanvasHeaderText>
-            <CanvasSubheaderText>
-          ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN<br />และ CRYPTOCURRENCY
-            </CanvasSubheaderText>
-          </CanvasHeader> */}
         </Segment>
         <Segment
           basic
