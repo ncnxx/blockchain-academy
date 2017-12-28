@@ -168,7 +168,22 @@ export default class HomePage extends Component {
     return (
       <div>
         <AppMenu />
-        <Segment
+        <Grid
+          columns={2}
+          style={{
+            padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
+          }}
+        >
+          <Grid.Column verticalAlign="middle">
+            <Image centered size="medium" src="/static/full-logo.png" />
+            <Header textAlign="center" style={{ fontSize: '15px', letterSpacing: '10px' }} as="h1">POWERED BY</Header>
+            <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
+          </Grid.Column>
+          <Grid.Column verticalAlign="middle">
+            <Header as="h1" style={{ fontSize: '2rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+          </Grid.Column>
+        </Grid>
+        {/* <Segment
           basic
           style={{
             padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
@@ -176,12 +191,12 @@ export default class HomePage extends Component {
         >
           <ImageContainer>
             <div style={{ overflow: 'hidden', height: '100vh' }}>
-              {/* <Responsive minWidth={768}>
+              <Responsive minWidth={768}>
                 <video src="/static/space.mp4" playsinline loop muted autoPlay style={{ minHeight: '100vh', filter: 'brightness(400%)' }}></video>
               </Responsive>
               <Responsive maxWidth={767}>
                 <img style={{ minHeight: '100vh', filter: 'brightness(150%)' }} src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=1075&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-              </Responsive> */}
+              </Responsive>
             </div>
             <TextOverImage>
               <Image centered size="large" src="/static/full-logo.png" />
@@ -190,7 +205,7 @@ export default class HomePage extends Component {
               <Header as="h1" style={{ fontSize: '2rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
             </TextOverImage>
           </ImageContainer>
-        </Segment>
+        </Segment> */}
         <Segment
           basic
           style={{
@@ -325,13 +340,13 @@ export default class HomePage extends Component {
         >
           <Zoom>
             <Header textAlign="center" color="red" as="h1">
-            SIAM BLOCKCHAIN ACADEMY
+              SIAM BLOCKCHAIN ACADEMY
             </Header>
           </Zoom>
           <Zoom delay={500}>
             <Header textAlign="center" color="red" as="h1">
-            จะทำให้คุณรู้จักและเข้าใจในเทคโนโลยี CRYPTOCURRENCY และ BLOCKCHAIN<br />
-            ด้วยบริการของเรา
+              จะทำให้คุณรู้จักและเข้าใจในเทคโนโลยี CRYPTOCURRENCY และ BLOCKCHAIN<br />
+              ด้วยบริการของเรา
             </Header>
           </Zoom>
           <br />
@@ -362,7 +377,7 @@ export default class HomePage extends Component {
                   <TextOverImage>
                     <h1>คอร์สออนไลน์</h1>
                     <h3>
-                    เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา
+                      เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา
                     </h3>
                     <Button color="red">ดูคอร์สทั้งหมด</Button>
                   </TextOverImage>
@@ -378,7 +393,7 @@ export default class HomePage extends Component {
                   <TextOverImage>
                     <h1>วิทยากรรับเชิญและอบรมส่วนตัว</h1>
                     <h3>
-                    เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ
+                      เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ
                     </h3>
                     <Button color="red">ติดต่อเรา</Button>
                   </TextOverImage>
@@ -437,11 +452,11 @@ export default class HomePage extends Component {
             <TextOverImage>
               <Fade duration={3000}>
                 <h1>
-                เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
+                  เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
                 </h1>
                 <h1 style={{ fontSize: '3rem' }}>
-                โอกาสอีกมากมาย<br />
-                ยังรอคุณอยู่<br />
+                  โอกาสอีกมากมาย<br />
+                  ยังรอคุณอยู่<br />
                 </h1>
                 <Button color="red" size="huge">เริ่มเรียนรู้</Button>
               </Fade>
