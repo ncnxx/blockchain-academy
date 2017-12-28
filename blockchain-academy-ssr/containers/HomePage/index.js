@@ -167,6 +167,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
+        <AppMenu />
         <Segment
           basic
           style={{
@@ -175,12 +176,12 @@ export default class HomePage extends Component {
         >
           <ImageContainer>
             <div style={{ overflow: 'hidden', height: '100vh' }}>
-              <Responsive minWidth={768}>
+              {/* <Responsive minWidth={768}>
                 <video src="/static/space.mp4" playsinline loop muted autoPlay style={{ minHeight: '100vh', filter: 'brightness(400%)' }}></video>
               </Responsive>
               <Responsive maxWidth={767}>
                 <img style={{ minHeight: '100vh', filter: 'brightness(150%)' }} src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=1075&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-              </Responsive>
+              </Responsive> */}
             </div>
             <TextOverImage>
               <Image centered size="large" src="/static/full-logo.png" />

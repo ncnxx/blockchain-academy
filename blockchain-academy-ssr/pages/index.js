@@ -5,9 +5,9 @@ import MobileViewWrapper from '../containers/MobileViewWrapper';
 
 const Index = () => (
   <div>
-    <MobileViewWrapper>
-      <HomePage />
-    </MobileViewWrapper>
+    {/* <MobileViewWrapper> */}
+    <HomePage />
+    {/* </MobileViewWrapper> */}
   </div>
 );
 

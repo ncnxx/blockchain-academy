@@ -19,4 +19,9 @@ export const menuList = [
     label: 'เกี่ยวกับเรา',
     link: '/',
   },
+  {
+    name: 'about-us',
+    label: 'ติดต่อเรา',
+    link: '/',
+  },
 ];
