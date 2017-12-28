@@ -55,12 +55,12 @@ const ratchapatLogo =
 const thminerLogo =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/thminer-logo.jpg';
 
-const PushableWrapper = styled(Sidebar.Pushable)`
+const PushableWrapper = styled(Sidebar.Pushable) `
   @media (max-width: 768px) {
   }
 `;
 
-const SidebarPusher = styled(Sidebar.Pusher)`
+const SidebarPusher = styled(Sidebar.Pusher) `
   @media (max-width: 768px) {
   }
 `;
@@ -78,7 +78,7 @@ const settings = {
   nextArrow: <NextArrow />,
 };
 
-const CanvasHeader = styled(Header)`
+const CanvasHeader = styled(Header) `
   text-align: center;
   position: absolute;
 
@@ -113,6 +113,12 @@ const VideoOverlay = styled.div`
   top: 0;
 `;
 
+const YellowButton = styled(Button) `
+  margin-top: 30px !important;
+  background-color: #F5BF5F !important;
+  color: white !important;
+`;
+
 const BitcoinText = () => (
   <span style={{ color: '#FB9238' }}>BITCOIN</span>
 );
@@ -144,7 +150,7 @@ const TextOverImage = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 100%;
 `;
 
 export default class HomePage extends Component {
@@ -168,48 +174,33 @@ export default class HomePage extends Component {
     return (
       <div>
         <AppMenu />
-        <Grid
-          columns={2}
-          style={{
-            padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
-          }}
-        >
-          <Grid.Column verticalAlign="middle">
-            <Image centered size="medium" src="/static/full-logo.png" />
-            <Header textAlign="center" style={{ fontSize: '15px', letterSpacing: '10px' }} as="h1">POWERED BY</Header>
-            <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
-          </Grid.Column>
-          <Grid.Column verticalAlign="middle">
-            <Header as="h1" style={{ fontSize: '4rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
-          </Grid.Column>
-        </Grid>
-        {/* <Segment
-          basic
-          style={{
-            padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
-          }}
-        >
-          <ImageContainer>
-            <div style={{ overflow: 'hidden', height: '100vh' }}>
-              <Responsive minWidth={768}>
-                <video src="/static/space.mp4" playsinline loop muted autoPlay style={{ minHeight: '100vh', filter: 'brightness(400%)' }}></video>
-              </Responsive>
-              <Responsive maxWidth={767}>
-                <img style={{ minHeight: '100vh', filter: 'brightness(150%)' }} src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=1075&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-              </Responsive>
-            </div>
-            <TextOverImage>
-              <Image centered size="large" src="/static/full-logo.png" />
-              <Header style={{ fontSize: '20px' }} as="h1">POWERED BY</Header>
-              <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
-              <Header as="h1" style={{ fontSize: '2rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
-            </TextOverImage>
-          </ImageContainer>
-        </Segment> */}
+        <ImageContainer>
+          <div style={{ overflow: 'hidden', height: '100vh' }}>
+            <Image style={{ height: '100vh' }} fluid src="/static/home-header.jpg" />
+          </div>
+          <TextOverImage>
+            <Grid
+              stackable
+              columns={2}
+              style={{
+                padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
+              }}
+            >
+              <Grid.Column verticalAlign="middle">
+                <Image centered size="big" src="/static/full-logo.png" />
+                <Header textAlign="center" style={{ fontSize: '15px', letterSpacing: '10px' }} as="h1">POWERED BY</Header>
+                <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
+              </Grid.Column>
+              <Grid.Column verticalAlign="middle">
+                <Header as="h1" style={{ fontSize: '4.5rem' }} inverted>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+              </Grid.Column>
+            </Grid>
+          </TextOverImage>
+        </ImageContainer>
         <Segment
           basic
           style={{
-            maxHeight: '150vh', backgroundColor: 'white', marginTop: '0', paddingTop: '100px', overflow: 'hidden',
+            backgroundColor: 'white', marginTop: '0', paddingTop: '100px', overflow: 'hidden',
           }}
         >
           <Grid columns={2}>
@@ -238,131 +229,109 @@ export default class HomePage extends Component {
               <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <span style={{ color: 'red' }}>TDAX.COM</span></Header></Fade>
             </Grid.Column>
           </Grid>
-          <Grid>
-            <Grid.Column width="16" textAlign="center" style={{ fontSize: '1.5em' }}>
-              <Fade left>
-                <Header size="huge" as="h1" color="red">
-                  เงินดิจิตอล คือ คำตอบของอนาคต
-                </Header>
-              </Fade>
-              <Fade right>
-                <Header size="huge" as="h1" color="red">
-                  มกราคม ปี พ.ศ. 2560 <BitcoinText /> มีราคาประมาณ 20,000 บาท
-                </Header>
-              </Fade>
-            </Grid.Column>
-            <Grid.Column style={{ padding: '0 0 0 0' }} width="16" textAlign="center">
-              <Fade>
-                <div
-                  style={{
-                    width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh', textAlign: 'center',
-                  }}
-                >
-                </div>
-              </Fade>
-              <div
-                style={{
-                  position: 'absolute', top: '0px', left: '0px', display: 'table', width: '100%', height: '100%',
-                }}
-              >
-                <div style={{ display: 'table-cell', verticalAlign: 'middle', textAlign: 'center' }}>
-                  <Fade><Header as="h3" size="large" inverted>วันนี้ <BitcoinText /> เงินดิจิตอลสกุลแรกของโลก มีราคา</Header></Fade>
-                  <Fade>
-                    <Header as="h1" style={{ fontSize: '4rem' }} inverted>
-                      <BitcoinPriceTicker {...this.state} /> บาท
-                    </Header>
-                  </Fade>
-                  <Fade><Header as="h3" size="large" inverted>เพิ่มมากขึ้นกว่า {Math.floor(this.state.nextBTCPrice / 20000)} เท่าตัว และยังคงเพิ่มขึ้นเรื่อยๆ</Header></Fade>
-                  <Fade><Header as="h3" size="medium" inverted>ข้อมูลราคาจาก <span style={{ color: 'red' }}>TDAX.COM</span></Header></Fade>
-                </div>
-              </div>
-            </Grid.Column>
-          </Grid>
         </Segment>
         <Segment
           basic
           style={{
-            height: '100vh', backgroundColor: 'white', overflow: 'hidden', marginTop: '100px',
+            height: '100vh', backgroundColor: 'white', overflow: 'hidden', padding: '0 0 0 0', margin: '0 0 0 0',
           }}
         >
           <Grid>
             <Grid.Column width="16">
-              <Fade right>
-                <Header as="h1" size="huge" textAlign="center">
-                  <span style={{ color: 'red' }}>BLOCKCHAIN</span> เทคโนโลยีเบื้องหลังของ <BitcoinText /><br />กำลังเป็นที่นิยมสำหรับการนำไปประยุกต์ใช้ในหลากหลายอุตสาหกรรม
-                </Header>
-              </Fade>
-            </Grid.Column>
-            <Fade left delay={0} style={{ width: '100%' }}>
-              <Grid.Row style={{ padding: '0 0 0 0' }}>
-                <Grid.Column width="16">
-                  <ImageContainer>
-                    <div style={{ overflow: 'hidden', height: '22vh' }}>
-                      <Image fluid src="https://images.pexels.com/photos/421888/pexels-photo-421888.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
-                    </div>
-                    <TextOverImage>
-                      <h1 style={{ fontSize: '4rem' }}>
+              <ImageContainer>
+                <div style={{ overflow: 'hidden', height: '100vh', backgroundColor: 'black' }}>
+                  <Image style={{ height: '100vh' }} src="/static/three-tiles.jpg" />
+                </div>
+                <TextOverImage style={{ width: '100%' }}>
+                  <h1 style={{ fontSize: '2.4rem' }}>
+                    <span style={{ color: 'red' }}>BLOCKCHAIN</span> เทคโนโลยีเบื้องหลังของ <BitcoinText /><br />กำลังเป็นที่นิยมสำหรับการนำไปประยุกต์ใช้ในหลากหลายอุตสาหกรรม
+                  </h1>
+                  <Grid columns={3}>
+                    <Grid.Column>
+                      <h1 style={{ fontSize: '2.4rem' }}>
                         พลังงาน
                       </h1>
-                    </TextOverImage>
-                  </ImageContainer>
-                </Grid.Column>
-              </Grid.Row>
-            </Fade>
-            <Fade left delay={500} style={{ width: '100%' }}>
-              <Grid.Row style={{ padding: '0 0 0 0' }}>
-                <Grid.Column width="16">
-                  <ImageContainer>
-                    <div style={{ overflow: 'hidden', height: '22vh' }}>
-                      <Image fluid src="https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                    </div>
-                    <TextOverImage>
-                      <h1 style={{ fontSize: '4rem' }}>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <h1 style={{ fontSize: '2.4rem' }}>
                         การเงิน
                       </h1>
-                    </TextOverImage>
-                  </ImageContainer>
-                </Grid.Column>
-              </Grid.Row>
-            </Fade>
-            <Fade left delay={1000} style={{ width: '100%' }}>
-              <Grid.Row style={{ padding: '0 0 0 0' }}>
-                <Grid.Column width="16">
-                  <ImageContainer>
-                    <div style={{ overflow: 'hidden', height: '22vh' }}>
-                      <Image fluid src="https://images.unsplash.com/photo-1494412623380-6e86033ab9ed?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                    </div>
-                    <TextOverImage>
-                      <h1 style={{ fontSize: '4rem' }}>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <h1 style={{ fontSize: '2.4rem' }}>
                         โลจิสติกส์
                       </h1>
-                    </TextOverImage>
-                  </ImageContainer>
-                </Grid.Column>
-              </Grid.Row>
-            </Fade>
+                    </Grid.Column>
+                  </Grid>
+                </TextOverImage>
+              </ImageContainer>
+            </Grid.Column>
           </Grid>
         </Segment>
         <Segment
           basic
           style={{
-            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px',
+            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px', margin: '0 0 0 0',
           }}
         >
           <Zoom>
-            <Header textAlign="center" color="red" as="h1">
+            <Header textAlign="center" inverted as="h1" style={{ fontSize: '3rem' }}>
               SIAM BLOCKCHAIN ACADEMY
             </Header>
           </Zoom>
           <Zoom delay={500}>
-            <Header textAlign="center" color="red" as="h1">
-              จะทำให้คุณรู้จักและเข้าใจในเทคโนโลยี CRYPTOCURRENCY และ BLOCKCHAIN<br />
-              ด้วยบริการของเรา
+            <Header textAlign="center" inverted as="h1">
+              จะทำให้คุณรู้จักและเข้าใจในเทคโนโลยี CRYPTOCURRENCY และ BLOCKCHAIN ด้วยบริการของเรา
             </Header>
           </Zoom>
           <br />
+          <Card.Group itemsPerRow="3">
+            <Card>
+              <Image src='https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
+              <Card.Content>
+                <Card.Header>
+                  <Header as="h1">{'อบรมและสัมมนา'}</Header>
+                </Card.Header>
+                <Card.Description style={{ fontSize: '1.5rem' }}>
+                  {'ถ่ายทอดความรู้แบบถึงตัว พร้อมสาธิตให้เห็นภาพชัดเจน เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ'}
+                  <Segment basic textAlign="center">
+                    <YellowButton size="massive">{'ดูงานทั้งหมด'}</YellowButton>
+                  </Segment>
+                </Card.Description>
+              </Card.Content>
+            </Card>
+            <Card>
+              <Image src='https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1052&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
+              <Card.Content>
+                <Card.Header>
+                  <Header as="h1">{'คอร์สออนไลน์'}</Header>
+                </Card.Header>
+                <Card.Description style={{ fontSize: '1.5rem' }}>
+                  {'เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา'}
+                  <Segment basic textAlign="center">
+                    <YellowButton size="massive">{'ดูคอร์สทั้งหมด'}</YellowButton>
+                  </Segment>
+                </Card.Description>
+              </Card.Content>
+            </Card>
+            <Card>
+              <div style={{ height: '300px', overflow: 'hidden' }}>
+                <Image src='https://images.unsplash.com/photo-1505860421472-7d74e0b4d98a?auto=format&fit=crop&w=634&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
+              </div>
+              <Card.Content>
+                <Card.Header>
+                  <Header as="h1">{'วิทยากรรับเชิญและอบรมส่วนตัว'}</Header>
+                </Card.Header>
+                <Card.Description style={{ fontSize: '1.5rem' }}>
+                  {'เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ'}
+                  <Segment basic textAlign="center">
+                    <YellowButton size="massive">{'ติดต่อเรา'}</YellowButton>
+                  </Segment>
+                </Card.Description>
+              </Card.Content>
+            </Card>
+          </Card.Group>
           <Grid stackable columns={3}>
-
             <Grid.Column>
               <Fade top>
                 <ImageContainer>
