@@ -155,9 +155,9 @@ export default class HomePage extends Component {
     setInterval(() => {
       this.setState({
         previousBTCPrice: this.state.nextBTCPrice,
-        nextBTCPrice: this.state.nextBTCPrice += Math.floor((Math.random() * 100) - 100),
+        nextBTCPrice: this.state.nextBTCPrice += Math.floor(Math.random() * (100 - (-100))) + (-100),
       });
-    }, Math.floor((Math.random() * 3000) + 1000));
+    }, Math.floor((Math.random() * 6000) + 3000));
   }
 
   toggleSidebarVisibility = () => this.setState({ sidebarVisible: !this.state.sidebarVisible })
@@ -180,7 +180,7 @@ export default class HomePage extends Component {
             <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
-            <Header as="h1" style={{ fontSize: '2rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+            <Header as="h1" style={{ fontSize: '7rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
           </Grid.Column>
         </Grid>
         {/* <Segment
@@ -209,9 +209,35 @@ export default class HomePage extends Component {
         <Segment
           basic
           style={{
-            maxHeight: '150vh', backgroundColor: 'black', marginTop: '0', paddingTop: '100px', overflow: 'hidden',
+            maxHeight: '150vh', backgroundColor: 'white', marginTop: '0', paddingTop: '100px', overflow: 'hidden',
           }}
         >
+          <Grid columns={2}>
+            <Grid.Column verticalAlign="middle" textAlign="center">
+              <Fade left>
+                <Header size="huge" as="h3" style={{ color: '#737273' }}>
+                  เงินดิจิตอล คือ คำตอบของอนาคต
+                  มกราคม ปี พ.ศ. 2560 <BitcoinText /> มีราคาประมาณ 20,000 บาท
+                </Header>
+              </Fade>
+              <br />
+              <br />
+              <Fade left>
+                <Header size="huge" as="h3" style={{ color: 'red' }}>
+                  วันนี้ <BitcoinText /> เงินดิจิตอลสกุลแรกของโลก มีราคา
+                  เพิ่มมากขึ้นกว่า {Math.floor(this.state.nextBTCPrice / 20000)} เท่าตัว และยังคงเพิ่มขึ้นเรื่อยๆ
+                </Header>
+              </Fade>
+            </Grid.Column>
+            <Grid.Column verticalAlign="middle">
+              <Fade>
+                <Header as="h1" style={{ fontSize: '7rem' }} textAlign="center">
+                  <BitcoinPriceTicker {...this.state} /> บาท
+                </Header>
+              </Fade>
+              <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <span style={{ color: 'red' }}>TDAX.COM</span></Header></Fade>
+            </Grid.Column>
+          </Grid>
           <Grid>
             <Grid.Column width="16" textAlign="center" style={{ fontSize: '1.5em' }}>
               <Fade left>
@@ -232,21 +258,6 @@ export default class HomePage extends Component {
                     width: '100vw', overflow: 'hidden', position: 'relative', height: '80vh', textAlign: 'center',
                   }}
                 >
-                  <Responsive minWidth={768}>
-                    <ShuttleLaunchVideo
-                      style={{
-                        height: '100vh',
-                        left: '100%',
-                        bottom: 0,
-                        position: 'relative',
-                        filter: 'brightness(50%)',
-                        marginLeft: '-200%',
-                      }}
-                    />
-                  </Responsive>
-                  <Responsive maxWidth={767}>
-                    <img style={{ minHeight: '100vh', filter: 'brightness(50%)' }} src="https://images.pexels.com/photos/87089/rocket-lift-off-liftoff-astronautics-87089.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
-                  </Responsive>
                 </div>
               </Fade>
               <div
