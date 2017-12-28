@@ -180,7 +180,7 @@ export default class HomePage extends Component {
             <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
           </Grid.Column>
           <Grid.Column verticalAlign="middle">
-            <Header as="h1" style={{ fontSize: '7rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
+            <Header as="h1" style={{ fontSize: '4rem' }}>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
           </Grid.Column>
         </Grid>
         {/* <Segment
