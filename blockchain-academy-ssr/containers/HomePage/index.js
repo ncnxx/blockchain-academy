@@ -162,6 +162,9 @@ export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = { sidebarVisible: false };
+    axios('https://tdax.com').then((result) => {
+      console.log(result);
+    });
     getBitcoinPrice().then((bitcoinPrice) => {
       this.setState({
         previousBTCPrice: bitcoinPrice,
