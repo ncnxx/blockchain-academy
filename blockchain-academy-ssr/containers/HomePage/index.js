@@ -153,6 +153,13 @@ const TextOverImage = styled.div`
   width: 100%;
 `;
 
+const OurServicesSegment = styled.div`
+  background: url('/static/our-services-bg.png') center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+`;
+
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -268,7 +275,7 @@ export default class HomePage extends Component {
             </Grid.Column>
           </Grid>
         </Segment>
-        <Segment
+        <OurServicesSegment
           basic
           style={{
             minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px', margin: '0 0 0 0',
@@ -285,7 +292,7 @@ export default class HomePage extends Component {
             </Header>
           </Zoom>
           <br />
-          <Card.Group itemsPerRow="3">
+          <Card.Group itemsPerRow="3" style={{ margin: '0 50px 0 50px' }}>
             <Card>
               <Image src='https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
               <Card.Content>
@@ -331,57 +338,7 @@ export default class HomePage extends Component {
               </Card.Content>
             </Card>
           </Card.Group>
-          <Grid stackable columns={3}>
-            <Grid.Column>
-              <Fade top>
-                <ImageContainer>
-                  <div style={{ overflow: 'hidden', height: '80vh' }}>
-                    <img style={{ height: '100%', filter: 'brightness(50%)' }} src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                  </div>
-                  <TextOverImage>
-                    <h1>อบรมและสัมมนา</h1>
-                    <h3>ถ่ายทอดความรู้แบบถึงตัว พร้อมสาธิตให้เห็นภาพชัดเจน
-                    เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ
-                    </h3>
-                    <Button color="red">ดูงานทั้งหมด</Button>
-                  </TextOverImage>
-                </ImageContainer>
-              </Fade>
-            </Grid.Column>
-            <Grid.Column>
-              <Fade top delay={500}>
-                <ImageContainer>
-                  <div style={{ overflow: 'hidden', height: '80vh' }}>
-                    <img style={{ height: '100%', filter: 'brightness(50%)' }} src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1052&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                  </div>
-                  <TextOverImage>
-                    <h1>คอร์สออนไลน์</h1>
-                    <h3>
-                      เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา
-                    </h3>
-                    <Button color="red">ดูคอร์สทั้งหมด</Button>
-                  </TextOverImage>
-                </ImageContainer>
-              </Fade>
-            </Grid.Column>
-            <Grid.Column>
-              <Fade top delay={1000}>
-                <ImageContainer>
-                  <div style={{ overflow: 'hidden', height: '80vh' }}>
-                    <img style={{ height: '100%', filter: 'brightness(50%)' }} src="https://images.unsplash.com/photo-1505860421472-7d74e0b4d98a?auto=format&fit=crop&w=634&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-                  </div>
-                  <TextOverImage>
-                    <h1>วิทยากรรับเชิญและอบรมส่วนตัว</h1>
-                    <h3>
-                      เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ
-                    </h3>
-                    <Button color="red">ติดต่อเรา</Button>
-                  </TextOverImage>
-                </ImageContainer>
-              </Fade>
-            </Grid.Column>
-          </Grid>
-        </Segment>
+        </OurServicesSegment>
         <Segment basic textAlign="center" style={{ minHeight: '100vh' }}>
           <Fade bottom left><Header as="h1">การันตีคุณภาพจากผู้เคยเข้าร่วมการอบรมและสัมมนา</Header></Fade>
           <Zoom>
@@ -444,7 +401,7 @@ export default class HomePage extends Component {
           </ImageContainer>
         </Segment>
         <Footer />
-      </div>
+      </div >
     );
   }
 }
