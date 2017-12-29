@@ -9,6 +9,7 @@
  * the linting exception.
  */
 import React, { Component } from 'react';
+import axios from 'axios';
 import CountUp from 'react-countup';
 import { Fade, Zoom } from 'react-reveal';
 import { Particles } from 'react-particles-js';
@@ -154,17 +155,28 @@ const OurServicesSegment = styled.div`
   background-size: cover;
 `;
 
+const getBitcoinPrice = () => axios('https://api.coindesk.com/v1/bpi/currentprice/THB.json')
+  .then(({ data }) => Promise.resolve(data.bpi.THB.rate_float));
+
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = { sidebarVisible: false, previousBTCPrice: 580000, nextBTCPrice: 587000 };
+    this.state = { sidebarVisible: false };
+    getBitcoinPrice().then((bitcoinPrice) => {
+      this.setState({
+        previousBTCPrice: bitcoinPrice,
+        nextBTCPrice: bitcoinPrice,
+      });
+    });
 
     setInterval(() => {
-      this.setState({
-        previousBTCPrice: this.state.nextBTCPrice,
-        nextBTCPrice: this.state.nextBTCPrice += Math.floor(Math.random() * (100 - (-100))) + (-100),
+      getBitcoinPrice().then((bitcoinPrice) => {
+        this.setState({
+          previousBTCPrice: this.state.nextBTCPrice,
+          nextBTCPrice: bitcoinPrice,
+        });
       });
-    }, Math.floor((Math.random() * 6000) + 3000));
+    }, 15000);
   }
 
   toggleSidebarVisibility = () => this.setState({ sidebarVisible: !this.state.sidebarVisible })
@@ -201,7 +213,7 @@ export default class HomePage extends Component {
         <Segment
           basic
           style={{
-            backgroundColor: 'white', marginTop: '0', paddingTop: '100px', overflow: 'hidden',
+            backgroundColor: 'white', marginTop: '0', padding: '100px 0 100px 0', overflow: 'hidden',
           }}
         >
           <Grid columns={2}>
@@ -227,7 +239,7 @@ export default class HomePage extends Component {
                   <BitcoinPriceTicker {...this.state} /> บาท
                 </Header>
               </Fade>
-              <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <span style={{ color: 'red' }}>TDAX.COM</span></Header></Fade>
+              <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <span style={{ color: 'red' }}>COINDESK.COM</span></Header></Fade>
             </Grid.Column>
           </Grid>
         </Segment>

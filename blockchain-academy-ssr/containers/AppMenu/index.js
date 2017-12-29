@@ -32,6 +32,11 @@ export default class AppMenu extends Component {
                 </Menu.Item>
               </Link>
             ))}
+            <a href="https://www.siamblockchain.com">
+              <Menu.Item>
+                <Image centered style={{ width: '130px' }} src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
+              </Menu.Item>
+            </a>
           </Menu.Menu>
         </Menu>
       </Responsive>
