@@ -8,6 +8,7 @@
  * reloading is not a necessity for you then you can refactor it and remove
  * the linting exception.
  */
+import _ from 'lodash';
 import React, { Component } from 'react';
 import axios from 'axios';
 import CountUp from 'react-countup';
@@ -155,16 +156,13 @@ const OurServicesSegment = styled.div`
   background-size: cover;
 `;
 
-const getBitcoinPrice = () => axios('https://api.coindesk.com/v1/bpi/currentprice/THB.json')
-  .then(({ data }) => Promise.resolve(data.bpi.THB.rate_float));
+const getBitcoinPrice = () => axios('https://api.tdax.com/orders?Symbol=BTC_THB')
+  .then(({ data }) => Promise.resolve(_.get(data, 'Bids[0].Price', 0) / 100.0));
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = { sidebarVisible: false };
-    axios('https://tdax.com').then((result) => {
-      console.log(result);
-    });
     getBitcoinPrice().then((bitcoinPrice) => {
       this.setState({
         previousBTCPrice: bitcoinPrice,
@@ -242,7 +240,7 @@ export default class HomePage extends Component {
                   <BitcoinPriceTicker {...this.state} /> บาท
                 </Header>
               </Fade>
-              <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <span style={{ color: 'red' }}>COINDESK.COM</span></Header></Fade>
+              <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <a href="https://tdax.com"><span style={{ color: 'red' }}>TDAX.COM</span></a></Header></Fade>
             </Grid.Column>
           </Grid>
         </Segment>
