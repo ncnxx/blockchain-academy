@@ -29,7 +29,7 @@ import {
 import Slider from 'react-slick';
 import styled from 'styled-components';
 
-import { particleConfig } from './constants';
+import { particleConfig, carouselList } from './constants';
 import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
 import { courseList } from '../CoursePage';
@@ -37,15 +37,9 @@ import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
 import { seminarList } from '~/containers/SeminarPage/constants';
 import ShuttleLaunchVideo from '~/components/ShuttleLaunchVideo';
+import GridColumn from 'semantic-ui-react/dist/commonjs/collections/Grid/GridColumn';
 
-const seminar1 =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
-const seminar2 =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-2.png';
-const seminar3 =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-3.png';
-const seminar4 =
-  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-4.png';
+
 const pantipPratunamLogo =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/pantip-pratunam-logo.png';
 const biostarLogo =
@@ -294,111 +288,101 @@ export default class HomePage extends Component {
           <br />
           <Card.Group itemsPerRow="3" style={{ margin: '0 50px 0 50px' }}>
             <Card>
-              <Image src='https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
+              <Image src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
               <Card.Content>
                 <Card.Header>
-                  <Header as="h1">{'อบรมและสัมมนา'}</Header>
+                  <Header as="h1">อบรมและสัมมนา</Header>
                 </Card.Header>
                 <Card.Description style={{ fontSize: '1.5rem' }}>
                   {'ถ่ายทอดความรู้แบบถึงตัว พร้อมสาธิตให้เห็นภาพชัดเจน เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ'}
                   <Segment basic textAlign="center">
-                    <YellowButton size="massive">{'ดูงานทั้งหมด'}</YellowButton>
+                    <YellowButton size="massive">ดูงานทั้งหมด</YellowButton>
                   </Segment>
                 </Card.Description>
               </Card.Content>
             </Card>
             <Card>
-              <Image src='https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1052&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
+              <Image src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1052&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
               <Card.Content>
                 <Card.Header>
-                  <Header as="h1">{'คอร์สออนไลน์'}</Header>
+                  <Header as="h1">คอร์สออนไลน์</Header>
                 </Card.Header>
                 <Card.Description style={{ fontSize: '1.5rem' }}>
                   {'เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา'}
                   <Segment basic textAlign="center">
-                    <YellowButton size="massive">{'ดูคอร์สทั้งหมด'}</YellowButton>
+                    <YellowButton size="massive">ดูคอร์สทั้งหมด</YellowButton>
                   </Segment>
                 </Card.Description>
               </Card.Content>
             </Card>
             <Card>
               <div style={{ height: '300px', overflow: 'hidden' }}>
-                <Image src='https://images.unsplash.com/photo-1505860421472-7d74e0b4d98a?auto=format&fit=crop&w=634&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D' />
+                <Image src="https://images.unsplash.com/photo-1505860421472-7d74e0b4d98a?auto=format&fit=crop&w=634&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
               </div>
               <Card.Content>
                 <Card.Header>
-                  <Header as="h1">{'วิทยากรรับเชิญและอบรมส่วนตัว'}</Header>
+                  <Header as="h1">วิทยากรรับเชิญและอบรมส่วนตัว</Header>
                 </Card.Header>
                 <Card.Description style={{ fontSize: '1.5rem' }}>
                   {'เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ'}
                   <Segment basic textAlign="center">
-                    <YellowButton size="massive">{'ติดต่อเรา'}</YellowButton>
+                    <YellowButton size="massive">ติดต่อเรา</YellowButton>
                   </Segment>
                 </Card.Description>
               </Card.Content>
             </Card>
           </Card.Group>
         </OurServicesSegment>
-        <Segment basic textAlign="center" style={{ minHeight: '100vh' }}>
-          <Fade bottom left><Header as="h1">การันตีคุณภาพจากผู้เคยเข้าร่วมการอบรมและสัมมนา</Header></Fade>
-          <Zoom>
-            <Image.Group>
-              <Image size="small" src={pantipPratunamLogo} />
-              <Image size="small" src={biostarLogo} />
-              <Image size="tiny" src={thminerLogo} />
-              <Image size="tiny" src={ratchapatLogo} />
-            </Image.Group>
-          </Zoom>
-          <Fade>
-            <div
-              style={{
-                maxHeight: '600px',
-              }}
-            >
-              <Slider {...settings}>
-                <div>
-                  <Image size="big" centered src={seminar1} />
-                  <Header textAlign="center" as="h2"><i>"ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี"</i></Header>
-                </div>
-                <div>
-                  <Image size="big" centered src={seminar2} />
-                  <Header textAlign="center" as="h2"><i>"รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย"</i></Header>
-                </div>
-                <div>
-                  <Image size="big" centered src={seminar3} />
-                  <Header textAlign="center" as="h2"><i>"ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย"</i></Header>
-                </div>
-                <div>
-                  <Image size="big" centered src={seminar4} />
-                  <Header textAlign="center" as="h2"><i>"เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ"</i></Header>
-                </div>
-              </Slider>
-            </div>
-          </Fade>
-        </Segment>
-        <Segment
-          basic
-          style={{
-            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', padding: '100px 0px 0px 0px',
-          }}
-        >
-          <ImageContainer>
-            <div style={{ overflow: 'hidden', height: '100vh' }}>
-              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1352&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-            </div>
-            <TextOverImage>
-              <Fade duration={3000}>
-                <h1>
-                  เรายังอยู่แค่เพียงจุดเริ่มต้นของเทคโนโลยีนี้เท่านั้น
-                </h1>
-                <h1 style={{ fontSize: '3rem' }}>
-                  โอกาสอีกมากมาย<br />
-                  ยังรอคุณอยู่<br />
-                </h1>
-                <Button color="red" size="huge">เริ่มเรียนรู้</Button>
+        <Segment basic textAlign="center" style={{ margin: '0 0 0 0', padding: '0 0 0 0', backgroundColor: '#E6E5E6' }}>
+          <Grid>
+            <Grid.Column width="6" style={{ padding: '0 0 0 0' }}>
+              <ImageContainer>
+                <Image src="/static/light-bulb.jpg" fluid />
+                <TextOverImage>
+                  <h1>
+                    เรายังอยู่แค่เพียงจุดเริ่มต้น<br />
+                    ของเทคโนโลยีนี้เท่านั้น
+                  </h1>
+                  <h1 style={{ color: '#F6CD45', fontSize: '3rem' }}>
+                    โอกาสอีกมากมาย<br />
+                    รอคุณอยู่
+                  </h1>
+                  <Button color="red" size="huge">เริ่มเรียนรู้</Button>
+                </TextOverImage>
+              </ImageContainer>
+            </Grid.Column>
+            <Grid.Column width="10" verticalAlign="middle">
+              <Fade bottom left><Header as="h1">การันตีคุณภาพจากผู้เคยเข้าร่วมการอบรมและสัมมนา</Header></Fade>
+              <Fade>
+                <Image.Group>
+                  <Image size="small" src={pantipPratunamLogo} />
+                  <Image size="small" src={biostarLogo} />
+                  <Image size="tiny" src={thminerLogo} />
+                  <Image size="tiny" src={ratchapatLogo} />
+                </Image.Group>
               </Fade>
-            </TextOverImage>
-          </ImageContainer>
+              <Fade>
+                <div
+                  style={{
+                    maxHeight: '500px',
+                  }}
+                >
+                  <Slider {...settings}>
+                    {carouselList.map((each) => (
+                      <Grid key={each.id} padded width="8" verticalAlign="middle">
+                        <Grid.Column width="8">
+                          <Image size="medium" floated="right" src={each.image} />
+                        </Grid.Column>
+                        <Grid.Column width="8" style={{ height: '100%' }}>
+                          <Header textAlign="center" as="h2" style={{ paddingRight: '150px' }}><i>{`"${each.text}"`}</i></Header>
+                        </Grid.Column>
+                      </Grid>
+                    ))}
+                  </Slider>
+                </div>
+              </Fade>
+            </Grid.Column>
+          </Grid>
         </Segment>
         <Footer />
       </div >

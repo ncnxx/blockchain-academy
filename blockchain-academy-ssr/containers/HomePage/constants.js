@@ -1,3 +1,34 @@
+const seminar1 =
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-1.png';
+const seminar2 =
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-2.png';
+const seminar3 =
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-3.png';
+const seminar4 =
+  'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/seminar-4.png';
+export const carouselList = [
+  {
+    id: 1,
+    image: seminar1,
+    text: 'ประทับใจการตอบคำถาม ที่สามารถตอบคำถามได้เป็นอย่างดี'
+  },
+  {
+    id: 2,
+    image: seminar2,
+    text: 'รายละเอียดครบถ้วน วิทยากรพูดเข้าใจง่ายและมีตัวอย่างทำให้เห็นภาพและเข้าใจง่าย'
+  },
+  {
+    id: 3,
+    image: seminar3,
+    text: 'ได้รับความรู้ใหม่ๆ ที่บางอย่างเรานึกว่ารู้แล้ว เราก็ยังไม่รู้ และอาจารย์เรียงเนื้อหาคอร์สดี ปูทางให้เข้าใจแต่ละจุดได้ง่าย'
+  },
+  {
+    id: 4,
+    image: seminar4,
+    text: 'เป็นกันเองดี ใส่ใจตอบทุกคำถามมากครับ'
+  },
+];
+
 export const particleConfig = {
   particles: {
     number: {
