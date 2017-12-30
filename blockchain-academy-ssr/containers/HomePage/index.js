@@ -31,15 +31,14 @@ import {
 import Slider from 'react-slick';
 import styled from 'styled-components';
 
-import { particleConfig, carouselList } from './constants';
+import { carouselList } from './constants';
 import NextArrow from '../../components/NextArrow';
 import PrevArrow from '../../components/PrevArrow';
-import { courseList } from '../CoursePage';
 import AppMenu from '~/containers/AppMenu';
 import Footer from '~/components/Footer';
-import { seminarList } from '~/containers/SeminarPage/constants';
-import ShuttleLaunchVideo from '~/components/ShuttleLaunchVideo';
-import GridColumn from 'semantic-ui-react/dist/commonjs/collections/Grid/GridColumn';
+import ImageContainer from '~/components/ImageContainer';
+import TextOverImage from '~/components/TextOverImage';
+import HomePageHeader from '~/components/HomePageHeader';
 
 
 const pantipPratunamLogo =
@@ -135,20 +134,6 @@ const BitcoinPriceTicker = (props) => (
   />
 );
 
-const ImageContainer = styled.div`
-  position: relative;
-  text-align: center;
-  color: white;
-`;
-
-const TextOverImage = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-`;
-
 const OurServicesSegment = styled.div`
   background: url('/static/our-services-bg.png') center center no-repeat;
   -webkit-background-size: cover;
@@ -188,29 +173,7 @@ export default class HomePage extends Component {
     return (
       <div>
         <AppMenu />
-        <ImageContainer>
-          <div style={{ overflow: 'hidden', height: '100vh' }}>
-            <Image style={{ height: '100vh' }} fluid src="/static/home-header.jpg" />
-          </div>
-          <TextOverImage>
-            <Grid
-              stackable
-              columns={2}
-              style={{
-                padding: '0 0 0 0', height: '100vh', overflow: 'hidden', marginBottom: '0', marginTop: 0,
-              }}
-            >
-              <Grid.Column verticalAlign="middle">
-                <Image centered size="big" src="/static/full-logo.png" />
-                <Header textAlign="center" style={{ fontSize: '15px', letterSpacing: '10px' }} as="h1">POWERED BY</Header>
-                <Image style={{ marginTop: '-35px' }} centered size="medium" src="https://siamblockchain.com/wp-content/uploads/2016/12/sblogo1-04.png" />
-              </Grid.Column>
-              <Grid.Column verticalAlign="middle">
-                <Header as="h1" style={{ fontSize: '4.5rem' }} inverted>ศูนย์รวมแห่งการเรียนรู้ BLOCKCHAIN และ CRYPTOCURRENCY</Header>
-              </Grid.Column>
-            </Grid>
-          </TextOverImage>
-        </ImageContainer>
+        <HomePageHeader />
         <Segment
           basic
           style={{
