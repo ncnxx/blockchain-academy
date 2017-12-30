@@ -6,13 +6,11 @@ import axios from 'axios';
 import CountUp from 'react-countup';
 import ImageContainer from '~/components/ImageContainer';
 import TextOverImage from '~/components/TextOverImage';
+import BitcoinText from '~/components/BitcoinText';
 
 const getBitcoinPrice = () => axios('https://api.tdax.com/orders?Symbol=BTC_THB')
   .then(({ data }) => Promise.resolve(_.get(data, 'Bids[0].Price', 0) / 100.0));
 
-const BitcoinText = () => (
-  <span style={{ color: '#FB9238' }}>BITCOIN</span>
-);
 
 const BitcoinPriceTicker = (props) => {
   return (

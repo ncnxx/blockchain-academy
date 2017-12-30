@@ -40,6 +40,7 @@ import ImageContainer from '~/components/ImageContainer';
 import TextOverImage from '~/components/TextOverImage';
 import HomePageHeader from '~/components/HomePageHeader';
 import OurServices from '~/components/OurServices';
+import AboutBlockchain from '~/components/AboutBlockchain';
 
 const pantipPratunamLogo =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/pantip-pratunam-logo.png';
@@ -50,12 +51,12 @@ const ratchapatLogo =
 const thminerLogo =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/thminer-logo.jpg';
 
-const PushableWrapper = styled(Sidebar.Pushable) `
+const PushableWrapper = styled(Sidebar.Pushable)`
   @media (max-width: 768px) {
   }
 `;
 
-const SidebarPusher = styled(Sidebar.Pusher) `
+const SidebarPusher = styled(Sidebar.Pusher)`
   @media (max-width: 768px) {
   }
 `;
@@ -73,7 +74,7 @@ const settings = {
   nextArrow: <NextArrow />,
 };
 
-const CanvasHeader = styled(Header) `
+const CanvasHeader = styled(Header)`
   text-align: center;
   position: absolute;
 
@@ -108,7 +109,7 @@ const VideoOverlay = styled.div`
   top: 0;
 `;
 
-const YellowButton = styled(Button) `
+const YellowButton = styled(Button)`
   margin-top: 30px !important;
   background-color: #F5BF5F !important;
   color: white !important;
@@ -174,44 +175,7 @@ export default class HomePage extends Component {
       <div>
         <AppMenu />
         <HomePageHeader />
-        <Segment
-          basic
-          style={{
-            height: '100vh', backgroundColor: 'white', overflow: 'hidden', padding: '0 0 0 0', margin: '0 0 0 0',
-          }}
-        >
-          <Grid>
-            <Grid.Column width="16">
-              <ImageContainer>
-                <div style={{ overflow: 'hidden', height: '100vh', backgroundColor: 'black' }}>
-                  <Image style={{ height: '100vh' }} src="/static/three-tiles.jpg" />
-                </div>
-                <TextOverImage style={{ width: '100%' }}>
-                  <h1 style={{ fontSize: '2.4rem' }}>
-                    <span style={{ color: 'red' }}>BLOCKCHAIN</span> เทคโนโลยีเบื้องหลังของ <BitcoinText /><br />กำลังเป็นที่นิยมสำหรับการนำไปประยุกต์ใช้ในหลากหลายอุตสาหกรรม
-                  </h1>
-                  <Grid columns={3}>
-                    <Grid.Column>
-                      <h1 style={{ fontSize: '2.4rem' }}>
-                        พลังงาน
-                      </h1>
-                    </Grid.Column>
-                    <Grid.Column>
-                      <h1 style={{ fontSize: '2.4rem' }}>
-                        การเงิน
-                      </h1>
-                    </Grid.Column>
-                    <Grid.Column>
-                      <h1 style={{ fontSize: '2.4rem' }}>
-                        โลจิสติกส์
-                      </h1>
-                    </Grid.Column>
-                  </Grid>
-                </TextOverImage>
-              </ImageContainer>
-            </Grid.Column>
-          </Grid>
-        </Segment>
+        <AboutBlockchain />
         <OurServices />
         <Segment basic textAlign="center" style={{ margin: '0 0 0 0', padding: '0 0 0 0', backgroundColor: '#E6E5E6' }}>
           <Grid>
