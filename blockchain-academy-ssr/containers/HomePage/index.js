@@ -39,7 +39,7 @@ import Footer from '~/components/Footer';
 import ImageContainer from '~/components/ImageContainer';
 import TextOverImage from '~/components/TextOverImage';
 import HomePageHeader from '~/components/HomePageHeader';
-
+import OurServices from '~/components/OurServices';
 
 const pantipPratunamLogo =
   'https://s3-ap-southeast-1.amazonaws.com/blockchain-academy-static/pantip-pratunam-logo.png';
@@ -177,39 +177,6 @@ export default class HomePage extends Component {
         <Segment
           basic
           style={{
-            backgroundColor: 'white', marginTop: '0', padding: '100px 0 100px 0', overflow: 'hidden',
-          }}
-        >
-          <Grid columns={2}>
-            <Grid.Column verticalAlign="middle" textAlign="center">
-              <Fade left>
-                <Header size="huge" as="h3" style={{ color: '#737273' }}>
-                  เงินดิจิตอล คือ คำตอบของอนาคต
-                  มกราคม ปี พ.ศ. 2560 <BitcoinText /> มีราคาประมาณ 20,000 บาท
-                </Header>
-              </Fade>
-              <br />
-              <br />
-              <Fade left>
-                <Header size="huge" as="h3" style={{ color: 'red' }}>
-                  วันนี้ <BitcoinText /> เงินดิจิตอลสกุลแรกของโลก มีราคา
-                  เพิ่มมากขึ้นกว่า {Math.floor(this.state.nextBTCPrice / 20000)} เท่าตัว และยังคงเพิ่มขึ้นเรื่อยๆ
-                </Header>
-              </Fade>
-            </Grid.Column>
-            <Grid.Column verticalAlign="middle">
-              <Fade>
-                <Header as="h1" style={{ fontSize: '7rem' }} textAlign="center">
-                  <BitcoinPriceTicker {...this.state} /> บาท
-                </Header>
-              </Fade>
-              <Fade><Header as="h3" size="medium" textAlign="center">ข้อมูลราคาจาก <a href="https://tdax.com"><span style={{ color: 'red' }}>TDAX.COM</span></a></Header></Fade>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-        <Segment
-          basic
-          style={{
             height: '100vh', backgroundColor: 'white', overflow: 'hidden', padding: '0 0 0 0', margin: '0 0 0 0',
           }}
         >
@@ -245,70 +212,7 @@ export default class HomePage extends Component {
             </Grid.Column>
           </Grid>
         </Segment>
-        <OurServicesSegment
-          basic
-          style={{
-            minHeight: '100vh', backgroundColor: 'black', overflow: 'hidden', paddingTop: '100px', margin: '0 0 0 0',
-          }}
-        >
-          <Zoom>
-            <Header textAlign="center" inverted as="h1" style={{ fontSize: '3rem' }}>
-              SIAM BLOCKCHAIN ACADEMY
-            </Header>
-          </Zoom>
-          <Zoom delay={500}>
-            <Header textAlign="center" inverted as="h1">
-              จะทำให้คุณรู้จักและเข้าใจในเทคโนโลยี CRYPTOCURRENCY และ BLOCKCHAIN ด้วยบริการของเรา
-            </Header>
-          </Zoom>
-          <br />
-          <Card.Group itemsPerRow="3" style={{ margin: '0 50px 0 50px' }}>
-            <Card>
-              <Image src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&w=1050&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-              <Card.Content>
-                <Card.Header>
-                  <Header as="h1">อบรมและสัมมนา</Header>
-                </Card.Header>
-                <Card.Description style={{ fontSize: '1.5rem' }}>
-                  {'ถ่ายทอดความรู้แบบถึงตัว พร้อมสาธิตให้เห็นภาพชัดเจน เพรียบพร้อมด้วยความรู้จากวิทยากรผู้เชี่ยวชาญ'}
-                  <Segment basic textAlign="center">
-                    <YellowButton size="massive">ดูงานทั้งหมด</YellowButton>
-                  </Segment>
-                </Card.Description>
-              </Card.Content>
-            </Card>
-            <Card>
-              <Image src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1052&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-              <Card.Content>
-                <Card.Header>
-                  <Header as="h1">คอร์สออนไลน์</Header>
-                </Card.Header>
-                <Card.Description style={{ fontSize: '1.5rem' }}>
-                  {'เนื้อหาคุณภาพ เข้าใจง่าย เข้าถึงความรู้ได้ทุกที่ทุกเวลา'}
-                  <Segment basic textAlign="center">
-                    <YellowButton size="massive">ดูคอร์สทั้งหมด</YellowButton>
-                  </Segment>
-                </Card.Description>
-              </Card.Content>
-            </Card>
-            <Card>
-              <div style={{ height: '300px', overflow: 'hidden' }}>
-                <Image src="https://images.unsplash.com/photo-1505860421472-7d74e0b4d98a?auto=format&fit=crop&w=634&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" />
-              </div>
-              <Card.Content>
-                <Card.Header>
-                  <Header as="h1">วิทยากรรับเชิญและอบรมส่วนตัว</Header>
-                </Card.Header>
-                <Card.Description style={{ fontSize: '1.5rem' }}>
-                  {'เรายินดีถ่ายทอดความรู้ให้ตามสถานที่ของท่าน หรือจัดคอร์สอบรมส่วนตัวสำหรับกลุ่มผู้สนใจ'}
-                  <Segment basic textAlign="center">
-                    <YellowButton size="massive">ติดต่อเรา</YellowButton>
-                  </Segment>
-                </Card.Description>
-              </Card.Content>
-            </Card>
-          </Card.Group>
-        </OurServicesSegment>
+        <OurServices />
         <Segment basic textAlign="center" style={{ margin: '0 0 0 0', padding: '0 0 0 0', backgroundColor: '#E6E5E6' }}>
           <Grid>
             <Grid.Column width="6" style={{ padding: '0 0 0 0' }}>
