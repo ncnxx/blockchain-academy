@@ -15,7 +15,6 @@ const BitcoinText = () => (
 );
 
 const BitcoinPriceTicker = (props) => {
-  console.log(props.nextBTCPrice);
   return (
     <CountUp
       className="CountUp"
